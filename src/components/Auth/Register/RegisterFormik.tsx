@@ -27,7 +27,7 @@ const RegisterFormik = () => {
   const [showConfirmPassword, setShowConfirmPassword] =
     useState<boolean>(false);
 
-  // умова для визначення класу на кнопці submit
+  // функція, яка обробляє умови для визначення класу на кнопці submit і повертає певне значення
   const getButtonClass = ({
     isLoading,
     isValid,
@@ -205,6 +205,7 @@ const RegisterFormik = () => {
                 isDisabled={!dirty || isLoading}
               />
               <Button
+                // викликаю функцію getButtonClass - вона повертає одне із значень
                 className={`${s.styledBtn} ${getButtonClass({
                   isLoading,
                   isValid,
