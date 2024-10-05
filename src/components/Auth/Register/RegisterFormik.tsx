@@ -27,6 +27,42 @@ const RegisterFormik = () => {
   const [showConfirmPassword, setShowConfirmPassword] =
     useState<boolean>(false);
 
+  // умова для визначення класу на кнопці submit
+  const getButtonClass = ({
+    isLoading,
+    isValid,
+    touched,
+    errors,
+    backendError,
+  }: {
+    isLoading: boolean;
+    isValid: boolean;
+    touched: any;
+    errors: any;
+    backendError: string | null;
+  }) => {
+    if (isLoading || isValid) {
+      return s.valid;
+    }
+
+    if (
+      !touched.userName ||
+      errors.userName ||
+      !touched.email ||
+      errors.email ||
+      !touched.password ||
+      errors.password ||
+      !touched.confirmPassword ||
+      errors.confirmPassword ||
+      !touched.rememberMe ||
+      errors.rememberMe
+    ) {
+      return ' ';
+    }
+
+    return backendError ? s.invalid : s.valid;
+  };
+
   return (
     <>
       <ToastContainer />
@@ -169,24 +205,13 @@ const RegisterFormik = () => {
                 isDisabled={!dirty || isLoading}
               />
               <Button
-                className={`${s.styledBtn} ${
-                  isLoading || isValid
-                    ? s.valid
-                    : !touched.userName ||
-                        errors.userName ||
-                        !touched.email ||
-                        errors.email ||
-                        !touched.password ||
-                        errors.password ||
-                        !touched.confirmPassword ||
-                        errors.confirmPassword ||
-                        !touched.rememberMe ||
-                        errors.rememberMe
-                      ? ' '
-                      : backendError
-                        ? s.invalid
-                        : s.valid
-                }`}
+                className={`${s.styledBtn} ${getButtonClass({
+                  isLoading,
+                  isValid,
+                  touched,
+                  errors,
+                  backendError,
+                })}`}
                 type="submit"
                 isDisabled={!dirty || isLoading}
               >
