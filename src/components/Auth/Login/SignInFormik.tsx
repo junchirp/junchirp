@@ -7,6 +7,7 @@ import Loader from '@/components/UI/Loader/Loader';
 import useSignInFormik from '@/hooks/useSignInFormik';
 import { CustomError } from '@/utils/types/customError';
 import Error from '@/app/sign-in/error';
+import DynamicForm from '@/components/UI/DynamicForm/DynamicForm';
 
 const SignInFormik = () => {
   const {
@@ -20,6 +21,46 @@ const SignInFormik = () => {
     isError,
   } = useSignInFormik();
 
+  // функція, яка окремо обробляє велику умову на кнопці submit
+  const getButtonClass = ({
+    isLoading,
+    isValid,
+    touched,
+    errors,
+    backendError,
+  }: {
+    isLoading: boolean;
+    isValid: boolean;
+    touched: any;
+    errors: any;
+    backendError: string | null;
+  }): string => {
+    if (isLoading || isValid) {
+      return s.valid;
+    }
+
+    if (
+      !touched.email ||
+      errors.email ||
+      !touched.password ||
+      errors.password
+    ) {
+      return '';
+    }
+
+    if (
+      !touched.email ||
+      errors.email ||
+      !touched.password ||
+      errors.password ||
+      backendError
+    ) {
+      return s.invalid;
+    }
+
+    return s.valid;
+  };
+
   return (
     <>
       {isError && error && (
@@ -31,10 +72,12 @@ const SignInFormik = () => {
           reset={() => window.location.reload()}
         />
       )}
-      <Formik
+
+      {/* Wrap the Formik logic using DynamicForm */}
+      <DynamicForm
         initialValues={{ email: '', password: '', rememberMe: false }}
-        onSubmit={handleSubmit}
         validationSchema={validationSchemaSignIn}
+        onSubmit={handleSubmit}
       >
         {({
           errors,
@@ -77,23 +120,13 @@ const SignInFormik = () => {
             )}
 
             <Button
-              className={`${s.styledBtn} ${
-                isLoading || isValid
-                  ? s.valid
-                  : !touched.email ||
-                      errors.email ||
-                      !touched.password ||
-                      errors.password
-                    ? ''
-                    : !touched.email ||
-                        errors.email ||
-                        !touched.password ||
-                        errors.password ||
-                        backendError
-                      ? s.invalid
-                      : s.valid
-              }
-                `}
+              className={`${s.styledBtn} ${getButtonClass({
+                isLoading,
+                isValid,
+                touched,
+                errors,
+                backendError,
+              })}`}
               type="submit"
               isDisabled={!dirty || isLoading}
             >
@@ -108,8 +141,9 @@ const SignInFormik = () => {
             </Button>
           </Form>
         )}
-      </Formik>
+      </DynamicForm>
     </>
   );
 };
+
 export default SignInFormik;

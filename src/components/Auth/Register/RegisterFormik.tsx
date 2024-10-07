@@ -11,6 +11,7 @@ import { FormField } from '@/components/UI/CustomInput/CustomInput';
 import { useState } from 'react';
 import Error from '@/app/register/error';
 import { CustomError, customError } from '@/utils/types/customError';
+import DynamicForm from '@/components/UI/DynamicForm/DynamicForm';
 
 const RegisterFormik = () => {
   const {
@@ -75,7 +76,7 @@ const RegisterFormik = () => {
           reset={() => window.location.reload()}
         />
       )}
-      <Formik
+      <DynamicForm
         initialValues={{
           userName: '',
           email: '',
@@ -83,8 +84,8 @@ const RegisterFormik = () => {
           confirmPassword: '',
           rememberMe: false,
         }}
-        onSubmit={handleSubmit}
         validationSchema={validationSchemaRegister}
+        onSubmit={handleSubmit}
       >
         {({
           errors,
@@ -183,13 +184,13 @@ const RegisterFormik = () => {
                     <span className={s.text__chip__checkbox}>
                       {' '}
                       Політикою конфіденційності{' '}
-                    </span>{' '}
+                    </span>
                   </p>
                 </label>
               </div>
               {errors.rememberMe && touched.rememberMe && (
                 <div className={s.invalid__checkbox__message}>
-                  {errors.rememberMe}
+                  {typeof errors.rememberMe === 'string' && errors.rememberMe}
                 </div>
               )}
             </div>
@@ -205,7 +206,6 @@ const RegisterFormik = () => {
                 isDisabled={!dirty || isLoading}
               />
               <Button
-                // викликаю функцію getButtonClass - вона повертає одне із значень
                 className={`${s.styledBtn} ${getButtonClass({
                   isLoading,
                   isValid,
@@ -228,7 +228,7 @@ const RegisterFormik = () => {
             </div>
           </Form>
         )}
-      </Formik>
+      </DynamicForm>
     </>
   );
 };
