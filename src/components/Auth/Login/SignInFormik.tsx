@@ -1,5 +1,5 @@
 import { Form, Formik } from 'formik';
-import { FormField } from '@/components/UI/CustomInput/CustomInput';
+import { FormField } from '@/components/UI/Forms/CustomInput/CustomInput';
 import { validationSchemaSignIn } from '../../../validation/validationSignIn';
 import s from './signIn.module.scss';
 import Button from '@/components/UI/Button/Button';
@@ -7,7 +7,7 @@ import Loader from '@/components/UI/Loader/Loader';
 import useSignInFormik from '@/hooks/useSignInFormik';
 import { CustomError } from '@/utils/types/customError';
 import Error from '@/app/sign-in/error';
-import DynamicForm from '@/components/UI/DynamicForm/DynamicForm';
+import DynamicForm from '@/components/UI/Forms/DynamicForm/DynamicForm';
 
 const SignInFormik = () => {
   const {

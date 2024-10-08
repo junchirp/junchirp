@@ -7,11 +7,11 @@ import Loader from '../../UI/Loader/Loader';
 import PasswordStrengthIndicator from '../PasswordStrengthIndicator/PasswordStrengthIndicator';
 import s from './register.module.scss';
 import useRegisterFormik from '@/hooks/useRegisterFormik';
-import { FormField } from '@/components/UI/CustomInput/CustomInput';
+import { FormField } from '@/components/UI/Forms/CustomInput/CustomInput';
 import { useState } from 'react';
 import Error from '@/app/register/error';
 import { CustomError, customError } from '@/utils/types/customError';
-import DynamicForm from '@/components/UI/DynamicForm/DynamicForm';
+import DynamicForm from '@/components/UI/Forms/DynamicForm/DynamicForm';
 
 const RegisterFormik = () => {
   const {
