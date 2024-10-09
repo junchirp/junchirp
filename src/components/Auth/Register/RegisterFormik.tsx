@@ -1,4 +1,4 @@
-import { Field, Form, Formik } from 'formik';
+import { Field, Form } from 'formik';
 import { validationSchemaRegister } from '@/validation/validationRegister';
 import ToastContainer from '../../UI/ToastContainer/ToastContainer';
 import Button from '../../UI/Button/Button';
@@ -7,10 +7,11 @@ import Loader from '../../UI/Loader/Loader';
 import PasswordStrengthIndicator from '../PasswordStrengthIndicator/PasswordStrengthIndicator';
 import s from './register.module.scss';
 import useRegisterFormik from '@/hooks/useRegisterFormik';
-import { FormField } from '@/components/UI/CustomInput/CustomInput';
+import { FormField } from '@/components/UI/Forms/CustomInput/CustomInput';
 import { useState } from 'react';
 import Error from '@/app/register/error';
-import { CustomError, customError } from '@/utils/types/customError';
+import { CustomError } from '@/utils/types/customError';
+import DynamicForm from '@/components/UI/Forms/DynamicForm/DynamicForm';
 
 const RegisterFormik = () => {
   const {
@@ -27,6 +28,42 @@ const RegisterFormik = () => {
   const [showConfirmPassword, setShowConfirmPassword] =
     useState<boolean>(false);
 
+  // функція, яка обробляє умови для визначення класу на кнопці submit і повертає певне значення
+  const getButtonClass = ({
+    isLoading,
+    isValid,
+    touched,
+    errors,
+    backendError,
+  }: {
+    isLoading: boolean;
+    isValid: boolean;
+    touched: any;
+    errors: any;
+    backendError: string | null;
+  }) => {
+    if (isLoading || isValid) {
+      return s.valid;
+    }
+
+    if (
+      !touched.userName ||
+      errors.userName ||
+      !touched.email ||
+      errors.email ||
+      !touched.password ||
+      errors.password ||
+      !touched.confirmPassword ||
+      errors.confirmPassword ||
+      !touched.rememberMe ||
+      errors.rememberMe
+    ) {
+      return ' ';
+    }
+
+    return backendError ? s.invalid : s.valid;
+  };
+
   return (
     <>
       <ToastContainer />
@@ -39,7 +76,7 @@ const RegisterFormik = () => {
           reset={() => window.location.reload()}
         />
       )}
-      <Formik
+      <DynamicForm
         initialValues={{
           userName: '',
           email: '',
@@ -47,8 +84,8 @@ const RegisterFormik = () => {
           confirmPassword: '',
           rememberMe: false,
         }}
-        onSubmit={handleSubmit}
         validationSchema={validationSchemaRegister}
+        onSubmit={handleSubmit}
       >
         {({
           errors,
@@ -147,13 +184,13 @@ const RegisterFormik = () => {
                     <span className={s.text__chip__checkbox}>
                       {' '}
                       Політикою конфіденційності{' '}
-                    </span>{' '}
+                    </span>
                   </p>
                 </label>
               </div>
               {errors.rememberMe && touched.rememberMe && (
                 <div className={s.invalid__checkbox__message}>
-                  {errors.rememberMe}
+                  {typeof errors.rememberMe === 'string' && errors.rememberMe}
                 </div>
               )}
             </div>
@@ -169,24 +206,13 @@ const RegisterFormik = () => {
                 isDisabled={!dirty || isLoading}
               />
               <Button
-                className={`${s.styledBtn} ${
-                  isLoading || isValid
-                    ? s.valid
-                    : !touched.userName ||
-                        errors.userName ||
-                        !touched.email ||
-                        errors.email ||
-                        !touched.password ||
-                        errors.password ||
-                        !touched.confirmPassword ||
-                        errors.confirmPassword ||
-                        !touched.rememberMe ||
-                        errors.rememberMe
-                      ? ' '
-                      : backendError
-                        ? s.invalid
-                        : s.valid
-                }`}
+                className={`${s.styledBtn} ${getButtonClass({
+                  isLoading,
+                  isValid,
+                  touched,
+                  errors,
+                  backendError,
+                })}`}
                 type="submit"
                 isDisabled={!dirty || isLoading}
               >
@@ -202,7 +228,7 @@ const RegisterFormik = () => {
             </div>
           </Form>
         )}
-      </Formik>
+      </DynamicForm>
     </>
   );
 };

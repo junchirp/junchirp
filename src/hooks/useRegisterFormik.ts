@@ -5,16 +5,24 @@ import { useRegisterMutation } from '@/services/auth-and-user-services';
 import useRouterPush from '@/hooks/useRouter';
 import { FormValuesRegister } from '@/components/Auth/Register/types/types';
 import { customError } from '@/utils/types/customError';
+import useAuthFormCommon from './useAuthFormCommon';
 
 const useRegisterFormik = () => {
+  // хук, який обробляє логіку, спільну для реєстрації і логіну
+  const {
+    showPassword,
+    backendError,
+    togglePasswordVisibility,
+    handleChange,
+    setBackendError,
+  } = useAuthFormCommon();
+
   const [register, { isLoading, isSuccess, error, isError }] =
     useRegisterMutation();
   const { pushRouter } = useRouterPush();
 
-  const [showPassword, setShowPassword] = useState<boolean>(false);
   const [showConfirmPassword, setShowConfirmPassword] =
     useState<boolean>(false);
-  const [backendError, setBackendError] = useState<string | null>(null);
 
   const sessionStorage = window.sessionStorage;
 
@@ -63,13 +71,6 @@ const useRegisterFormik = () => {
 
       setBackendError(errorMessage);
     }
-  };
-
-  const handleChange = () => {
-    setBackendError(null);
-  };
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
   };
 
   return {
