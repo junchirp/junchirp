@@ -8,7 +8,7 @@ import { customError } from '@/utils/types/customError';
 import useAuthFormCommon from './useAuthFormCommon';
 
 const useRegisterFormik = () => {
-  // хук, який повертає дані, спільні для реєстрації і логіну
+  // хук, який обробляє логіку, спільну для реєстрації і логіну
   const {
     showPassword,
     backendError,

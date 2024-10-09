@@ -1,4 +1,4 @@
-import { Field, Form, Formik } from 'formik';
+import { Field, Form } from 'formik';
 import { validationSchemaRegister } from '@/validation/validationRegister';
 import ToastContainer from '../../UI/ToastContainer/ToastContainer';
 import Button from '../../UI/Button/Button';
@@ -10,7 +10,7 @@ import useRegisterFormik from '@/hooks/useRegisterFormik';
 import { FormField } from '@/components/UI/Forms/CustomInput/CustomInput';
 import { useState } from 'react';
 import Error from '@/app/register/error';
-import { CustomError, customError } from '@/utils/types/customError';
+import { CustomError } from '@/utils/types/customError';
 import DynamicForm from '@/components/UI/Forms/DynamicForm/DynamicForm';
 
 const RegisterFormik = () => {

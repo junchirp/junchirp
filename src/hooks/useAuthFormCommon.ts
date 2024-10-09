@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-// тут інкапсульована спільна для логіну і реєстрації логіка, щоб уникнути дублювання коду
+// тут інкапсульована спільна для логіну і реєстрації логіка, щоб уникнути дублювання коду в useRegisterFormik i useSigninFormik
 const useAuthFormCommon = () => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const [backendError, setBackendError] = useState<string | null>(null);
