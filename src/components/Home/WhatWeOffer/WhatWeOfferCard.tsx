@@ -1,11 +1,13 @@
+import { FC } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-import SvgIcon from '@/components/UI/SvgIcon/SvgIcon';
-import s from './whatWeOffer.module.scss';
-import { FC } from 'react';
 import { Offer } from '@/utils/types/Offer';
 import { roboto } from '@/utils/fonts';
+
+import SvgIcon from '@/components/UI/SvgIcon/SvgIcon';
+
+import s from './whatWeOffer.module.scss';
 
 type Props = {
   offer: Offer;

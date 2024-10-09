@@ -1,16 +1,19 @@
 import { Field, Form, Formik } from 'formik';
-import { validationSchemaRegister } from '@/validation/validationRegister';
-import ToastContainer from '../../UI/ToastContainer/ToastContainer';
-import Button from '../../UI/Button/Button';
-import SvgIcon from '../../UI/SvgIcon/SvgIcon';
-import Loader from '../../UI/Loader/Loader';
-import PasswordStrengthIndicator from '../PasswordStrengthIndicator/PasswordStrengthIndicator';
-import s from './register.module.scss';
-import useRegisterFormik from '@/hooks/useRegisterFormik';
-import { FormField } from '@/components/UI/CustomInput/CustomInput';
 import { useState } from 'react';
+
+import { validationSchemaRegister } from '@/validation/validationRegister';
+import { CustomError } from '@/utils/types/customError';
+import useRegisterFormik from '@/hooks/useRegisterFormik';
 import Error from '@/app/register/error';
-import { CustomError, customError } from '@/utils/types/customError';
+
+import ToastContainer from '@/components/UI/ToastContainer/ToastContainer';
+import Button from '@/components/UI/Button/Button';
+import SvgIcon from '@/components/UI/SvgIcon/SvgIcon';
+import Loader from '@/components/UI/Loader/Loader';
+import { FormField } from '@/components/UI/CustomInput/CustomInput';
+import PasswordStrengthIndicator from '../PasswordStrengthIndicator/PasswordStrengthIndicator';
+
+import s from './register.module.scss';
 
 const RegisterFormik = () => {
   const {
@@ -173,19 +176,19 @@ const RegisterFormik = () => {
                   isLoading || isValid
                     ? s.valid
                     : !touched.userName ||
-                        errors.userName ||
-                        !touched.email ||
-                        errors.email ||
-                        !touched.password ||
-                        errors.password ||
-                        !touched.confirmPassword ||
-                        errors.confirmPassword ||
-                        !touched.rememberMe ||
-                        errors.rememberMe
-                      ? ' '
-                      : backendError
-                        ? s.invalid
-                        : s.valid
+                      errors.userName ||
+                      !touched.email ||
+                      errors.email ||
+                      !touched.password ||
+                      errors.password ||
+                      !touched.confirmPassword ||
+                      errors.confirmPassword ||
+                      !touched.rememberMe ||
+                      errors.rememberMe
+                    ? ' '
+                    : backendError
+                    ? s.invalid
+                    : s.valid
                 }`}
                 type="submit"
                 isDisabled={!dirty || isLoading}

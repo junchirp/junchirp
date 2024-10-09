@@ -1,4 +1,5 @@
 'use client';
+
 import ErrorComponent, {
   ErrorProps,
 } from '@/components/UI/ErrorComponent/ErrorComponent';

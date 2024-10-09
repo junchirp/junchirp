@@ -1,7 +1,8 @@
-import JuniorForm from "@/components/RoleFormes/junior/JuniorForm";
-import PartnerForm from "@/components/RoleFormes/partner/PartnerForm";
 import { RoleType } from "@/utils/types/Role";
 import { Roles } from "../app/Role";
+
+import JuniorForm from "@/components/RoleFormes/junior/JuniorForm";
+import PartnerForm from "@/components/RoleFormes/partner/PartnerForm";
 import MentorForm from "@/components/RoleFormes/mentor/MentorForm";
 import InvestorForm from "@/components/RoleFormes/investor/InvestorForm";
 
