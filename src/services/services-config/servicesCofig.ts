@@ -5,6 +5,7 @@ import {
   FetchArgs,
   FetchBaseQueryError,
 } from '@reduxjs/toolkit/query/react';
+
 import store from '../../redux/store';
 import { clearToken, tokenReceived } from '../../redux/auth/authSlice';
 

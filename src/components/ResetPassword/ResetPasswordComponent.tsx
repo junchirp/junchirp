@@ -1,18 +1,22 @@
 'use client';
 
-import s from './styles.module.scss';
-import { Field, Form, Formik } from 'formik';
 import { useState } from 'react';
-import { useResetPasswordMutation } from '@/services/auth-and-user-services'; 
+import { Field, Form, Formik } from 'formik';
 import { toast } from 'react-toastify';
+
+import { useResetPasswordMutation } from '@/services/auth-and-user-services';
 import useRouterPush from '@/hooks/useRouter';
+
+import { validationSchemaResetPassword } from '@/validation/validationResetPassword';
+
 import { FormValuesResetPassword } from '@/components/Auth/ResetPassword/FormValuesResetPassword';
 import ToastContainer from '@/components/UI/ToastContainer/ToastContainer';
-import { validationSchemaResetPassword } from '@/validation/validationResetPassword';
 import SvgIcon from '@/components/UI/SvgIcon/SvgIcon';
 import ErrorFeedback from '@/components/Auth/ErrorFeedback';
 import Button from '@/components/UI/Button/Button';
 import Loader from '@/components/UI/Loader/Loader';
+
+import s from './styles.module.scss';
 
 const ResetPasswordComponent = () => {
   const [resetPassword, { isLoading }] = useResetPasswordMutation();
@@ -95,8 +99,8 @@ const ResetPasswordComponent = () => {
                       ? //
                         s.invalid
                       : touched.email && !errors.email
-                        ? s.valid
-                        : ''
+                      ? s.valid
+                      : ''
                   }`}
                   type="email"
                   name="email"
@@ -126,8 +130,8 @@ const ResetPasswordComponent = () => {
                       ? // || backendError
                         s.invalid
                       : touched.code && !errors.code
-                        ? s.valid
-                        : ''
+                      ? s.valid
+                      : ''
                   }`}
                   type="text"
                   name="code"
@@ -157,8 +161,8 @@ const ResetPasswordComponent = () => {
                     touched.newPassword && errors.newPassword
                       ? s.invalid
                       : touched.newPassword && !errors.newPassword
-                        ? s.valid
-                        : ''
+                      ? s.valid
+                      : ''
                   }`}
                   type={showPassword ? 'text' : 'password'}
                   name="newPassword"
@@ -193,10 +197,10 @@ const ResetPasswordComponent = () => {
                    isLoading
                      ? s.styledBtn
                      : !touched.email || errors.email
-                       ? ''
-                       : !touched.email || errors.email || backendError
-                         ? s.invalid
-                         : s.valid
+                     ? ''
+                     : !touched.email || errors.email || backendError
+                     ? s.invalid
+                     : s.valid
                  } `}
                   type="submit"
                   isDisabled={!dirty || !isValid || isLoading}

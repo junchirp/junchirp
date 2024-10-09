@@ -1,7 +1,9 @@
-import s from './styles.module.scss';
 import { Field, FormikErrors, FormikTouched } from 'formik';
+
 import ErrorFeedback from '@/components/Auth/ErrorFeedback';
 import SvgIcon from '@/components/UI/SvgIcon/SvgIcon';
+
+import s from './styles.module.scss';
 
 type FormFieldProps<T extends object> = {
   name: keyof T;
@@ -45,8 +47,8 @@ const FormField = <T extends object>(props: FormFieldProps<T>) => {
           (touched[name] && errors[name]) || backendError
             ? s.invalid
             : touched[name] && !errors[name]
-              ? s.valid
-              : ''
+            ? s.valid
+            : ''
         }`}
         type={showPassword === true ? 'text' : type}
         name={name as string}

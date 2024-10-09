@@ -1,18 +1,22 @@
 'use client';
+
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+
 import authSelector from '@/redux/auth/authSelector';
-import { useLogoutMutation } from '@/services/auth-and-user-services';
-import Logo from '../UI/Logo/Logo';
-import BurgerButton from '../UI/BurgerButton/BurgerButton';
-import SvgIcon from '../UI/SvgIcon/SvgIcon';
-import useRouterPush from '@/hooks/useRouter';
-import s from './header.module.scss';
-import { AppRouteEnum } from '@/libs/enums/enums';
-import { useEffect, useState } from 'react';
-import useWindowWidth from '@/hooks/useWindowWidth';
 import { clearToken } from '@/redux/auth/authSlice';
+import { useLogoutMutation } from '@/services/auth-and-user-services';
+import { AppRouteEnum } from '@/libs/enums/enums';
+import useWindowWidth from '@/hooks/useWindowWidth';
+import useRouterPush from '@/hooks/useRouter';
 import { useAppDispatch, useAppSelector } from '@/hooks/redux-hook';
+
+import Logo from '@/components/UI/Logo/Logo';
+import BurgerButton from '@/components/UI/BurgerButton/BurgerButton';
+import SvgIcon from '@/components/UI/SvgIcon/SvgIcon';
+
+import s from './header.module.scss';
 
 const Header = () => {
   const pathname = usePathname();

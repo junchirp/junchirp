@@ -2,10 +2,14 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import s from './register.module.scss';
-import RegisterFormik from './RegisterFormik';
-import SocialLoginGroup from '../../UI/SocialLoginGroup/SocialLoginGroup';
+
 import { AppRouteEnum } from '@/libs/enums/enums';
+
+import SocialLoginGroup from '../../UI/SocialLoginGroup/SocialLoginGroup';
+
+import RegisterFormik from './RegisterFormik';
+
+import s from './register.module.scss';
 
 const Register = () => {
   const pathname = usePathname();

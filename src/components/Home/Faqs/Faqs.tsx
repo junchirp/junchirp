@@ -1,12 +1,15 @@
 'use client';
 
+import { useState } from 'react';
 import cn from 'classnames';
 import Link from 'next/link';
-import s from './faqs.module.scss';
+
 import { faqs } from './faqsText';
-import { useState } from 'react';
-import SvgIcon from '@/components/UI/SvgIcon/SvgIcon';
 import { AppRouteEnum } from '@/libs/enums/enums';
+
+import SvgIcon from '@/components/UI/SvgIcon/SvgIcon';
+
+import s from './faqs.module.scss';
 
 const Faqs = () => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);

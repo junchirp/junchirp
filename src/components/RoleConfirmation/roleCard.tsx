@@ -1,8 +1,10 @@
-import { ChangeEvent, FC } from "react";
-import s from "./roleConfirmation.module.scss";
-import { RoleCard as RoleCardType } from "@/utils/types/RoleCard";
-import { useField } from "formik";
-import cn from "classnames";
+import { ChangeEvent, FC } from 'react';
+import cn from 'classnames';
+import { useField } from 'formik';
+
+import { RoleCard as RoleCardType } from '@/utils/types/RoleCard';
+
+import s from './roleConfirmation.module.scss';
 
 type Props = {
   role: RoleCardType;
@@ -11,8 +13,8 @@ type Props = {
 
 export const RoleCard: FC<Props> = ({ role, onSelectRole }) => {
   const [field] = useField({
-    name: "role",
-    type: "radio",
+    name: 'role',
+    type: 'radio',
     value: String(role.role),
   });
 
@@ -24,7 +26,7 @@ export const RoleCard: FC<Props> = ({ role, onSelectRole }) => {
     <label
       key={role.id}
       className={cn(s.card, {
-        [s["card--selected"]]: field.checked,
+        [s['card--selected']]: field.checked,
       })}
     >
       <div>

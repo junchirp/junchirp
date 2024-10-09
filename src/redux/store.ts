@@ -1,11 +1,10 @@
+import storage from 'redux-persist/lib/storage';
 import {
   Action,
   combineReducers,
   configureStore,
   ThunkAction,
 } from '@reduxjs/toolkit';
-
-import storage from 'redux-persist/lib/storage';
 
 import {
   persistReducer,

@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import storage from 'redux-persist/lib/storage';
 import { persistReducer } from 'redux-persist';
+
 import { authApi } from '@/services/auth-and-user-services';
 import { IAuthState } from '@/utils/types/IUser';
 

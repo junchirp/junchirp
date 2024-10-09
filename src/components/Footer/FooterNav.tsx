@@ -1,6 +1,7 @@
-import Link from "next/link";
-import React from "react";
-import s from "./footer.module.scss";
+import Link from 'next/link';
+import React from 'react';
+
+import s from './footer.module.scss';
 
 const FooterNav = () => {
   return (

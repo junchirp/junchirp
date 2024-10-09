@@ -1,4 +1,5 @@
-import { RootState } from "../store";
+import { RootState } from '../store';
+
 const getName = (state: RootState) => state.auth?.user?.userName;
 const getEmail = (state: RootState) => state.auth?.user?.email;
 const selectIsConfirmed = (state: RootState) => state.auth?.user?.isConfirmed;

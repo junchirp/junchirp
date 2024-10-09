@@ -1,18 +1,21 @@
 'use client';
 
 import { useState } from 'react';
+import { Field, Form, Formik } from 'formik';
+
 import { useRequestPasswordResetMutation } from '@/services/auth-and-user-services';
 import useRouterPush from '@/hooks/useRouter';
 import { customError } from '@/utils/types/customError';
-import Loader from '../../UI/Loader/Loader';
 
-import { Field, Form, Formik } from 'formik';
-import SvgIcon from '../../UI/SvgIcon/SvgIcon';
-import ErrorFeedback from '../ErrorFeedback';
-import Button from '../../UI/Button/Button';
-import ToastContainer from '../../UI/ToastContainer/ToastContainer';
 import { validationSchemaRequestPasswordReset } from '../../../validation/validationRequestPasswordReset';
 import { FormValuesRequestPasswordReset } from './FormValuesRequestPasswordReset';
+import ErrorFeedback from '../ErrorFeedback';
+
+import Loader from '@/components/UI/Loader/Loader';
+import SvgIcon from '@/components/UI/SvgIcon/SvgIcon';
+import Button from '@/components/UI/Button/Button';
+import ToastContainer from '@/components/UI/ToastContainer/ToastContainer';
+
 import s from './requestPasswordReset.module.scss';
 
 const ResetRequestPassword = () => {
@@ -80,8 +83,8 @@ const ResetRequestPassword = () => {
                     (touched.email && errors.email) || backendError
                       ? s.invalid
                       : touched.email && !errors.email
-                        ? s.valid
-                        : ''
+                      ? s.valid
+                      : ''
                   }`}
                   type="email"
                   name="email"
@@ -101,10 +104,10 @@ const ResetRequestPassword = () => {
                  isLoading
                    ? s.styledBtn
                    : !touched.email || errors.email
-                     ? ''
-                     : !touched.email || errors.email || backendError
-                       ? s.invalid
-                       : s.valid
+                   ? ''
+                   : !touched.email || errors.email || backendError
+                   ? s.invalid
+                   : s.valid
                } `}
                 type="submit"
                 isDisabled={!dirty || !isValid || isLoading}

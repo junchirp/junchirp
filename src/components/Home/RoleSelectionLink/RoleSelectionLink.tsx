@@ -1,6 +1,8 @@
-import s from "./roleSelectionLink.module.scss";
-import { roleCards } from "./data/cards";
-import CardDetails from "./CardDetails/CardDetails";
+import CardDetails from './CardDetails/CardDetails';
+
+import { roleCards } from './data/cards';
+
+import s from './roleSelectionLink.module.scss';
 
 const RoleSelectionLink = () => {
   const cards = roleCards.map((card) => (

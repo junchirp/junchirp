@@ -1,4 +1,5 @@
 import SvgIcon from '../SvgIcon/SvgIcon';
+
 import s from '../../Auth/Login/signIn.module.scss';
 
 const SocialLoginGroup = () => {

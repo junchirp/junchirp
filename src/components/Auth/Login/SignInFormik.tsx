@@ -1,12 +1,15 @@
 import { Form, Formik } from 'formik';
-import { FormField } from '@/components/UI/CustomInput/CustomInput';
+
+import useSignInFormik from '@/hooks/useSignInFormik';
+import Error from '@/app/sign-in/error';
+import { CustomError } from '@/utils/types/customError';
 import { validationSchemaSignIn } from '../../../validation/validationSignIn';
-import s from './signIn.module.scss';
+
+import { FormField } from '@/components/UI/CustomInput/CustomInput';
 import Button from '@/components/UI/Button/Button';
 import Loader from '@/components/UI/Loader/Loader';
-import useSignInFormik from '@/hooks/useSignInFormik';
-import { CustomError } from '@/utils/types/customError';
-import Error from '@/app/sign-in/error';
+
+import s from './signIn.module.scss';
 
 const SignInFormik = () => {
   const {
@@ -81,17 +84,17 @@ const SignInFormik = () => {
                 isLoading || isValid
                   ? s.valid
                   : !touched.email ||
-                      errors.email ||
-                      !touched.password ||
-                      errors.password
-                    ? ''
-                    : !touched.email ||
-                        errors.email ||
-                        !touched.password ||
-                        errors.password ||
-                        backendError
-                      ? s.invalid
-                      : s.valid
+                    errors.email ||
+                    !touched.password ||
+                    errors.password
+                  ? ''
+                  : !touched.email ||
+                    errors.email ||
+                    !touched.password ||
+                    errors.password ||
+                    backendError
+                  ? s.invalid
+                  : s.valid
               }
                 `}
               type="submit"

@@ -1,6 +1,8 @@
-"use client";
-import { useEffect, useState } from "react";
-import SvgIcon from "../SvgIcon/SvgIcon";
+'use client';
+
+import { useEffect, useState } from 'react';
+
+import SvgIcon from '../SvgIcon/SvgIcon';
 
 const Logo = () => {
   const [dynamicWidth, setDynamicWidth] = useState(103);
@@ -36,19 +38,13 @@ const Logo = () => {
 
     handleResize();
 
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
 
     return () => {
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
-  return (
-    <SvgIcon
-      id="LOGO"
-      width={dynamicWidth}
-      height={dynamicHeight}
-    />
-  );
+  return <SvgIcon id="LOGO" width={dynamicWidth} height={dynamicHeight} />;
 };
 export default Logo;

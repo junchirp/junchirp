@@ -1,6 +1,7 @@
-import s from "./whatWeOffer.module.scss";
-import WhatWeOfferList from "./WhatWeOfferList";
-import { offeringsData } from "./whatWeOfferData";
+import WhatWeOfferList from './WhatWeOfferList';
+import { offeringsData } from './whatWeOfferData';
+
+import s from './whatWeOffer.module.scss';
 
 const WhatWeOffer = () => {
   return (

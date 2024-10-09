@@ -1,22 +1,19 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Navigation, EffectCoverflow } from 'swiper/modules';
+
+import SvgIcon from '@/components/UI/SvgIcon/SvgIcon';
+
+import testimonials from './testimonials.json';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-
-// import required modules
-import { Pagination, Navigation, EffectCoverflow } from 'swiper/modules';
-
 import 'swiper/css/scrollbar';
-
 import s from './testimonials.module.scss';
-import Image from 'next/image';
-import SvgIcon from '@/components/UI/SvgIcon/SvgIcon';
-
-import testimonials from './testimonials.json';
 
 interface Testimonial {
   id: number;

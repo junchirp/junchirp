@@ -1,12 +1,15 @@
 import type { Metadata } from 'next';
-import './globals.scss';
-import Header from '@/components/Header/Header';
+import dynamic from 'next/dynamic';
+import localFont from 'next/font/local';
+
 import { montserrat } from '@/utils/fonts';
+
+import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
 import { Temporary } from '@/components/UI/temporary/temporary';
+
 import s from '@/sass/layouts/main.module.scss';
-import localFont from 'next/font/local';
-import dynamic from 'next/dynamic';
+import './globals.scss';
 
 const ReduxProvider = dynamic(
   () => import('../Providers/ReduxProvider/ReduxProvider'),

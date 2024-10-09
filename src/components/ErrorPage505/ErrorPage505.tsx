@@ -1,7 +1,10 @@
-"use client";
-import s from "./ErrorPage505.module.scss";
-import Link from "next/link";
-import { roboto } from "@/utils/fonts";
+'use client';
+
+import Link from 'next/link';
+
+import { roboto } from '@/utils/fonts';
+
+import s from './ErrorPage505.module.scss';
 
 export default function Error505() {
   return (
