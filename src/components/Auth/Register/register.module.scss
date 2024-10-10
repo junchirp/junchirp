@@ -1,7 +1,7 @@
-@import "../../../sass/utils/container";
-@import "../../../sass/utils/mixins";
+@import '../../../sass/utils/container';
+@import '../../../sass/utils/mixins';
 
-@import "../Login/signIn.module.scss";
+@import '../Login/signIn.module.scss';
 
 .form {
   display: flex;
@@ -25,13 +25,17 @@
   &:checked + .chip__checkbox {
     cursor: pointer;
     display: block;
-    position: absolute;
-    top: 10px;
-    left: 4px;
-    @include mediaQuery(1280px) {
-      top: 0;
-    }
+    // position: absolute;
+    // top: 10px;
+    // left: 4px;
+    // @include mediaQuery(1280px) {
+    //   top: 0;
+    // }
   }
+}
+
+.checkbox__wraper {
+  position: relative;
 }
 
 .form__box__checkbox__field {
