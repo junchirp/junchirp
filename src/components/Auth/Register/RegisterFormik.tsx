@@ -1,17 +1,18 @@
-import { Field, Form, Formik } from 'formik';
 import { useState } from 'react';
+import { Field, Form, Formik } from 'formik';
 
-import { validationSchemaRegister } from '@/validation/validationRegister';
-import { CustomError } from '@/utils/types/customError';
 import useRegisterFormik from '@/hooks/useRegisterFormik';
 import Error from '@/app/register/error';
+import { CustomError } from '@/utils/types/customError';
+import PasswordStrengthIndicator from '../PasswordStrengthIndicator/PasswordStrengthIndicator';
+import { validationSchemaRegister } from '@/validation/validationRegister';
 
 import ToastContainer from '@/components/UI/ToastContainer/ToastContainer';
+import { FormField } from '@/components/UI/Forms/CustomInput/CustomInput';
+import DynamicForm from '@/components/UI/Forms/DynamicForm/DynamicForm';
 import Button from '@/components/UI/Button/Button';
 import SvgIcon from '@/components/UI/SvgIcon/SvgIcon';
 import Loader from '@/components/UI/Loader/Loader';
-import { FormField } from '@/components/UI/CustomInput/CustomInput';
-import PasswordStrengthIndicator from '../PasswordStrengthIndicator/PasswordStrengthIndicator';
 
 import s from './register.module.scss';
 
@@ -30,6 +31,42 @@ const RegisterFormik = () => {
   const [showConfirmPassword, setShowConfirmPassword] =
     useState<boolean>(false);
 
+  // функція, яка обробляє умови для визначення класу на кнопці submit і повертає певне значення
+  const getButtonClass = ({
+    isLoading,
+    isValid,
+    touched,
+    errors,
+    backendError,
+  }: {
+    isLoading: boolean;
+    isValid: boolean;
+    touched: any;
+    errors: any;
+    backendError: string | null;
+  }) => {
+    if (isLoading || isValid) {
+      return s.valid;
+    }
+
+    if (
+      !touched.userName ||
+      errors.userName ||
+      !touched.email ||
+      errors.email ||
+      !touched.password ||
+      errors.password ||
+      !touched.confirmPassword ||
+      errors.confirmPassword ||
+      !touched.rememberMe ||
+      errors.rememberMe
+    ) {
+      return ' ';
+    }
+
+    return backendError ? s.invalid : s.valid;
+  };
+
   return (
     <>
       <ToastContainer />
@@ -42,7 +79,7 @@ const RegisterFormik = () => {
           reset={() => window.location.reload()}
         />
       )}
-      <Formik
+      <DynamicForm
         initialValues={{
           userName: '',
           email: '',
@@ -50,8 +87,8 @@ const RegisterFormik = () => {
           confirmPassword: '',
           rememberMe: false,
         }}
-        onSubmit={handleSubmit}
         validationSchema={validationSchemaRegister}
+        onSubmit={handleSubmit}
       >
         {({
           errors,
@@ -150,13 +187,13 @@ const RegisterFormik = () => {
                     <span className={s.text__chip__checkbox}>
                       {' '}
                       Політикою конфіденційності{' '}
-                    </span>{' '}
+                    </span>
                   </p>
                 </label>
               </div>
               {errors.rememberMe && touched.rememberMe && (
                 <div className={s.invalid__checkbox__message}>
-                  {errors.rememberMe}
+                  {typeof errors.rememberMe === 'string' && errors.rememberMe}
                 </div>
               )}
             </div>
@@ -205,7 +242,7 @@ const RegisterFormik = () => {
             </div>
           </Form>
         )}
-      </Formik>
+      </DynamicForm>
     </>
   );
 };

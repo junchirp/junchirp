@@ -1,19 +1,24 @@
 'use client';
 
-import { useState } from 'react';
-
 import { useLoginMutation } from '@/services/auth-and-user-services';
 import useRouterPush from '@/hooks/useRouter';
 import { customError } from '@/utils/types/customError';
 
 import { FormValuesSignIn } from '@/components/Auth/Login/FormValuesSignIn';
+import useAuthFormCommon from './useAuthFormCommon';
 
 const useSignInFormik = () => {
+  // хук, який повертає дані, спільні для реєстрації і логіну
+  const {
+    showPassword,
+    backendError,
+    togglePasswordVisibility,
+    handleChange,
+    setBackendError,
+  } = useAuthFormCommon();
+
   const [login, { isLoading, isError, error }] = useLoginMutation();
   const { pushRouter } = useRouterPush();
-
-  const [showPassword, setShowPassword] = useState(false);
-  const [backendError, setBackendError] = useState<string | null>(null);
 
   const handleSubmit = async (
     values: FormValuesSignIn,
@@ -47,12 +52,6 @@ const useSignInFormik = () => {
 
       setBackendError(errorMessage);
     }
-  };
-  const handleChange = () => {
-    setBackendError(null);
-  };
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
   };
 
   return {

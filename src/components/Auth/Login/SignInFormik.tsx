@@ -1,11 +1,12 @@
-import { Form, Formik } from 'formik';
+import { Form } from 'formik';
 
 import useSignInFormik from '@/hooks/useSignInFormik';
-import Error from '@/app/sign-in/error';
 import { CustomError } from '@/utils/types/customError';
+import Error from '@/app/sign-in/error';
 import { validationSchemaSignIn } from '../../../validation/validationSignIn';
 
-import { FormField } from '@/components/UI/CustomInput/CustomInput';
+import DynamicForm from '@/components/UI/Forms/DynamicForm/DynamicForm';
+import { FormField } from '@/components/UI/Forms/CustomInput/CustomInput';
 import Button from '@/components/UI/Button/Button';
 import Loader from '@/components/UI/Loader/Loader';
 
@@ -23,6 +24,46 @@ const SignInFormik = () => {
     isError,
   } = useSignInFormik();
 
+  // функція, яка окремо обробляє велику умову на кнопці submit
+  const getButtonClass = ({
+    isLoading,
+    isValid,
+    touched,
+    errors,
+    backendError,
+  }: {
+    isLoading: boolean;
+    isValid: boolean;
+    touched: any;
+    errors: any;
+    backendError: string | null;
+  }): string => {
+    if (isLoading || isValid) {
+      return s.valid;
+    }
+
+    if (
+      !touched.email ||
+      errors.email ||
+      !touched.password ||
+      errors.password
+    ) {
+      return '';
+    }
+
+    if (
+      !touched.email ||
+      errors.email ||
+      !touched.password ||
+      errors.password ||
+      backendError
+    ) {
+      return s.invalid;
+    }
+
+    return s.valid;
+  };
+
   return (
     <>
       {isError && error && (
@@ -34,10 +75,12 @@ const SignInFormik = () => {
           reset={() => window.location.reload()}
         />
       )}
-      <Formik
+
+      {/* Wrap the Formik logic using DynamicForm */}
+      <DynamicForm
         initialValues={{ email: '', password: '', rememberMe: false }}
-        onSubmit={handleSubmit}
         validationSchema={validationSchemaSignIn}
+        onSubmit={handleSubmit}
       >
         {({
           errors,
@@ -111,8 +154,9 @@ const SignInFormik = () => {
             </Button>
           </Form>
         )}
-      </Formik>
+      </DynamicForm>
     </>
   );
 };
+
 export default SignInFormik;

@@ -3,15 +3,15 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import cn from 'classnames';
-import { Form, Formik } from 'formik';
-
-import { useSetRoleMutation } from '@/services/auth-and-user-services';
-import { customError } from '@/utils/types/customError';
-import { AppRouteEnum } from '@/libs/enums/enums';
-import { rolesValidationSchema } from '../../validation/rolesValidation';
 
 import { RoleList } from './roleList';
 import { roleCardData } from './roleCardText';
+import { AppRouteEnum } from '@/libs/enums/enums';
+import { useSetRoleMutation } from '@/services/auth-and-user-services';
+import { customError } from '@/utils/types/customError';
+import { rolesValidationSchema } from '../../validation/rolesValidation';
+
+import DynamicForm from '@/components/UI/Forms/DynamicForm/DynamicForm';
 import Button from '@/components/UI/Button/Button';
 
 import s from './roleConfirmation.module.scss';
@@ -41,13 +41,13 @@ export const RoleConfirmation = () => {
   return (
     <section className={s.section}>
       <div className={s.container}>
-        <Formik
+        <DynamicForm
           initialValues={{ role: '' }}
           validationSchema={rolesValidationSchema}
           onSubmit={handleSubmit}
         >
           {({ errors, touched, setFieldValue }) => (
-            <Form className={s.form}>
+            <>
               <RoleList
                 roles={roleCardData}
                 onSelectRole={(roleId) => {
@@ -65,12 +65,14 @@ export const RoleConfirmation = () => {
               </div>
 
               {errors.role && touched.role && (
-                <div className={s.error}>{errors.role}</div>
+                <div className={s.error}>
+                  {typeof errors.role === 'string' && errors.role}
+                </div>
               )}
               {backendError && <div className={s.error}>{backendError}</div>}
-            </Form>
+            </>
           )}
-        </Formik>
+        </DynamicForm>
       </div>
     </section>
   );
