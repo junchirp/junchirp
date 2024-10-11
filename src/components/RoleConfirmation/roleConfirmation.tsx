@@ -3,7 +3,6 @@ import s from './roleConfirmation.module.scss';
 import { RoleList } from './roleList';
 import { roleCardData } from './roleCardText';
 import Button from '../UI/Button/Button';
-import { Form, Formik } from 'formik';
 import { rolesValidationSchema } from '../../validation/rolesValidation';
 import { useRouter } from 'next/navigation';
 import { AppRouteEnum } from '@/libs/enums/enums';
@@ -11,6 +10,7 @@ import { useSetRoleMutation } from '@/services/auth-and-user-services';
 import { customError } from '@/utils/types/customError';
 import { useState } from 'react';
 import cn from 'classnames';
+import DynamicForm from '../UI/Forms/DynamicForm/DynamicForm';
 export const RoleConfirmation = () => {
   const [setRole, { isLoading }] = useSetRoleMutation();
   const router = useRouter();
@@ -36,13 +36,13 @@ export const RoleConfirmation = () => {
   return (
     <section className={s.section}>
       <div className={s.container}>
-        <Formik
+        <DynamicForm
           initialValues={{ role: '' }}
           validationSchema={rolesValidationSchema}
           onSubmit={handleSubmit}
         >
           {({ errors, touched, setFieldValue }) => (
-            <Form className={s.form}>
+            <>
               <RoleList
                 roles={roleCardData}
                 onSelectRole={(roleId) => {
@@ -60,12 +60,14 @@ export const RoleConfirmation = () => {
               </div>
 
               {errors.role && touched.role && (
-                <div className={s.error}>{errors.role}</div>
+                <div className={s.error}>
+                  {typeof errors.role === 'string' && errors.role}
+                </div>
               )}
               {backendError && <div className={s.error}>{backendError}</div>}
-            </Form>
+            </>
           )}
-        </Formik>
+        </DynamicForm>
       </div>
     </section>
   );
