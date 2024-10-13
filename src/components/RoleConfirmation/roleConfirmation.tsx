@@ -1,16 +1,21 @@
 'use client';
-import s from './roleConfirmation.module.scss';
+
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import cn from 'classnames';
+
 import { RoleList } from './roleList';
 import { roleCardData } from './roleCardText';
-import Button from '../UI/Button/Button';
-import { rolesValidationSchema } from '../../validation/rolesValidation';
-import { useRouter } from 'next/navigation';
 import { AppRouteEnum } from '@/libs/enums/enums';
 import { useSetRoleMutation } from '@/services/auth-and-user-services';
 import { customError } from '@/utils/types/customError';
-import { useState } from 'react';
-import cn from 'classnames';
-import DynamicForm from '../UI/Forms/DynamicForm/DynamicForm';
+import { rolesValidationSchema } from '../../validation/rolesValidation';
+
+import DynamicForm from '@/components/UI/Forms/DynamicForm/DynamicForm';
+import Button from '@/components/UI/Button/Button';
+
+import s from './roleConfirmation.module.scss';
+
 export const RoleConfirmation = () => {
   const [setRole, { isLoading }] = useSetRoleMutation();
   const router = useRouter();

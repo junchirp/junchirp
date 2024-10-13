@@ -1,6 +1,8 @@
-import './globals.scss';
 import Link from 'next/link';
+
 import { roboto } from '@/utils/fonts';
+
+import './globals.scss';
 
 const NotFoundPage = () => {
   return (

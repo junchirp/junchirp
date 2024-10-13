@@ -1,13 +1,16 @@
 import { Form } from 'formik';
-import { FormField } from '@/components/UI/Forms/CustomInput/CustomInput';
-import { validationSchemaSignIn } from '../../../validation/validationSignIn';
-import s from './signIn.module.scss';
-import Button from '@/components/UI/Button/Button';
-import Loader from '@/components/UI/Loader/Loader';
+
 import useSignInFormik from '@/hooks/useSignInFormik';
 import { CustomError } from '@/utils/types/customError';
 import Error from '@/app/sign-in/error';
+import { validationSchemaSignIn } from '../../../validation/validationSignIn';
+
 import DynamicForm from '@/components/UI/Forms/DynamicForm/DynamicForm';
+import { FormField } from '@/components/UI/Forms/CustomInput/CustomInput';
+import Button from '@/components/UI/Button/Button';
+import Loader from '@/components/UI/Loader/Loader';
+
+import s from './signIn.module.scss';
 
 const SignInFormik = () => {
   const {
@@ -120,13 +123,23 @@ const SignInFormik = () => {
             )}
 
             <Button
-              className={`${s.styledBtn} ${getButtonClass({
-                isLoading,
-                isValid,
-                touched,
-                errors,
-                backendError,
-              })}`}
+              className={`${s.styledBtn} ${
+                isLoading || isValid
+                  ? s.valid
+                  : !touched.email ||
+                    errors.email ||
+                    !touched.password ||
+                    errors.password
+                  ? ''
+                  : !touched.email ||
+                    errors.email ||
+                    !touched.password ||
+                    errors.password ||
+                    backendError
+                  ? s.invalid
+                  : s.valid
+              }
+                `}
               type="submit"
               isDisabled={!dirty || isLoading}
             >

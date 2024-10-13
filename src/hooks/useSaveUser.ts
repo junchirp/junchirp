@@ -1,5 +1,7 @@
 'use client';
+
 import { useEffect } from 'react';
+
 import { setUser } from '@/redux/auth/authSlice';
 import { IUser } from '@/utils/types/IUser';
 import { useAppDispatch } from './redux-hook';

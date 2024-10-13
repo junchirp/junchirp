@@ -1,5 +1,4 @@
 import MagicButton from '@/components/UI/magickButton';
-
 import Faqs from '@/components/Home/Faqs/Faqs';
 import Hero from '@/components/Home/Hero/Hero';
 import ProjectStatistics from '@/components/Home/ProjectStatistics/ProjectStatistics';

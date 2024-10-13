@@ -1,4 +1,5 @@
 'use client';
+
 export interface ErrorProps {
   error: {
     status?: number;

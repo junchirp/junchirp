@@ -1,7 +1,8 @@
 'use client';
 
-import useSaveUser from '@/hooks/useSaveUser';
 import Image from 'next/image';
+
+import useSaveUser from '@/hooks/useSaveUser';
 import { SearchParams } from '@/utils/types/SearchParams';
 
 const MyOfficePage = ({ searchParams }: SearchParams) => {

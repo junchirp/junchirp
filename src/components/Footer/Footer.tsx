@@ -1,9 +1,12 @@
-import s from "./footer.module.scss";
 import Link from "next/link";
+
+import { roboto, montserrat } from "@/utils/fonts";
+
 import Logo from "../UI/Logo/Logo";
 import FooterNav from "./FooterNav";
-import { roboto, montserrat } from "@/utils/fonts";
 import FooterIcons from "./FooterIcons";
+
+import s from "./footer.module.scss";
 
 const Footer: React.FC = () => {
   return (

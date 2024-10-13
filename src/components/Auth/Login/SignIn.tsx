@@ -2,10 +2,13 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import SignInFormik from './SignInFormik';
-import SocialLoginGroup from '../../UI/SocialLoginGroup/SocialLoginGroup';
-import s from './signIn.module.scss';
+
 import { AppRouteEnum } from '@/libs/enums/enums';
+
+import SignInFormik from './SignInFormik';
+import SocialLoginGroup from '@/components/UI/SocialLoginGroup/SocialLoginGroup';
+
+import s from './signIn.module.scss';
 
 const SignIn = () => {
   const pathname = usePathname();
