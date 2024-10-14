@@ -8,29 +8,38 @@
   flex-direction: column;
 }
 
-.form__box__checkbox .checkbox {
-  appearance: none;
-  width: 16px;
-  min-width: 16px;
-  height: 16px;
-  border: var(--border);
-  border-radius: 2px;
+.form__box__checkbox {
   position: relative;
-  cursor: pointer;
-  z-index: 1;
-  &:focus {
-    outline: none;
+
+  .checkboxLabel {
+    margin-left: 8px;
+    @include font(16px, 2vw, 16px, 400, 16px);
+  }
+  .checkbox {
+    appearance: none;
+    width: 16px;
+    min-width: 16px;
+    height: 16px;
+    border: var(--border);
+    border-radius: 2px;
+    position: relative;
+    cursor: pointer;
+    z-index: 1;
+    &:focus {
+      outline: none;
+    }
+
+    &:checked + .chip__checkbox {
+      cursor: pointer;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 4px;
+    }
   }
 
-  &:checked + .chip__checkbox {
-    cursor: pointer;
-    display: block;
-    // position: absolute;
-    // top: 10px;
-    // left: 4px;
-    // @include mediaQuery(1280px) {
-    //   top: 0;
-    // }
+  .chip__checkbox {
+    display: none;
   }
 }
 

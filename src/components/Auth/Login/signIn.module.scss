@@ -81,9 +81,7 @@
 
   &:-webkit-autofill,
   &:-webkit-autofill:focus {
-    transition:
-      background-color 600000s 0s,
-      color 600000s 0s;
+    transition: background-color 600000s 0s, color 600000s 0s;
   }
   &[data-autocompleted] {
     background-color: transparent !important;
@@ -124,41 +122,6 @@
 }
 .warning + .chip__eye {
   right: 49px;
-}
-
-.form__box__checkbox {
-  position: relative;
-
-  .checkboxLabel {
-    margin-left: 8px;
-    @include font(16px, 2vw, 16px, 400, 16px);
-  }
-  .checkbox {
-    appearance: none;
-    width: 16px;
-    min-width: 16px;
-    height: 16px;
-    border: var(--border);
-    border-radius: 2px;
-    position: relative;
-    cursor: pointer;
-    z-index: 1;
-    &:focus {
-      outline: none;
-    }
-
-    &:checked + .chip__checkbox {
-      cursor: pointer;
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 4px;
-    }
-  }
-
-  .chip__checkbox {
-    display: none;
-  }
 }
 
 .warning {
