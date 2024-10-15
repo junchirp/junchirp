@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import cn from 'classnames';
 
-import { RoleList } from './roleList';
+import RoleList from './roleList';
 import { roleCardData } from './roleCardText';
 import { AppRouteEnum } from '@/libs/enums/enums';
 import { useSetRoleMutation } from '@/services/auth-and-user-services';
@@ -16,7 +16,7 @@ import Button from '@/components/UI/Button/Button';
 
 import s from './roleConfirmation.module.scss';
 
-export const RoleConfirmation = () => {
+ const RoleConfirmation = () => {
   const [setRole, { isLoading }] = useSetRoleMutation();
   const router = useRouter();
   const [backendError, setBackendError] = useState<string | null>(null);
@@ -77,3 +77,5 @@ export const RoleConfirmation = () => {
     </section>
   );
 };
+
+export default RoleConfirmation;

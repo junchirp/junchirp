@@ -6,7 +6,7 @@ import PartnerForm from "@/components/UI/Forms/RoleFormes/partner/PartnerForm";
 import MentorForm from "@/components/UI/Forms/RoleFormes/mentor/MentorForm";
 import InvestorForm from "@/components/UI/Forms/RoleFormes/investor/InvestorForm";
 
-export const getRoleForm = (role: RoleType): React.ReactElement => {
+ const getRoleForm = (role: RoleType): React.ReactElement => {
   console.log(Roles.JUNIOR);
   switch (role) {
     case Roles.INVESTOR:
@@ -21,3 +21,5 @@ export const getRoleForm = (role: RoleType): React.ReactElement => {
       return <p>No form available for this role.</p>;
   }
 };
+
+export default getRoleForm;

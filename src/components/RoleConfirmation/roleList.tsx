@@ -10,7 +10,7 @@ type Props = {
   onSelectRole: (roleId: string) => void;
 };
 
-export const RoleList: FC<Props> = ({ roles, onSelectRole }) => {
+ const RoleList: FC<Props> = ({ roles, onSelectRole }) => {
   return (
     <div className={s.list}>
       {roles.map((role) => (
@@ -19,3 +19,5 @@ export const RoleList: FC<Props> = ({ roles, onSelectRole }) => {
     </div>
   );
 };
+
+export default RoleList;
