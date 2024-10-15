@@ -161,21 +161,24 @@ const RegisterFormik = () => {
 
             <div className={s.form__box__checkbox}>
               <div className={s.form__box__checkbox__field}>
-                <Field
-                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                    formikHandleChange(e);
-                    handleChange();
-                  }}
-                  type="checkbox"
-                  name="rememberMe"
-                  className={`${s.checkbox} `}
-                />
-                <SvgIcon
-                  id="checkbox"
-                  width={14}
-                  height={12}
-                  className={s.chip__checkbox}
-                />
+                <div className={s.checkbox__wraper}>
+                  <Field
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                      formikHandleChange(e);
+                      handleChange();
+                    }}
+                    type="checkbox"
+                    name="rememberMe"
+                    className={`${s.checkbox} `}
+                  />
+                  <SvgIcon
+                    id="checkbox"
+                    width={14}
+                    height={12}
+                    className={s.chip__checkbox}
+                  />
+                </div>
+
                 <label className={`${s.checkboxLabel} `}>
                   <p className={s.text}>
                     Я погоджуюсь з{' '}
