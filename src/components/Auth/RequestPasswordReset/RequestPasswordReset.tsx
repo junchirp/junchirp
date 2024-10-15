@@ -7,18 +7,18 @@ import { useRequestPasswordResetMutation } from '@/services/auth-and-user-servic
 import useRouterPush from '@/hooks/useRouter';
 import { customError } from '@/utils/types/customError';
 
-import { validationSchemaRequestPasswordReset } from '@/validation/validationRequestPasswordReset';
-import ErrorFeedback from '@/components/Auth/ErrorFeedback';
-import { FormValuesRequestPasswordReset } from '@/components/Auth/RequestPasswordReset/FormValuesRequestPasswordReset';
+import { validationSchemaRequestPasswordReset } from '../../../validation/validationRequestPasswordReset';
+import { FormValuesRequestPasswordReset } from './FormValuesRequestPasswordReset';
+import ErrorFeedback from '../ErrorFeedback';
 
-import ToastContainer from '@/components/UI/ToastContainer/ToastContainer';
+import Loader from '@/components/UI/Loader/Loader';
 import SvgIcon from '@/components/UI/SvgIcon/SvgIcon';
 import Button from '@/components/UI/Button/Button';
-import Loader from '@/components/UI/Loader/Loader';
+import ToastContainer from '@/components/UI/ToastContainer/ToastContainer';
 
-import s from './styles.module.scss';
+import s from './requestPasswordReset.module.scss';
 
-const RequestPasswordResetComponent = () => {
+const RequestPasswordReset = () => {
   const [requestPasswordReset, { isLoading }] =
     useRequestPasswordResetMutation();
   const { pushRouter } = useRouterPush();
@@ -127,4 +127,5 @@ const RequestPasswordResetComponent = () => {
     </section>
   );
 };
-export default RequestPasswordResetComponent;
+
+export default RequestPasswordReset;
