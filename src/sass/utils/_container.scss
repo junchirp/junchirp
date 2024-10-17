@@ -1,28 +1,25 @@
-@import "./mixins";
+@import './mixins';
 
 .container {
   width: 100%;
   margin: 0 auto;
-  @include mediaQuery(375px) {
+  @include mediaQuery(var(--screen-size-xs)) {
     padding-left: 16px;
     padding-right: 16px;
   }
-  @include mediaQuery(768px) {
+  @include mediaQuery(var(--screen-size-s)) {
     padding-left: 30px;
     padding-right: 30px;
   }
-  @include mediaQuery(1280px) {
+  @include mediaQuery(var(--screen-size-m)) {
     padding-left: 40px;
     padding-right: 40px;
   }
-  @include mediaQuery(1536px) {
+  @include mediaQuery(var(--screen-size-l)) {
     padding-left: 60px;
     padding-right: 60px;
   }
-  @include mediaQuery(1920px) {
+  @include mediaQuery(var(--screen-size-xl)) {
     width: 1920px;
   }
-
 }
-
-

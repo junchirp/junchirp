@@ -3,14 +3,14 @@
 
 .section {
   padding: 40px 0;
-  @include mediaQuery(768px) {
+  @include mediaQuery(var(--screen-size-s)) {
     padding: 74px 0;
   }
 
-  @include mediaQuery(1536px) {
+  @include mediaQuery(var(--screen-size-l)) {
     padding: 94px 0;
   }
-  @include mediaQuery(1920px) {
+  @include mediaQuery(var(--screen-size-xl)) {
     padding: 114px 0;
   }
 }
@@ -39,15 +39,15 @@
   margin: 0 auto;
 
   max-width: 400px;
-  @include mediaQuery(768px) {
+  @include mediaQuery(var(--screen-size-s)) {
     gap: 35px;
   }
-  @include mediaQuery(1280px) {
+  @include mediaQuery(var(--screen-size-m)) {
     max-width: 530px;
     gap: 48px;
   }
 
-  @include mediaQuery(1920px) {
+  @include mediaQuery(var(--screen-size-xl)) {
     max-width: 584px;
   }
 }
@@ -108,7 +108,7 @@
   color: var(--invalid);
   @include font(10px, 2vw, 11px, 400, 12px);
 
-  @include mediaQuery(1280px) {
+  @include mediaQuery(var(--screen-size-m)) {
     @include font(12px, 2vw, 14px, 400, 14px);
   }
 }
