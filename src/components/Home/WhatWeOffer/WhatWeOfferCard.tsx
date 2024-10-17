@@ -2,7 +2,7 @@ import { FC } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { Offer } from '@/utils/types/Offer';
+import { Offer } from '@/components/Home/WhatWeOffer/WhatWeOffer.types';
 import { roboto } from '@/utils/fonts';
 
 import SvgIcon from '@/components/UI/SvgIcon/SvgIcon';
