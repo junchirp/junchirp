@@ -1,5 +1,5 @@
-@import "../../sass/utils/container";
-@import "../../sass/utils/mixins";
+@import '../../sass/utils/container';
+@import '../../sass/utils/mixins';
 
 .header {
   background: transparent;
@@ -12,7 +12,7 @@
   border-color: var(--border-color);
   padding: 12px 0;
 
-  @include mediaQuery($screen-size-m) {
+  @include mediaQuery(var(--screen-size-m)) {
     padding: 16px 0;
   }
 }
@@ -28,7 +28,7 @@
   max-width: 243px;
   height: 22px;
 
-  @include mediaQuery(1280px) {
+  @include mediaQuery(var(--screen-size-m)) {
     max-width: 380px;
     height: 40px;
   }
@@ -37,7 +37,7 @@
   display: flex;
   gap: 16px;
 
-  @include mediaQuery(1280px) {
+  @include mediaQuery(var(--screen-size-m)) {
     width: 100%;
     max-width: 336px;
   }
@@ -52,7 +52,7 @@
 
   border-radius: 30px;
   @include font(18px, 2vw, 18px, 400, 18px);
-  @include mediaMaxQuery(1279px) {
+  @include mediaMaxQuery(var(--screen-max-size-m)) {
     display: none;
     &.open {
       display: flex;
@@ -89,11 +89,11 @@
   padding-top: 30px;
   transition: left 600ms ease;
 
-  @include mediaQuery($screen-size-m) {
+  @include mediaQuery(var(--screen-size-m)) {
     display: none;
   }
 
-  @include mediaQuery($screen-size-s) {
+  @include mediaQuery(var(--screen-size-s)) {
     top: 83px;
   }
 
@@ -110,10 +110,10 @@
     padding-top: 30px;
     transform: translateX(0);
 
-    @include mediaQuery($screen-size-s) {
+    @include mediaQuery(var(--screen-size-s)) {
       top: 83px;
     }
-    @include mediaQuery($screen-size-m) {
+    @include mediaQuery(var(--screen-size-m)) {
       display: none;
     }
   }

@@ -1,24 +1,24 @@
-@import "../../sass/utils/container";
-@import "../../sass/utils/mixins";
+@import '../../sass/utils/container';
+@import '../../sass/utils/mixins';
 
 .footer {
   padding-top: 10px;
   border-top: var(--border-btn);
 
-  @include mediaQuery($screen-size-s) {
+  @include mediaQuery(var(--screen-size-s)) {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
     padding-top: 24px;
   }
 
-  @include mediaQuery($screen-size-m) {
+  @include mediaQuery(var(--screen-size-m)) {
     @include flexSpaceBetween();
     padding-top: 10px;
     padding-bottom: 0px;
   }
 
-  @include mediaQuery($screen-size-l) {
+  @include mediaQuery(var(--screen-size-l)) {
     @include flexSpaceBetween();
   }
 }
@@ -26,7 +26,7 @@
 .footer_nav {
   @include flexSpaceBetween();
 
-  @include mediaQuery($screen-size-s) {
+  @include mediaQuery(var(--screen-size-s)) {
     flex-direction: row-reverse;
   }
 
@@ -38,18 +38,18 @@
     font-size: 12px;
     font-weight: 400;
 
-    @include mediaQuery($screen-size-s) {
+    @include mediaQuery(var(--screen-size-s)) {
       font-size: 18px;
     }
 
-    @include mediaQuery($screen-size-m) {
+    @include mediaQuery(var(--screen-size-m)) {
       display: flex;
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
       gap: 54px;
     }
-
+    // ще раз подивитися, макет
     @include mediaQuery(1800px) {
       gap: 24px;
     }
@@ -60,13 +60,13 @@
       border-radius: 20px;
       transition: background-color 0.25s ease;
       transition: color var(--transition-time) ease;
-      @include mediaQuery($screen-size-m) {
+      @include mediaQuery(var(--screen-size-m)) {
         padding-top: 10px;
         padding-bottom: 10px;
         width: 188px;
       }
 
-      @include mediaQuery($screen-size-l) {
+      @include mediaQuery(var(--screen-size-l)) {
         width: 216px;
       }
 
@@ -75,10 +75,10 @@
       }
 
       &:first-child {
-        @include mediaQuery($screen-size-m) {
+        @include mediaQuery(var(--screen-size-m)) {
           width: 80px;
         }
-        @include mediaQuery($screen-size-l) {
+        @include mediaQuery(var(--screen-size-l)) {
           width: 96px;
         }
 
@@ -88,11 +88,11 @@
       }
 
       &:nth-child(4) {
-        @include mediaQuery($screen-size-m) {
+        @include mediaQuery(var(--screen-size-m)) {
           width: 280px;
         }
 
-        @include mediaQuery($screen-size-l) {
+        @include mediaQuery(var(--screen-size-l)) {
           width: 336px;
         }
 
@@ -117,7 +117,7 @@
   gap: 8px;
   padding-top: 10px;
 
-  @include mediaQuery($screen-size-m) {
+  @include mediaQuery(var(--screen-size-m)) {
     display: flex;
     flex-direction: row;
     gap: 50px;
@@ -138,7 +138,7 @@
 
   &:nth-child(3) {
     display: none;
-    @include mediaQuery($screen-size-m) {
+    @include mediaQuery(var(--screen-size-m)) {
       display: block;
     }
   }
@@ -146,7 +146,7 @@
   & p {
     display: none;
 
-    @include mediaQuery($screen-size-m) {
+    @include mediaQuery(var(--screen-size-m)) {
       display: block;
     }
   }
@@ -167,16 +167,16 @@
   min-width: 152px;
   @include flexCenter();
 
-  @include mediaQuery($screen-size-s) {
+  @include mediaQuery(var(--screen-size-s)) {
     font-size: 20px;
     min-width: 204px;
     height: 33px;
   }
 
-  @include mediaQuery($screen-size-m) {
+  @include mediaQuery(var(--screen-size-m)) {
     min-width: 180px;
   }
-  @include mediaQuery($screen-size-l) {
+  @include mediaQuery(var(--screen-size-l)) {
     width: 216px;
   }
 
@@ -189,38 +189,38 @@
 
 .display_none_mobile {
   display: none;
-  @include mediaQuery($screen-size-m) {
+  @include mediaQuery(var(--screen-size-m)) {
     display: flex;
   }
 }
 
 .display_none_768 {
   display: none;
-  @include mediaQuery($screen-size-s) {
+  @include mediaQuery(var(--screen-size-s)) {
     display: flex;
   }
 }
 
 .display_none_tablet {
   display: flex;
-  @include mediaQuery($screen-size-s) {
+  @include mediaQuery(var(--screen-size-s)) {
     display: none;
   }
 }
 
 .display_none_767 {
   display: none;
-  @include mediaQuery($screen-size-s) {
+  @include mediaQuery(var(--screen-size-s)) {
     display: flex;
   }
-  @include mediaQuery($screen-size-m) {
+  @include mediaQuery(var(--screen-size-m)) {
     display: none;
   }
 }
 
 .display_none_1280 {
   display: flex;
-  @include mediaQuery($screen-size-m) {
+  @include mediaQuery(var(--screen-size-m)) {
     display: none;
   }
 }
@@ -228,7 +228,7 @@
 .footer_logo {
   @include flexSpaceBetween();
   margin-bottom: 16px;
-  @include mediaQuery($screen-size-s) {
+  @include mediaQuery(var(--screen-size-s)) {
     @include flexCenter();
     margin-bottom: 0px;
   }
@@ -245,12 +245,13 @@
   text-align: end;
   margin-left: auto;
 
-  @include mediaQuery($screen-size-s) {
+  @include mediaQuery(var(--screen-size-s)) {
     font-size: 14px;
     margin-left: 0;
     margin-top: 24px;
   }
 
+  // ще один незрозумілий брейкпоінт
   @include mediaQuery(1279px) {
     font-size: 16px;
   }
