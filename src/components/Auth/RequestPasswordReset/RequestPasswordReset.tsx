@@ -14,7 +14,6 @@ import ErrorFeedback from '../ErrorFeedback';
 import Loader from '@/components/UI/Loader/Loader';
 import SvgIcon from '@/components/UI/SvgIcon/SvgIcon';
 import Button from '@/components/UI/Button/Button';
-import ToastContainer from '@/components/UI/ToastContainer/ToastContainer';
 
 import s from './requestPasswordReset.module.scss';
 
@@ -50,7 +49,6 @@ const RequestPasswordReset = () => {
   return (
     <section className={s.section}>
       <div className={`${s.container}    ${s.container__resend}`}>
-        <ToastContainer />
         <h2 className={s.title}>Відправити запит на зміну паролю ?</h2>
         <Formik
           initialValues={{ email: '' }}
