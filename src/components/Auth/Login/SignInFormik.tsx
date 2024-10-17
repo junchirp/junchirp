@@ -81,6 +81,7 @@ const SignInFormik = () => {
         initialValues={{ email: '', password: '', rememberMe: false }}
         validationSchema={validationSchemaSignIn}
         onSubmit={handleSubmit}
+        classForm={s.form}
       >
         {({
           errors,
@@ -89,7 +90,7 @@ const SignInFormik = () => {
           handleChange: formikHandleChange,
           isValid,
         }) => (
-          <Form className={s.form}>
+          <Form>
             <FormField
               name={'email'}
               label={'Email'}

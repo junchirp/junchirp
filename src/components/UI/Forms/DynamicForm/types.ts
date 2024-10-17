@@ -6,4 +6,5 @@ export interface DynamicFormProps {
   onSubmit: (values: any, actions: FormikHelpers<any>) => void | Promise<void>;
   children: React.ReactNode | ((props: FormikProps<any>) => React.ReactNode);
   enableReinitialize?: boolean;
+  classForm?: string;
 }
