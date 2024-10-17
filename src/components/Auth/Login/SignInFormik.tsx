@@ -90,7 +90,7 @@ const SignInFormik = () => {
           handleChange: formikHandleChange,
           isValid,
         }) => (
-          <Form>
+          <Form className={s.form}>
             <FormField
               name={'email'}
               label={'Email'}

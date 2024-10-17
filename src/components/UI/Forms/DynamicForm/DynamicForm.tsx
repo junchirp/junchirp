@@ -1,6 +1,6 @@
 'use client';
 
-import { Form, Formik } from 'formik';
+import { Formik } from 'formik';
 
 import { DynamicFormProps } from './types';
 
@@ -10,7 +10,6 @@ const DynamicForm = ({
   onSubmit,
   children,
   enableReinitialize = false,
-  classForm,
 }: DynamicFormProps) => {
   return (
     <Formik
@@ -20,6 +19,7 @@ const DynamicForm = ({
       enableReinitialize={enableReinitialize}
     >
       {(formikProps) => (
+        // тут використовую фрагмент, т.я. <Form/> використовується безпосередньо у компоненті
         <>{typeof children === 'function' ? children(formikProps) : children}</>
       )}
     </Formik>
