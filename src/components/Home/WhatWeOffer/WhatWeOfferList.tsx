@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { Offer } from '@/utils/types/Offer';
+import { Offer } from '@/components/Home/WhatWeOffer/WhatWeOffer.types';
 
 import WhatWeOfferCard from './WhatWeOfferCard';
 

@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { RoleCard as RoleCardType } from '@/utils/types/RoleCard';
+import { RoleCard as RoleCardType } from '@/components/RoleConfirmation/RoleConfirmation.types';
 import { RoleCard } from './roleCard';
 
 import s from './roleConfirmation.module.scss';
