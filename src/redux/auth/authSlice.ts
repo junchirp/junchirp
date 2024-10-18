@@ -3,7 +3,8 @@ import storage from 'redux-persist/lib/storage';
 import { persistReducer } from 'redux-persist';
 
 import { authApi } from '@/services/auth-and-user-services';
-import { IAuthState } from '@/utils/types/IUser';
+import { IAuthState } from '@/types/commonTypes';
+
 
 const authPersistConfig = {
   key: 'auth',

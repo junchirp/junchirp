@@ -3,8 +3,9 @@
 import { useEffect } from 'react';
 
 import { setUser } from '@/redux/auth/authSlice';
-import { IUser } from '@/utils/types/IUser';
+
 import { useAppDispatch } from './redux-hook';
+import { IUser } from '@/types/commonTypes';
 
 const useSaveUser = ({ userName, token, email, photo }: IUser) => {
   const dispatch = useAppDispatch();

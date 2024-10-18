@@ -3,7 +3,8 @@
 import Image from 'next/image';
 
 import useSaveUser from '@/hooks/useSaveUser';
-import { SearchParams } from '@/utils/types/SearchParams';
+import { SearchParams } from '@/types/commonTypes';
+
 
 const MyOfficePage = ({ searchParams }: SearchParams) => {
   const { userName, token, email, photo } = searchParams;
