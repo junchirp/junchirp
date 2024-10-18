@@ -1,6 +1,6 @@
-@import "../../../sass/utils/container";
-@import "../../../sass/utils/mixins";
-@import "../../../sass/utils/variables";
+@import '../../../sass/utils/container';
+@import '../../../sass/utils/mixins';
+@import '../../../sass/utils/variables';
 
 .faq {
   display: flex;
@@ -10,19 +10,19 @@
     @include flexCenter();
     @include font(24px, 2vw, 24px, 400, 36px);
 
-    @include mediaMaxQuery($screen-size-l) {
+    @include mediaMaxQuery(var(--screen-size-l)) {
       @include font(20px, 2vw, 20px, 400, 30px);
     }
 
-    @include mediaMaxQuery($screen-size-m) {
+    @include mediaMaxQuery(var(--screen-size-m)) {
       @include font(20px, 2vw, 20px, 400, 30px);
     }
 
-    @include mediaMaxQuery($screen-size-s) {
+    @include mediaMaxQuery(var(--screen-size-s)) {
       @include font(16px, 2vw, 16px, 400, 24px);
     }
 
-    @include mediaMaxQuery($screen-size-xs) {
+    @include mediaMaxQuery(var(--screen-size-xs)) {
       @include font(12px, 2vw, 12px, 400, 18px);
     }
   }
@@ -42,15 +42,15 @@
       max-height: 500px;
       margin-top: 32px;
 
-      @include mediaMaxQuery($screen-size-l) {
+      @include mediaMaxQuery(var(--screen-size-l)) {
         margin-top: 24px;
       }
 
-      @include mediaMaxQuery($screen-size-s) {
+      @include mediaMaxQuery(var(--screen-size-s)) {
         margin-top: 12px;
       }
 
-      @include mediaMaxQuery($screen-size-xs) {
+      @include mediaMaxQuery(var(--screen-size-xs)) {
         margin-top: 24px;
       }
     }
@@ -58,19 +58,19 @@
     @include font(20px, 2vw, 20px, 500, 30px);
     color: var(--text-color-valid);
 
-    @include mediaMaxQuery($screen-size-l) {
+    @include mediaMaxQuery(var(--screen-size-l)) {
       @include font(20px, 2vw, 20px, 500, 30px);
     }
 
-    @include mediaMaxQuery($screen-size-m) {
+    @include mediaMaxQuery(var(--screen-size-m)) {
       @include font(18px, 2vw, 18px, 500, 27px);
     }
 
-    @include mediaMaxQuery($screen-size-s) {
+    @include mediaMaxQuery(var(--screen-size-s)) {
       @include font(16px, 2vw, 40px, 500, 24px);
     }
 
-    @include mediaMaxQuery($screen-size-xs) {
+    @include mediaMaxQuery(var(--screen-size-xs)) {
       @include font(12px, 2vw, 12px, 500, 18px);
     }
   }
@@ -85,17 +85,17 @@
   &__title {
     @include font(40px, 2vw, 40px, 600, 44px);
 
-    @include mediaMaxQuery($screen-size-l) {
+    @include mediaMaxQuery(var(--screen-size-l)) {
       @include font(32px, 2vw, 32px, 600, 35px);
     }
 
-    @include mediaMaxQuery($screen-size-m) {
+    @include mediaMaxQuery(var(--screen-size-m)) {
       @include font(40px, 2vw, 40px, 600, 44px);
     }
-    @include mediaMaxQuery($screen-size-s) {
+    @include mediaMaxQuery(var(--screen-size-s)) {
       @include font(24px, 2vw, 24px, 600, 26px);
     }
-    @include mediaMaxQuery($screen-size-xs) {
+    @include mediaMaxQuery(var(--screen-size-xs)) {
       @include font(20px, 2vw, 22px, 600, 22px);
       @include flexCenter;
     }
@@ -115,19 +115,19 @@
   display: flex;
   flex-direction: column;
 
-  @include mediaMaxQuery($screen-size-l) {
+  @include mediaMaxQuery(var(--screen-size-l)) {
     padding: 40px 189px 50px 189px;
   }
 
-  @include mediaMaxQuery($screen-size-m) {
+  @include mediaMaxQuery(var(--screen-size-m)) {
     padding: 50px 122px 40px;
   }
 
-  @include mediaMaxQuery($screen-size-s) {
+  @include mediaMaxQuery(var(--screen-size-s)) {
     padding: 24px 69px 24px;
   }
 
-  @include mediaMaxQuery($screen-size-xs) {
+  @include mediaMaxQuery(var(--screen-size-xs)) {
     padding: 32px 24px 24px;
   }
 }
@@ -138,16 +138,16 @@
   gap: 32px;
   margin-bottom: 40px;
 
-  @include mediaMaxQuery($screen-size-l) {
+  @include mediaMaxQuery(var(--screen-size-l)) {
     gap: 24px;
     margin-bottom: 24px;
   }
 
-  @include mediaMaxQuery($screen-size-s) {
+  @include mediaMaxQuery(var(--screen-size-s)) {
     gap: 12px;
   }
 
-  @include mediaMaxQuery($screen-size-xs) {
+  @include mediaMaxQuery(var(--screen-size-xs)) {
     gap: 24px;
     margin-bottom: 12px;
   }
@@ -157,7 +157,7 @@
   @include font(40px, 2vw, 40px, 600, 44px);
   color: var(--text-color-valid);
 
-  @include mediaMaxQuery($screen-size-xs) {
+  @include mediaMaxQuery(var(--screen-size-xs)) {
     @include font(20px, 2vw, 20px, 600, 22px);
   }
 }
@@ -172,24 +172,24 @@
   @include flexCenter();
   @include hover(transform, scale(1.05));
 
-  @include mediaMaxQuery($screen-size-m) {
+  @include mediaMaxQuery(var(--screen-size-m)) {
     @include font(18px, 2vw, 18px, 300, 22px);
     width: 225px;
   }
 
-  @include mediaMaxQuery($screen-size-s) {
+  @include mediaMaxQuery(var(--screen-size-s)) {
     @include font(16px, 2vw, 16px, 300, 20px);
     width: 188px;
     height: 33px;
   }
-  @include mediaMaxQuery($screen-size-xs) {
+  @include mediaMaxQuery(var(--screen-size-xs)) {
     width: 32px;
     height: 32px;
     border-radius: 40px;
   }
 
   &__text {
-    @include mediaMaxQuery($screen-size-xs) {
+    @include mediaMaxQuery(var(--screen-size-xs)) {
       display: none;
     }
   }

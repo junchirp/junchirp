@@ -1,5 +1,5 @@
-@import "../../sass/utils/container";
-@import "../../sass/utils/mixins";
+@import '../../sass/utils/container';
+@import '../../sass/utils/mixins';
 
 .content__block {
   width: 321px;
@@ -13,11 +13,11 @@
     width: 344px;
   }
 
-  @include mediaQuery(1280px) {
+  @include mediaQuery(var(--screen-size-m)) {
     width: 390px;
   }
 
-  @include mediaQuery(1536px) {
+  @include mediaQuery(var(--screen-size-l)) {
     width: 457px;
   }
 
@@ -35,13 +35,13 @@
     margin-bottom: 16px;
   }
 
-  @include mediaQuery(1280px) {
+  @include mediaQuery(var(--screen-size-m)) {
     width: 390px;
     height: 338px;
     margin-bottom: 18px;
   }
 
-  @include mediaQuery(1536px) {
+  @include mediaQuery(var(--screen-size-l)) {
     width: 458px;
     height: 396px;
     margin-bottom: 18px;
@@ -65,11 +65,11 @@
     font-size: 18px;
   }
 
-  @include mediaQuery(1280px) {
+  @include mediaQuery(var(--screen-size-m)) {
     font-size: 20px;
   }
 
-  @include mediaQuery(1536px) {
+  @include mediaQuery(var(--screen-size-l)) {
     font-size: 24px;
   }
 
@@ -94,11 +94,11 @@
     margin-bottom: 20px;
   }
 
-  @include mediaQuery(1280px) {
+  @include mediaQuery(var(--screen-size-m)) {
     font-size: 18px;
   }
 
-  @include mediaQuery(1536px) {
+  @include mediaQuery(var(--screen-size-l)) {
     font-size: 18px;
   }
 
@@ -138,7 +138,7 @@
     font-size: 14px;
   }
 
-  @include mediaQuery(1280px) {
+  @include mediaQuery(var(--screen-size-m)) {
     width: 392px;
     height: 48px;
     font-size: 16px;
@@ -146,7 +146,7 @@
     margin-bottom: 8px;
   }
 
-  @include mediaQuery(1536px) {
+  @include mediaQuery(var(--screen-size-l)) {
     width: 458px;
     height: 53px;
   }
