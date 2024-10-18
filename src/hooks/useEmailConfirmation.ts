@@ -4,7 +4,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { toast } from 'react-toastify';
 import { FormikValues } from 'formik';
 
-import { customError } from '@/utils/types/customError';
+import { customError } from '@/types/commonTypes';
 import { AppRouteEnum } from '@/libs/enums/enums';
 import { useAppSelector } from './redux-hook';
 import {

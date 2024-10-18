@@ -8,7 +8,7 @@ import { RoleList } from './roleList';
 import { roleCardData } from './roleCardText';
 import { AppRouteEnum } from '@/libs/enums/enums';
 import { useSetRoleMutation } from '@/services/auth-and-user-services';
-import { customError } from '@/utils/types/customError';
+import { customError } from '@/types/commonTypes';
 import { rolesValidationSchema } from '../../validation/rolesValidation';
 
 import DynamicForm from '@/components/UI/Forms/DynamicForm/DynamicForm';
