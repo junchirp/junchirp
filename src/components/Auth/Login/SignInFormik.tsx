@@ -81,6 +81,7 @@ const SignInFormik = () => {
         initialValues={{ email: '', password: '', rememberMe: false }}
         validationSchema={validationSchemaSignIn}
         onSubmit={handleSubmit}
+        classForm={s.form}
       >
         {({
           errors,
