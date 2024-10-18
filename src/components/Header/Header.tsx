@@ -59,21 +59,24 @@ const Header = () => {
     <header className={s.header}>
       <div className={`${s.container} `}>
         <div className={` ${s.container__header} `}>
-          <Link
-            href={AppRouteEnum.ROOT}
-            className={s.logo__link}
-            onClick={() => setMenuOpen(false)}
-          >
-            <Logo />
-          </Link>
-          <Link href={AppRouteEnum.ROOT} className={s.text__link}>
-            <SvgIcon
-              id="future-of-it"
-              width={438}
-              height={50}
-              className={s.text__link__chip}
-            />
-          </Link>
+          <div className={s.logo_text_container}>
+            <Link
+              href={AppRouteEnum.ROOT}
+              className={s.logo__link}
+              onClick={() => setMenuOpen(false)}
+            >
+              <Logo />
+            </Link>
+            <Link href={AppRouteEnum.ROOT} className={s.text__link}>
+              <SvgIcon
+                id="future-of-it"
+                width={438}
+                height={50}
+                className={s.text__link__chip}
+              />
+            </Link>
+          </div>
+
           {pathname !== AppRouteEnum.SIGN_IN &&
             pathname !== AppRouteEnum.SIGN_UP &&
             pathname !== AppRouteEnum.CONFIRM && (

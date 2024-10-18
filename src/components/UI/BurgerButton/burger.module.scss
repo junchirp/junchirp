@@ -1,5 +1,5 @@
-@import "../../../sass/utils/container";
-@import "../../../sass/utils/mixins";
+@import '@/sass/utils/container';
+@import '@/sass/utils/mixins';
 
 .burger__button {
   @include mediaMaxQuery(1279px) {
@@ -9,7 +9,8 @@
 
   flex-direction: column;
   justify-content: space-evenly;
-  width: 30px;
+  width: 26px;
+  height: 21px;
 
   background: transparent;
   border: none;
@@ -22,6 +23,11 @@
 
   &:hover::after {
     bottom: -300%;
+  }
+
+  @include mediaQuery($screen-size-s) {
+    width: 32px;
+    height: 28px;
   }
 }
 
