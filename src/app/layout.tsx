@@ -15,6 +15,7 @@ const ReduxProvider = dynamic(
   () => import('../Providers/ReduxProvider/ReduxProvider'),
   {
     ssr: false,
+    
   }
 );
 
