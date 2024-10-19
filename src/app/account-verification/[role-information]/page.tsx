@@ -1,5 +1,5 @@
 import { getRoleForm } from '@/libs/enums/helpers/getRoleForm';
-import { RoleType } from '@/utils/types/Role';
+import { RoleType } from '@/components/RoleConfirmation/RoleConfirmation.types';
 
 const RoleInformationPage = ({
   params,
