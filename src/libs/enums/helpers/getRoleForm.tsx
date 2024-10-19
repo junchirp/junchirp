@@ -1,10 +1,10 @@
-import { RoleType } from "@/utils/types/Role";
-import { Roles } from "../app/Role";
+import { RoleType } from '@/components/RoleConfirmation/RoleConfirmation.types';
+import { Roles } from '../app/Role';
 
-import JuniorForm from "@/components/UI/Forms/RoleFormes/junior/JuniorForm";
-import PartnerForm from "@/components/UI/Forms/RoleFormes/partner/PartnerForm";
-import MentorForm from "@/components/UI/Forms/RoleFormes/mentor/MentorForm";
-import InvestorForm from "@/components/UI/Forms/RoleFormes/investor/InvestorForm";
+import JuniorForm from '@/components/UI/Forms/RoleFormes/junior/JuniorForm';
+import PartnerForm from '@/components/UI/Forms/RoleFormes/partner/PartnerForm';
+import MentorForm from '@/components/UI/Forms/RoleFormes/mentor/MentorForm';
+import InvestorForm from '@/components/UI/Forms/RoleFormes/investor/InvestorForm';
 
  const getRoleForm = (role: RoleType): React.ReactElement => {
   console.log(Roles.JUNIOR);
