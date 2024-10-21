@@ -35,7 +35,6 @@ const useEmailConfirmation = () => {
 
     if (storedEmailData) {
       const { email } = JSON.parse(storedEmailData);
-      // Синхронізуємо email, якщо його не було вказано
     }
   }, [email]);
 
