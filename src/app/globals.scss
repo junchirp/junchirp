@@ -115,15 +115,16 @@ p {
   padding-top: 50px;
   padding-bottom: 50px;
 
-  @include mediaQuery(767px) {
+  // значення 767!!!
+  @include mediaQuery($screen-max-size-s) {
     width: 344px;
   }
 
-  @include mediaQuery(1280px) {
+  @include mediaQuery($screen-size-m) {
     width: 392px;
   }
 
-  @include mediaQuery(1536px) {
+  @include mediaQuery($screen-size-l) {
     width: 457px;
   }
 
@@ -135,19 +136,20 @@ p {
 .img__404 {
   margin-bottom: 14px;
 
-  @include mediaQuery(767px) {
+  // значення 767!!!
+  @include mediaQuery($screen-max-size-s) {
     width: 344px;
     height: 298px;
     margin-bottom: 16px;
   }
 
-  @include mediaQuery(1280px) {
+  @include mediaQuery($screen-size-m) {
     width: 390px;
     height: 338px;
     margin-bottom: 18px;
   }
 
-  @include mediaQuery(1536px) {
+  @include mediaQuery($screen-size-l) {
     width: 456px;
     height: 395px;
     margin-bottom: 18px;
@@ -167,15 +169,16 @@ p {
   font-weight: 400;
   line-height: normal;
 
-  @include mediaQuery(767px) {
+  // значення 767!!!
+  @include mediaQuery($screen-max-size-s) {
     font-size: 18px;
   }
 
-  @include mediaQuery(1280px) {
+  @include mediaQuery($screen-size-m) {
     font-size: 20px;
   }
 
-  @include mediaQuery(1536px) {
+  @include mediaQuery($screen-size-l) {
     font-size: 24px;
   }
 

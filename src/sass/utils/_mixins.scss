@@ -1,4 +1,4 @@
-@import "./variables";
+@import './variables';
 
 // mixin media query
 @mixin mediaQuery($breakpoint) {
@@ -8,6 +8,12 @@
 }
 @mixin mediaMaxQuery($breakpoint) {
   @media screen and (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin mediaBetweenQuery($min-width, $max-width) {
+  @media screen and (min-width: $min-width) and (max-width: $max-width) {
     @content;
   }
 }
@@ -52,12 +58,6 @@
   transition: #{$property} $transition-time ease;
   &:hover {
     #{$property}: $value;
-  }
-}
-
-@mixin mediaBetweenQuery($min-width, $max-width) {
-  @media screen and (min-width: $min-width) and (max-width: $max-width) {
-    @content;
   }
 }
 

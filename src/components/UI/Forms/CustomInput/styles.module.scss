@@ -1,16 +1,16 @@
-@import "@/sass/utils/container";
-@import "@/sass/utils/mixins";
+@import '@/sass/utils/container';
+@import '@/sass/utils/mixins';
 
 .section {
   padding: 40px 0;
-  @include mediaQuery(768px) {
+  @include mediaQuery($screen-size-s) {
     padding: 74px 0;
   }
 
-  @include mediaQuery(1536px) {
+  @include mediaQuery($screen-size-l) {
     padding: 94px 0;
   }
-  @include mediaQuery(1920px) {
+  @include mediaQuery($screen-size-xl) {
     padding: 114px 0;
   }
 }
@@ -39,15 +39,15 @@
   margin: 0 auto;
 
   max-width: 400px;
-  @include mediaQuery(768px) {
+  @include mediaQuery($screen-size-s) {
     gap: 35px;
   }
-  @include mediaQuery(1280px) {
+  @include mediaQuery($screen-size-m) {
     max-width: 530px;
     gap: 48px;
   }
 
-  @include mediaQuery(1920px) {
+  @include mediaQuery($screen-size-xl) {
     max-width: 584px;
   }
 }

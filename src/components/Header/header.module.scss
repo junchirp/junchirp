@@ -12,7 +12,7 @@
   border-color: var(--border-color);
   padding: 12px 0;
 
-  @include mediaQuery(var(--screen-size-m)) {
+  @include mediaQuery($screen-size-m) {
     padding: 16px 0;
   }
 }
@@ -28,7 +28,7 @@
   max-width: 243px;
   height: 22px;
 
-  @include mediaQuery(var(--screen-size-m)) {
+  @include mediaQuery($screen-size-m) {
     max-width: 380px;
     height: 40px;
   }
@@ -37,7 +37,7 @@
   display: flex;
   gap: 16px;
 
-  @include mediaQuery(var(--screen-size-m)) {
+  @include mediaQuery($screen-size-m) {
     width: 100%;
     max-width: 336px;
   }
@@ -52,7 +52,7 @@
 
   border-radius: 30px;
   @include font(18px, 2vw, 18px, 400, 18px);
-  @include mediaMaxQuery(var(--screen-max-size-m)) {
+  @include mediaMaxQuery($screen-max-size-m) {
     display: none;
     &.open {
       display: flex;
@@ -89,11 +89,11 @@
   padding-top: 30px;
   transition: left 600ms ease;
 
-  @include mediaQuery(var(--screen-size-m)) {
+  @include mediaQuery($screen-size-m) {
     display: none;
   }
 
-  @include mediaQuery(var(--screen-size-s)) {
+  @include mediaQuery($screen-size-s) {
     top: 83px;
   }
 
@@ -110,10 +110,10 @@
     padding-top: 30px;
     transform: translateX(0);
 
-    @include mediaQuery(var(--screen-size-s)) {
+    @include mediaQuery($screen-size-s) {
       top: 83px;
     }
-    @include mediaQuery(var(--screen-size-m)) {
+    @include mediaQuery($screen-size-m) {
       display: none;
     }
   }

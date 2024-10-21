@@ -3,23 +3,23 @@
 .container {
   width: 100%;
   margin: 0 auto;
-  @include mediaQuery(var(--screen-size-xs)) {
+  @include mediaQuery($screen-size-xs) {
     padding-left: 16px;
     padding-right: 16px;
   }
-  @include mediaQuery(var(--screen-size-s)) {
+  @include mediaQuery($screen-size-s) {
     padding-left: 30px;
     padding-right: 30px;
   }
-  @include mediaQuery(var(--screen-size-m)) {
+  @include mediaQuery($screen-size-m) {
     padding-left: 40px;
     padding-right: 40px;
   }
-  @include mediaQuery(var(--screen-size-l)) {
+  @include mediaQuery($screen-size-l) {
     padding-left: 60px;
     padding-right: 60px;
   }
-  @include mediaQuery(var(--screen-size-xl)) {
+  @include mediaQuery($screen-size-xl) {
     width: 1920px;
   }
 }
