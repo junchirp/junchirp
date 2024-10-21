@@ -3,7 +3,7 @@ import { Field, Form, Formik } from 'formik';
 
 import useRegisterFormik from '@/hooks/useRegisterFormik';
 import Error from '@/app/register/error';
-import { CustomError } from '@/utils/types/customError';
+import { CustomError } from '@/types/commonTypes';
 import PasswordStrengthIndicator from '../PasswordStrengthIndicator/PasswordStrengthIndicator';
 import { validationSchemaRegister } from '@/validation/validationRegister';
 

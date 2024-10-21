@@ -1,7 +1,7 @@
 import { Form } from 'formik';
 
 import useSignInFormik from '@/hooks/useSignInFormik';
-import { CustomError } from '@/utils/types/customError';
+import { CustomError } from '@/types/commonTypes';
 import Error from '@/app/sign-in/error';
 import { validationSchemaSignIn } from '../../../validation/validationSignIn';
 
@@ -81,7 +81,6 @@ const SignInFormik = () => {
         initialValues={{ email: '', password: '', rememberMe: false }}
         validationSchema={validationSchemaSignIn}
         onSubmit={handleSubmit}
-        classForm={s.form}
       >
         {({
           errors,

@@ -2,7 +2,7 @@ import { ChangeEvent, FC } from 'react';
 import cn from 'classnames';
 import { useField } from 'formik';
 
-import { RoleCard as RoleCardType } from '@/utils/types/RoleCard';
+import { RoleCard as RoleCardType } from '@/components/RoleConfirmation/RoleConfirmation.types';
 
 import s from './roleConfirmation.module.scss';
 

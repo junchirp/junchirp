@@ -9,7 +9,7 @@ import { roboto } from '@/utils/fonts';
 
 import s from './roleConfirmation.module.scss';
 
-export const AccountVerificationHeader = () => {
+ const AccountVerificationHeader = () => {
   const pathname = usePathname();
   //
   const isFirstStep = pathname === AppRouteEnum.ROLE_CONFIRMATION;
@@ -41,3 +41,5 @@ export const AccountVerificationHeader = () => {
     </div>
   );
 };
+
+export default AccountVerificationHeader;

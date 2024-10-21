@@ -2,10 +2,11 @@
 
 import { useLoginMutation } from '@/services/auth-and-user-services';
 import useRouterPush from '@/hooks/useRouter';
-import { customError } from '@/utils/types/customError';
+
 
 import { FormValuesSignIn } from '@/components/Auth/Login/FormValuesSignIn';
 import useAuthFormCommon from './useAuthFormCommon';
+import { customError } from '@/types/commonTypes';
 
 const useSignInFormik = () => {
   // хук, який повертає дані, спільні для реєстрації і логіну

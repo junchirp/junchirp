@@ -1,9 +1,10 @@
-"use client";
+'use client';
 
-import Image from "next/image";
+import Image from 'next/image';
 
-import { SearchParams } from "@/utils/types/SearchParams";
-import useSaveUser from "@/hooks/useSaveUser";
+
+import useSaveUser from '@/hooks/useSaveUser';
+import { SearchParams } from '@/types/commonTypes';
 
 const UserData = ({ searchParams }: SearchParams) => {
   const { userName, token, email, photo } = searchParams;

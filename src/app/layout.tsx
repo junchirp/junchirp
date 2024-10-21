@@ -16,6 +16,7 @@ const ReduxProvider = dynamic(
   () => import('../Providers/ReduxProvider/ReduxProvider'),
   {
     ssr: false,
+    
   }
 );
 
@@ -38,7 +39,8 @@ export const metadata: Metadata = {
     icon: '/logo.png',
   },
 };
-export default function RootLayout({
+
+ function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -57,3 +59,5 @@ export default function RootLayout({
     </html>
   );
 }
+
+export default RootLayout;

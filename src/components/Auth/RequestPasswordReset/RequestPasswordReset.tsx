@@ -5,7 +5,7 @@ import { Field, Form, Formik } from 'formik';
 
 import { useRequestPasswordResetMutation } from '@/services/auth-and-user-services';
 import useRouterPush from '@/hooks/useRouter';
-import { customError } from '@/utils/types/customError';
+import { customError } from '@/types/commonTypes';
 
 import { validationSchemaRequestPasswordReset } from '../../../validation/validationRequestPasswordReset';
 import { FormValuesRequestPasswordReset } from './FormValuesRequestPasswordReset';
