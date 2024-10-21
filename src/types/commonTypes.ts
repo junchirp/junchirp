@@ -25,7 +25,11 @@ export interface IUser {
 
 export interface IAuthState {
   user: IUser;
+  timeLeft: number;   // додаємо це поле
+  attempts: number;   // додаємо це поле
+  cooldown: number | null;  // додаємо це поле
 }
+
 
 export interface SearchParams {
   searchParams: {
