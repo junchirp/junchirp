@@ -19,9 +19,7 @@ const NotFoundPage = () => {
             сторінку, щоб знайти потрібну інформацію
           </p>
           <Link href="/" className={'link'}>
-            <button type="button" className={'button'}>
-              головна сторінка
-            </button>
+            <a className={'button'}>Головна сторінка</a>
           </Link>
         </div>
       </div>
