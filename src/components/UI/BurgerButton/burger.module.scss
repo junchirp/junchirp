@@ -1,8 +1,8 @@
-@import "../../../sass/utils/container";
-@import "../../../sass/utils/mixins";
+@import '../../../sass/utils/container';
+@import '../../../sass/utils/mixins';
 
 .burger__button {
-  @include mediaMaxQuery(1279px) {
+  @include mediaMaxQuery($screen-max-size-m) {
     @include flexCenter();
   }
   display: none;

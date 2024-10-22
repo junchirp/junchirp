@@ -1,5 +1,5 @@
-@import "../../sass/utils/container";
-@import "../../sass/utils/mixins";
+@import '../../sass/utils/container';
+@import '../../sass/utils/mixins';
 
 .content__block {
   width: 321px;
@@ -9,15 +9,16 @@
   margin: 0 auto;
   padding-top: 50px;
   padding-bottom: 50px;
-  @include mediaQuery(767px) {
+  // значення 767!!!
+  @include mediaQuery($screen-max-size-s) {
     width: 344px;
   }
 
-  @include mediaQuery(1280px) {
+  @include mediaQuery($screen-size-m) {
     width: 390px;
   }
 
-  @include mediaQuery(1536px) {
+  @include mediaQuery($screen-size-l) {
     width: 457px;
   }
 
@@ -29,19 +30,20 @@
 .img__505 {
   margin-bottom: 14px;
 
-  @include mediaQuery(767px) {
+  // значення 767!!!
+  @include mediaQuery($screen-max-size-s) {
     width: 344px;
     height: 298px;
     margin-bottom: 16px;
   }
 
-  @include mediaQuery(1280px) {
+  @include mediaQuery($screen-size-m) {
     width: 390px;
     height: 338px;
     margin-bottom: 18px;
   }
 
-  @include mediaQuery(1536px) {
+  @include mediaQuery($screen-size-l) {
     width: 458px;
     height: 396px;
     margin-bottom: 18px;
@@ -61,15 +63,16 @@
   font-weight: 400;
   line-height: normal;
 
-  @include mediaQuery(767px) {
+  // значення 767!!!
+  @include mediaQuery($screen-max-size-s) {
     font-size: 18px;
   }
 
-  @include mediaQuery(1280px) {
+  @include mediaQuery($screen-size-m) {
     font-size: 20px;
   }
 
-  @include mediaQuery(1536px) {
+  @include mediaQuery($screen-size-l) {
     font-size: 24px;
   }
 
@@ -88,17 +91,18 @@
   margin-top: 12px;
   margin-bottom: 12px;
 
-  @include mediaQuery(767px) {
+  // значення 767!!!
+  @include mediaQuery($screen-max-size-s) {
     font-size: 16px;
     margin-top: 20px;
     margin-bottom: 20px;
   }
 
-  @include mediaQuery(1280px) {
+  @include mediaQuery($screen-size-m) {
     font-size: 18px;
   }
 
-  @include mediaQuery(1536px) {
+  @include mediaQuery($screen-size-l) {
     font-size: 18px;
   }
 
@@ -130,7 +134,8 @@
   margin-top: 8px;
   margin-bottom: 8px;
 
-  @include mediaQuery(767px) {
+  // значення 767!!!
+  @include mediaQuery($screen-max-size-s) {
     width: 344px;
     height: 44px;
     margin-top: 8px;
@@ -138,7 +143,7 @@
     font-size: 14px;
   }
 
-  @include mediaQuery(1280px) {
+  @include mediaQuery($screen-size-m) {
     width: 392px;
     height: 48px;
     font-size: 16px;
@@ -146,7 +151,7 @@
     margin-bottom: 8px;
   }
 
-  @include mediaQuery(1536px) {
+  @include mediaQuery($screen-size-l) {
     width: 458px;
     height: 53px;
   }
