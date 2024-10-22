@@ -10,7 +10,7 @@ import useRouterPush from '@/hooks/useRouter';
 import { validationSchemaResetPassword } from '@/validation/validationResetPassword';
 
 import { FormValuesResetPassword } from '@/components/Auth/ResetPassword/FormValuesResetPassword';
-import ToastContainer from '@/components/UI/ToastContainer/ToastContainer';
+
 import SvgIcon from '@/components/UI/SvgIcon/SvgIcon';
 import ErrorFeedback from '@/components/Auth/ErrorFeedback';
 import Button from '@/components/UI/Button/Button';
@@ -59,7 +59,7 @@ const ResetPasswordComponent = () => {
   return (
     <section className={s.section}>
       <div className={`${s.container}    ${s.container__resend}`}>
-        <ToastContainer /> <h2 className={s.title}>Зміна паролю</h2>
+        <h2 className={s.title}>Зміна паролю</h2>
         <p className={s.text}>
           Перевірте свою електронну пошту, ми відправили лист із подальшими
           інструкціями для відновлення паролю.

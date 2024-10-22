@@ -7,6 +7,7 @@ import { montserrat } from '@/utils/fonts';
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
 import { Temporary } from '@/components/UI/temporary/temporary';
+import ToastContainer from '@/components/UI/ToastContainer/ToastContainer';
 
 import s from '@/sass/layouts/main.module.scss';
 import './globals.scss';
@@ -48,6 +49,7 @@ export const metadata: Metadata = {
     <html lang="en">
       <body className={`${angryFont.className} ${montserrat.className}`}>
         <ReduxProvider>
+          <ToastContainer />
           <Header />
           <Temporary />
           <main className={s.main}>{children}</main>

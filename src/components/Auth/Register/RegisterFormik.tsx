@@ -7,7 +7,6 @@ import { CustomError } from '@/types/commonTypes';
 import PasswordStrengthIndicator from '../PasswordStrengthIndicator/PasswordStrengthIndicator';
 import { validationSchemaRegister } from '@/validation/validationRegister';
 
-import ToastContainer from '@/components/UI/ToastContainer/ToastContainer';
 import { FormField } from '@/components/UI/Forms/CustomInput/CustomInput';
 import DynamicForm from '@/components/UI/Forms/DynamicForm/DynamicForm';
 import Button from '@/components/UI/Button/Button';
@@ -69,7 +68,6 @@ const RegisterFormik = () => {
 
   return (
     <>
-      <ToastContainer />
       {isError && error && (
         <Error
           error={{
