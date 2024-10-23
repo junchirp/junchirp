@@ -6,29 +6,25 @@ import { FormikValues } from 'formik';
 
 import { customError } from '@/types/commonTypes';
 import { AppRouteEnum } from '@/libs/enums/enums';
-import { useAppSelector } from './redux-hook';
+import { useAppDispatch, useAppSelector } from './redux-hook';
 import {
   useConfirmEmailMutation,
   useResendConfirmationCodeMutation,
 } from '../services/auth-and-user-services';
 import authSelector from '@/redux/auth/authSelector';
 import useRouterPush from './useRouter';
+import { setAttempts, setCooldown, setTimeLeft } from '@/redux/auth/authSlice'; // додали дії з authSlice
 
 const useEmailConfirmation = () => {
   const [confirm, { isLoading }] = useConfirmEmailMutation();
   const [resendCode] = useResendConfirmationCodeMutation();
   const { pushRouter } = useRouterPush();
-  const emailSelector = useAppSelector(authSelector.getEmail);
-  const [email, setEmail] = useState<string | null>(emailSelector || '');
+  const dispatch = useAppDispatch();
 
-  const storedTimeLeft = parseInt(
-    localStorage.getItem('timeLeft') || '600',
-    10
-  );
-  const [timeLeft, setTimeLeft] = useState(storedTimeLeft);
-  const [attempts, setAttempts] = useState(0);
-
-  const [cooldown, setCooldown] = useState<number | null>(null);
+  const email = useAppSelector(authSelector.getEmail);
+  const timeLeft = useAppSelector((state) => state.auth.timeLeft);
+  const attempts = useAppSelector((state) => state.auth.attempts);
+  const cooldown = useAppSelector((state) => state.auth.cooldown);
 
   const [backendError, setBackendError] = useState<string | null>(null);
 
@@ -39,9 +35,8 @@ const useEmailConfirmation = () => {
 
     if (storedEmailData) {
       const { email } = JSON.parse(storedEmailData);
-      setEmail(email);
     }
-  }, []);
+  }, [email]);
 
   useEffect(() => {
     if (!email) {
@@ -50,47 +45,34 @@ const useEmailConfirmation = () => {
   }, [email, pushRouter]);
 
   useEffect(() => {
-    const storedAttempts = localStorage.getItem('resendAttempts');
-    const storedCooldown = localStorage.getItem('resendCooldown');
-
-    if (storedAttempts) setAttempts(parseInt(storedAttempts, 10));
-    if (storedCooldown) setCooldown(parseInt(storedCooldown, 10));
-  }, []);
-
-  useEffect(() => {
     if (cooldown !== null) {
       const interval = setInterval(() => {
         const newCooldown = cooldown - 1;
-        setCooldown(newCooldown);
-        localStorage.setItem('resendCooldown', newCooldown.toString());
+        dispatch(setCooldown(newCooldown));
 
         if (newCooldown <= 0) {
           clearInterval(interval);
-          setCooldown(null);
-          setAttempts(0);
-          localStorage.removeItem('resendCooldown');
-          localStorage.removeItem('resendAttempts');
+          dispatch(setCooldown(null));
+          dispatch(setAttempts(0));
         }
       }, 1000);
 
       return () => clearInterval(interval);
     }
-  }, [cooldown]);
+  }, [cooldown, dispatch]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       if (timeLeft > 0) {
-        const newTimeLeft = timeLeft - 1;
-        setTimeLeft(newTimeLeft);
-        localStorage.setItem('timeLeft', newTimeLeft.toString());
+        dispatch(setTimeLeft(timeLeft - 1));
       }
     }, 1000);
 
     return () => clearTimeout(timer);
-  }, [timeLeft]);
+  }, [timeLeft, dispatch]);
 
   const handleResendCode = async (email: string) => {
-    setTimeLeft(600);
+    dispatch(setTimeLeft(600));
 
     if (cooldown !== null) {
       toast.error(
@@ -127,12 +109,10 @@ const useEmailConfirmation = () => {
     try {
       await resendCode({ email }).unwrap();
 
-      setAttempts(attempts + 1);
-      localStorage.setItem('resendAttempts', (attempts + 1).toString());
-      setTimeLeft(0);
-      setCooldown(600);
-      localStorage.setItem('resendCooldown', '600');
-      localStorage.setItem('timeLeft', '600');
+      dispatch(setAttempts(attempts + 1));
+      dispatch(setTimeLeft(0));
+      dispatch(setCooldown(600));
+
       toast.success(`Новий код підтвердження успішно надіслано на ${email}`, {
         position: 'top-right',
         autoClose: 5000,
@@ -164,9 +144,8 @@ const useEmailConfirmation = () => {
       const res = await confirm({ email, code: values.code }).unwrap();
 
       if (res.user.accessToken) {
-        setTimeLeft(0);
-        setCooldown(null);
-        localStorage.removeItem('resendCooldown');
+        dispatch(setTimeLeft(0));
+        dispatch(setCooldown(null));
         pushRouter(`${AppRouteEnum.ROLE_CONFIRMATION}`);
       }
     } catch (error) {
