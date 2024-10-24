@@ -18,11 +18,7 @@ const NotFoundPage = () => {
             сторінка була видалена або переміщена. Перейдіть на нашу головну
             сторінку, щоб знайти потрібну інформацію
           </p>
-          <Link href="/" className={'link'}>
-            <button type="button" className={'button'}>
-              головна сторінка
-            </button>
-          </Link>
+          <Link className="button"  href='/'>головна сторінка</Link>
         </div>
       </div>
     </section>
