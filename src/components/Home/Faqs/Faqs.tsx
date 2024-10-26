@@ -23,7 +23,7 @@ const Faqs = () => {
       <div className={s.container}>
         <section className={s.faqs}>
           <div className={s.container__faqs}>
-            <h1 className={s.faq__title}>Heading for FAQs</h1>
+            <h1 className={s.faq__title}>Відповіді на часті запитання</h1>
 
             {faqs.map((faq) => (
               <div className={s.faq} key={faq.id}>
@@ -32,7 +32,13 @@ const Faqs = () => {
                   onClick={() => handleToggle(faq.id)}
                 >
                   <h2 className={s.faq__question}>{faq.question}</h2>
-                  <div className={s.toggleIcon}>+</div>
+                  <div
+                    className={cn(s.toggleIcon, {
+                      [s.active]: activeIndex === faq.id,
+                    })}
+                  >
+                    {activeIndex === faq.id ? '-' : '+'}
+                  </div>
                 </div>
 
                 <h3

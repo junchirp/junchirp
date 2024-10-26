@@ -1,6 +1,6 @@
-@import "../../../sass/utils/container";
-@import "../../../sass/utils/mixins";
-@import "../../../sass/utils/variables";
+@import '../../../sass/utils/container';
+@import '../../../sass/utils/mixins';
+@import '../../../sass/utils/variables';
 
 .faq {
   display: flex;
@@ -76,8 +76,7 @@
   }
 
   &__item {
-    display: flex;
-    justify-content: space-between;
+    @include flexSpaceBetween;
     width: 100%;
     cursor: pointer;
   }
@@ -157,8 +156,19 @@
   @include font(40px, 2vw, 40px, 600, 44px);
   color: var(--text-color-valid);
 
+  width: 27px;
+  height: 44px;
+  // gap: 0px;
+  // opacity: 0px;
+
+  &.active {
+    color: var(--text-color);
+  }
+
   @include mediaMaxQuery($screen-size-xs) {
-    @include font(20px, 2vw, 20px, 600, 22px);
+    @include font(20px, 2vw, 20px, 600, 24px);
+    width: 14px;
+    height: 24px;
   }
 }
 
