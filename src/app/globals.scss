@@ -213,8 +213,9 @@ p {
 }
 
 .button {
-  width: 319px;
-  height: 40px;
+  width: 250px;
+  font-size: 16px;
+  height: 36px;
   display: flex;
   padding: 10px 20px;
   justify-content: center;
@@ -225,7 +226,6 @@ p {
   background: #228b22;
   cursor: pointer;
   color: #fff;
-  font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -233,30 +233,36 @@ p {
   text-transform: uppercase;
   margin-top: 8px;
   margin-bottom: 8px;
+  border-color: white;
 
   @include mediaQuery(767px) {
-    width: 344px;
-    height: 44px;
+    width: 250px;
+    font-size: 16px;
+    height: 36px;
+    border-color: white;
     margin-top: 10px;
     margin-bottom: 10px;
   }
 
   @include mediaQuery(1280px) {
-    width: 392px;
-    height: 48px;
+    width: 250px;
     font-size: 16px;
+    height: 36px;
+    border-color: white;
     margin-top: 8px;
     margin-bottom: 8px;
   }
 
   @include mediaQuery(1536px) {
-    width: 456px;
-    height: 53px;
+    width: 250px;
+    font-size: 16px;
+    height: 36px;
   }
 
   @include mediaQuery(1800px) {
-    width: 584px;
-    font-size: 20px;
-    height: 62px;
+    width: 250px;
+    font-size: 16px;
+    height: 36px;
+    border-color: white;
   }
 }
