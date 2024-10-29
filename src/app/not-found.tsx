@@ -9,7 +9,7 @@ const NotFoundPage = () => {
     <section className={'section'}>
       <div className={`${roboto.className} ${'container'} `}>
         <div className={'content__block'}>
-          <svg className={'img__404'} width="242" height="210">
+          <svg className={'img__404'} >
             <use href="/symbol-defs.svg#404"></use>
           </svg>
           <h1 className={'title'}>Error 404 - Page not found</h1>

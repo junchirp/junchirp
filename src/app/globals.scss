@@ -107,7 +107,7 @@ p {
 /* Not-Found Page styles */
 
 .content__block {
-  width: 319px;
+  width: 343px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -117,29 +117,31 @@ p {
 
   // значення 767!!!
   @include mediaQuery($screen-max-size-s) {
-    width: 344px;
+    width: 708px;
   }
 
   @include mediaQuery($screen-size-m) {
-    width: 392px;
+    width: 594px;
   }
 
   @include mediaQuery($screen-size-l) {
-    width: 457px;
+    width: 721px;
   }
 
-  @include mediaQuery(1800px) {
-    width: 584px;
+  @include mediaQuery($screen-size-xl) {
+    width: 828px;
   }
 }
 
 .img__404 {
   margin-bottom: 14px;
-
+  width: 343px;
+  height: 250px;
   // значення 767!!!
+
   @include mediaQuery($screen-max-size-s) {
-    width: 344px;
-    height: 298px;
+    width: 500px;
+    height: 343px;
     margin-bottom: 16px;
   }
 
@@ -150,14 +152,14 @@ p {
   }
 
   @include mediaQuery($screen-size-l) {
-    width: 456px;
-    height: 395px;
+    width: 620px;
+    height: 464px;
     margin-bottom: 18px;
   }
 
-  @include mediaQuery(1800px) {
-    width: 581px;
-    height: 503px;
+  @include mediaQuery($screen-size-xl) {
+    width: 828px;
+    height: 643px;
   }
 }
 
@@ -182,7 +184,7 @@ p {
     font-size: 24px;
   }
 
-  @include mediaQuery(1800px) {
+  @include mediaQuery($screen-size-xl) {
     font-size: 32px;
   }
 }
@@ -197,15 +199,15 @@ p {
   margin-top: 12px;
   margin-bottom: 12px;
 
-  @include mediaQuery(1280px) {
+  @include mediaQuery($screen-size-m) {
     font-size: 18px;
   }
 
-  @include mediaQuery(1536px) {
+  @include mediaQuery($screen-size-l) {
     font-size: 20px;
   }
 
-  @include mediaQuery(1800px) {
+  @include mediaQuery($screen-size-xl) {
     font-size: 22px;
     margin-top: 16px;
     margin-bottom: 16px;
@@ -213,50 +215,17 @@ p {
 }
 
 .button {
-  width: 319px;
-  height: 40px;
+  width: 250px;
+  height: 36px;
   display: flex;
-  padding: 10px 20px;
   justify-content: center;
   align-items: center;
-  gap: 8px;
   border-radius: 40px;
-  border: 0.2px solid #228b22;
   background: #228b22;
   cursor: pointer;
   color: #fff;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
   letter-spacing: 0.5px;
   text-transform: uppercase;
   margin-top: 8px;
-  margin-bottom: 8px;
-
-  @include mediaQuery(767px) {
-    width: 344px;
-    height: 44px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-
-  @include mediaQuery(1280px) {
-    width: 392px;
-    height: 48px;
-    font-size: 16px;
-    margin-top: 8px;
-    margin-bottom: 8px;
-  }
-
-  @include mediaQuery(1536px) {
-    width: 456px;
-    height: 53px;
-  }
-
-  @include mediaQuery(1800px) {
-    width: 584px;
-    font-size: 20px;
-    height: 62px;
-  }
+  border: 2px solid white;
 }
