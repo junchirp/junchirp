@@ -1,5 +1,5 @@
-@import '../sass/utils/container';
-@import '../sass/utils/mixins';
+@import '../sass-utils/container';
+@import '../sass-utils/mixins';
 
 :root {
   --font-mono: 'Roboto' ui-monospace, Menlo, Monaco, 'Cascadia Mono',
@@ -81,6 +81,8 @@ body {
 
 main {
   flex: 1;
+  margin-top: 40px;
+  margin-bottom: 48px;
 }
 
 a {
