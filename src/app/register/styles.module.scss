@@ -1,9 +1,7 @@
+@import '../../sass-utils/container';
+@import '../../sass-utils/mixins';
 
-
-@import "../../sass/utils/container";
-@import "../../sass/utils/mixins";
-
-@import "../../components/auth/SignIn/signIn.module.scss";
+@import '../../components/auth/SignIn/signIn.module.scss';
 
 .form {
   display: flex;

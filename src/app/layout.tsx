@@ -9,14 +9,12 @@ import Footer from '@/components/Footer/Footer';
 import { Temporary } from '@/components/UI/temporary/temporary';
 import ToastContainer from '@/components/UI/ToastContainer/ToastContainer';
 
-import s from '@/sass/layouts/main.module.scss';
 import './globals.scss';
 
 const ReduxProvider = dynamic(
   () => import('../Providers/ReduxProvider/ReduxProvider'),
   {
     ssr: false,
-    
   }
 );
 
@@ -40,7 +38,7 @@ export const metadata: Metadata = {
   },
 };
 
- function RootLayout({
+function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -52,7 +50,7 @@ export const metadata: Metadata = {
           <ToastContainer />
           <Header />
           <Temporary />
-          <main className={s.main}>{children}</main>
+          <main>{children}</main>
           <Footer />
         </ReduxProvider>
       </body>
