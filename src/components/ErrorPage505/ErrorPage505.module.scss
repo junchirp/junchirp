@@ -32,29 +32,31 @@
 
 .img__505 {
   margin-bottom: 14px;
+  width: 343px;
+  height: 289px;
 
   // значення 767!!!
   @include mediaQuery($screen-max-size-s) {
-    width: 344px;
-    height: 298px;
+    width: 496px;
+    height: 434px;
     margin-bottom: 16px;
   }
 
   @include mediaQuery($screen-size-m) {
-    width: 390px;
-    height: 338px;
+    width: 398px;
+    height: 323px;
     margin-bottom: 18px;
   }
 
   @include mediaQuery($screen-size-l) {
-    width: 458px;
-    height: 396px;
+    width: 620px;
+    height: 470px;
     margin-bottom: 18px;
   }
 
   @include mediaQuery($screen-size-xl) {
-    width: 581px;
-    height: 503px;
+    width: 828px;
+    height: 676px;
   }
 }
 
@@ -65,6 +67,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  margin-top: 24px;
 
   // значення 767!!!
   @include mediaQuery($screen-max-size-s) {
@@ -91,18 +94,17 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  margin-top: 12px;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 
   // значення 767!!!
   @include mediaQuery($screen-max-size-s) {
     font-size: 16px;
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
   }
 
   @include mediaQuery($screen-size-m) {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   @include mediaQuery($screen-size-l) {
@@ -117,9 +119,9 @@
 }
 
 .button {
-  width: 321px;
+  width: 250px;
   display: flex;
-  height: 40px;
+  height: 36px;
   padding: 10px 20px;
   justify-content: center;
   align-items: center;
@@ -137,32 +139,4 @@
   margin-top: 8px;
   margin-bottom: 8px;
   border: 2px solid white;
-
-  // значення 767!!!
-  @include mediaQuery($screen-max-size-s) {
-    width: 344px;
-    height: 44px;
-    margin-top: 8px;
-    margin-bottom: 8px;
-    font-size: 14px;
-  }
-
-  @include mediaQuery($screen-size-m) {
-    width: 392px;
-    height: 48px;
-    font-size: 16px;
-    margin-top: 8px;
-    margin-bottom: 8px;
-  }
-
-  @include mediaQuery($screen-size-l) {
-    width: 458px;
-    height: 53px;
-  }
-
-  @include mediaQuery(1800px) {
-    width: 581px;
-    font-size: 20px;
-    height: 62px;
-  }
 }
