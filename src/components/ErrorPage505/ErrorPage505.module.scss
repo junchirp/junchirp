@@ -30,28 +30,26 @@
   }
 }
 
-.img__505 {
-  margin-bottom: 14px;
+.img__505,
+.img__404 {
   width: 343px;
-  height: 289px;
+  height: 280px;
+  margin-bottom: 24px;
 
   // значення 767!!!
   @include mediaQuery($screen-max-size-s) {
     width: 496px;
-    height: 434px;
-    margin-bottom: 16px;
+    height: 405px;
   }
 
   @include mediaQuery($screen-size-m) {
-    width: 398px;
-    height: 323px;
-    margin-bottom: 18px;
+    width: 435px;
+    height: 355px;
   }
 
   @include mediaQuery($screen-size-l) {
-    width: 620px;
+    width: 576px;
     height: 470px;
-    margin-bottom: 18px;
   }
 
   @include mediaQuery($screen-size-xl) {
@@ -67,7 +65,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  margin-top: 24px;
+  margin-bottom: 20px;
 
   // значення 767!!!
   @include mediaQuery($screen-max-size-s) {
@@ -76,45 +74,49 @@
 
   @include mediaQuery($screen-size-m) {
     font-size: 20px;
+    margin-bottom: 12px;
   }
 
   @include mediaQuery($screen-size-l) {
     font-size: 24px;
+    margin-bottom: 18px;
   }
 
   @include mediaQuery($screen-size-xl) {
     font-size: 32px;
+    margin-bottom: 24px;
   }
 }
 
 .details {
+  font-family: 'Montserrat', sans-serif;
   color: #fff;
   text-align: center;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  line-height: normal;
+  line-height: 150%;
   margin-bottom: 16px;
 
   // значення 767!!!
   @include mediaQuery($screen-max-size-s) {
     font-size: 16px;
-    margin-top: 20px;
     margin-bottom: 16px;
   }
 
   @include mediaQuery($screen-size-m) {
     font-size: 16px;
+    margin-bottom: 18px;
   }
 
   @include mediaQuery($screen-size-l) {
     font-size: 18px;
+    margin-bottom: 18px;
   }
 
   @include mediaQuery($screen-size-xl) {
     font-size: 20px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
   }
 }
 
@@ -136,7 +138,5 @@
   line-height: normal;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  margin-top: 8px;
-  margin-bottom: 8px;
   border: 2px solid white;
 }
