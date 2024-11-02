@@ -10,7 +10,7 @@ import { FormField } from '@/components/UI/Forms/CustomInput/CustomInput';
 import Button from '@/components/UI/Button/Button';
 import Loader from '@/components/UI/Loader/Loader';
 
-import s from './signIn.module.scss';
+import common from '@/components/Auth/commonAuthStyles.module.scss';
 
 const SignInFormik = () => {
   const {
@@ -39,7 +39,7 @@ const SignInFormik = () => {
     backendError: string | null;
   }): string => {
     if (isLoading || isValid) {
-      return s.valid;
+      return common.valid;
     }
 
     if (
@@ -58,10 +58,10 @@ const SignInFormik = () => {
       errors.password ||
       backendError
     ) {
-      return s.invalid;
+      return common.invalid;
     }
 
-    return s.valid;
+    return common.valid;
   };
 
   return (
@@ -89,7 +89,7 @@ const SignInFormik = () => {
           handleChange: formikHandleChange,
           isValid,
         }) => (
-          <Form className={s.form}>
+          <Form className={common.form}>
             <FormField
               name={'email'}
               label={'Email'}
@@ -119,13 +119,13 @@ const SignInFormik = () => {
             />
 
             {backendError && (
-              <div className={s.error__backend}>{backendError}</div>
+              <div className={common.error__backend}>{backendError}</div>
             )}
 
             <Button
-              className={`${s.styledBtn} ${
+              className={`${common.styledBtn} ${
                 isLoading || isValid
-                  ? s.valid
+                  ? common.valid
                   : !touched.email ||
                     errors.email ||
                     !touched.password ||
@@ -136,8 +136,8 @@ const SignInFormik = () => {
                     !touched.password ||
                     errors.password ||
                     backendError
-                  ? s.invalid
-                  : s.valid
+                  ? common.invalid
+                  : common.valid
               }
                 `}
               type="submit"

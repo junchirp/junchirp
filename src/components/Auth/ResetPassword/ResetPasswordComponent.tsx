@@ -12,7 +12,7 @@ import { validationSchemaResetPassword } from '@/validation/validationResetPassw
 import { FormValuesResetPassword } from '@/components/Auth/ResetPassword/FormValuesResetPassword';
 
 import SvgIcon from '@/components/UI/SvgIcon/SvgIcon';
-import ErrorFeedback from '@/components/Auth/ErrorFeedback';
+import ErrorFeedback from '@/components/Auth/ErrorFeedback/ErrorFeedback';
 import Button from '@/components/UI/Button/Button';
 import Loader from '@/components/UI/Loader/Loader';
 

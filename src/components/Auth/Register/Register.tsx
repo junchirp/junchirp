@@ -1,45 +1,20 @@
 'use client';
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-
-import { AppRouteEnum } from '@/libs/enums/enums';
-
 import SocialLoginGroup from '../../UI/SocialLoginGroup/SocialLoginGroup';
 
 import RegisterFormik from './RegisterFormik';
+import AuthHeader from '../AuthHeader/AuthHeader';
 
-import s from './register.module.scss';
+import common from '@/components/Auth/commonAuthStyles.module.scss';
 
 const Register = () => {
-  const pathname = usePathname();
-
   return (
-    <section className={`${s.section} `}>
-      <div className={`${s.container} `}>
-        <div className={s.box__link}>
-          <Link
-            href={AppRouteEnum.SIGN_IN}
-            className={` ${s.link} ${
-              pathname === `${AppRouteEnum.SIGN_IN}` ? s.link__sign_in : ''
-            } `}
-          >
-            Увійти
-          </Link>
-          <span>/</span>
-          <Link
-            href={AppRouteEnum.SIGN_UP}
-            className={` ${s.link} ${
-              pathname === `${AppRouteEnum.SIGN_UP}` ? s.link__register : ''
-            } `}
-          >
-            Зареєструватись
-          </Link>
-        </div>
-
+    <section className={`${common.section} `}>
+      <div className={`${common.container} `}>
+        <AuthHeader />
         <RegisterFormik />
-        <div className={s.box__link__group}>
-          <p className={s.text}>Зареєструватись за допомогою</p>
+        <div className={common.box__link__group}>
+          <p className={common.text}>Зареєструватись за допомогою</p>
           <SocialLoginGroup />
         </div>
       </div>

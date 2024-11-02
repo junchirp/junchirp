@@ -1,6 +1,6 @@
-@import '../../sass/utils/container';
-@import '../../sass/utils/mixins';
-@import '../../components/Auth/Login/signIn.module.scss';
+@import '../../../sass/utils/container';
+@import '../../../sass/utils/mixins';
+@import '../../../components/Auth/Login/signIn.module.scss';
 
 .text {
   padding-top: 30px;
@@ -10,11 +10,11 @@
 
   max-width: 400px;
 
-  @include mediaQuery(1280px) {
+  @include mediaQuery($screen-size-m) {
     max-width: 530px;
   }
 
-  @include mediaQuery(1920px) {
+  @include mediaQuery($screen-size-xl) {
     max-width: 584px;
   }
 }

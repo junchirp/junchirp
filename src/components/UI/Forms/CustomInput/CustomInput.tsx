@@ -1,6 +1,6 @@
 import { Field, FormikErrors, FormikTouched } from 'formik';
 
-import ErrorFeedback from '@/components/Auth/ErrorFeedback';
+import ErrorFeedback from '@/components/Auth/ErrorFeedback/ErrorFeedback';
 import SvgIcon from '@/components/UI/SvgIcon/SvgIcon';
 
 import s from './styles.module.scss';

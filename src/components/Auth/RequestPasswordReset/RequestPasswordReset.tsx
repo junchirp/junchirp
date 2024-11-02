@@ -9,7 +9,7 @@ import { customError } from '@/types/commonTypes';
 
 import { validationSchemaRequestPasswordReset } from '../../../validation/validationRequestPasswordReset';
 import { FormValuesRequestPasswordReset } from './FormValuesRequestPasswordReset';
-import ErrorFeedback from '../ErrorFeedback';
+import ErrorFeedback from '../ErrorFeedback/ErrorFeedback';
 
 import Loader from '@/components/UI/Loader/Loader';
 import SvgIcon from '@/components/UI/SvgIcon/SvgIcon';
