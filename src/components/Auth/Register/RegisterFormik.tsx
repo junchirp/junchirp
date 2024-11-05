@@ -203,10 +203,10 @@ const RegisterFormik = () => {
             {backendError && (
               <div className={common.error__backend}>{backendError}</div>
             )}
-            <div className={s.box__btn}>
+            <div className={common.box__btn}>
               <Button
                 title="ОЧИСТИТИ"
-                className={s.resetBtn}
+                className={common.resetBtn}
                 type="reset"
                 isDisabled={!dirty || isLoading}
               />

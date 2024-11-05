@@ -8,7 +8,7 @@ import s from './styles.module.scss';
 type FormFieldProps<T extends object> = {
   name: keyof T;
   label: string;
-  type: string;
+  type?: string;
   touched: FormikTouched<T>;
   errors: FormikErrors<T>;
   backendError: string | null;
@@ -16,6 +16,14 @@ type FormFieldProps<T extends object> = {
   showPassword?: boolean;
   togglePasswordVisibility?: () => void;
   isThisPassword?: boolean;
+  className?: string;
+  error?:
+    | string
+    | false
+    | string[]
+    | FormikErrors<any>
+    | FormikErrors<any>[]
+    | undefined;
 };
 
 const FormField = <T extends object>(props: FormFieldProps<T>) => {

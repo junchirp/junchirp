@@ -8,7 +8,6 @@ import SignInFormik from './SignInFormik';
 import SocialLoginGroup from '@/components/UI/SocialLoginGroup/SocialLoginGroup';
 import AuthHeader from '../AuthHeader/AuthHeader';
 
-import s from './signIn.module.scss';
 import common from '@/components/Auth/commonAuthStyles.module.scss';
 
 const SignIn = () => {
@@ -22,7 +21,7 @@ const SignIn = () => {
           <SocialLoginGroup />
           <Link
             href={AppRouteEnum.REQUEST_PASSWORD_RESET}
-            className={s.link__forgot__password}
+            className={common.link__forgot__password}
           >
             Забули пароль?
           </Link>
