@@ -124,3 +124,15 @@
   justify-content: space-between;
   gap: 16px;
 }
+
+.title {
+  text-align: center;
+
+  @include font(20px, 2vw, 26px, 500, 25px);
+}
+
+.container__resend {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

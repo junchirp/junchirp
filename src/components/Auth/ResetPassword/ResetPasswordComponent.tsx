@@ -61,8 +61,8 @@ const ResetPasswordComponent = () => {
   };
   return (
     <section className={common.section}>
-      <div className={`${common.container} ${s.container__resend}`}>
-        <h2 className={s.title}>Зміна пароля</h2>
+      <div className={`${common.container} ${common.container__resend}`}>
+        <h2 className={common.title}>Зміна пароля</h2>
         <p className={s.text}>
           Перевірте свою електронну пошту, ми відправили лист із подальшими
           інструкціями для відновлення паролю.

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Field, Form, Formik } from 'formik';
+import { Form } from 'formik';
 
 import { useRequestPasswordResetMutation } from '@/services/auth-and-user-services';
 import useRouterPush from '@/hooks/useRouter';
@@ -9,13 +9,14 @@ import { customError } from '@/types/commonTypes';
 
 import { validationSchemaRequestPasswordReset } from '../../../validation/validationRequestPasswordReset';
 import { FormValuesRequestPasswordReset } from './FormValuesRequestPasswordReset';
-import ErrorFeedback from '../ErrorFeedback/ErrorFeedback';
 
 import Loader from '@/components/UI/Loader/Loader';
-import SvgIcon from '@/components/UI/SvgIcon/SvgIcon';
 import Button from '@/components/UI/Button/Button';
+import DynamicForm from '@/components/UI/Forms/DynamicForm/DynamicForm';
+import { FormField } from '@/components/UI/Forms/CustomInput/CustomInput';
 
 import s from './requestPasswordReset.module.scss';
+import common from '@/components/Auth/commonAuthStyles.module.scss';
 
 const RequestPasswordReset = () => {
   const [requestPasswordReset, { isLoading }] =
@@ -47,10 +48,10 @@ const RequestPasswordReset = () => {
     }
   };
   return (
-    <section className={s.section}>
-      <div className={`${s.container}    ${s.container__resend}`}>
-        <h2 className={s.title}>Відправити запит на зміну паролю ?</h2>
-        <Formik
+    <section className={common.section}>
+      <div className={`${common.container}    ${common.container__resend}`}>
+        <h2 className={common.title}>Відправити запит на зміну паролю ?</h2>
+        <DynamicForm
           initialValues={{ email: '' }}
           onSubmit={handleSubmit}
           validationSchema={validationSchemaRequestPasswordReset}
@@ -62,50 +63,54 @@ const RequestPasswordReset = () => {
             isValid,
             handleChange: formikHandleChange,
           }) => (
-            <Form className={s.form}>
-              <div className={s.form__box}>
-                <label
+            <Form className={common.form}>
+              {/* <div className={s.form__box}> */}
+              {/* <label
                   className={`${s.label} ${
                     touched.email && errors.email ? s.invalid : ''
                   } `}
                 >
                   Email
                   <SvgIcon id="icon" width={6} height={16} className={s.chip} />
-                </label>
-                <Field
-                  onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                    formikHandleChange(e);
-                    handleChange();
-                  }}
-                  className={`${s.input} ${
-                    (touched.email && errors.email) || backendError
-                      ? s.invalid
-                      : touched.email && !errors.email
-                      ? s.valid
-                      : ''
-                  }`}
-                  type="email"
-                  name="email"
-                  error={touched.email && errors.email}
-                />
-                {(touched.email && errors.email) || backendError ? (
+                </label> */}
+              <FormField
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                  formikHandleChange(e);
+                  handleChange();
+                }}
+                // className={`${s.input} ${
+                //   (touched.email && errors.email) || backendError
+                //     ? s.invalid
+                //     : touched.email && !errors.email
+                //     ? s.valid
+                //     : ''
+                // }`}
+                type={'email'}
+                name={'email'}
+                label={'email'}
+                error={touched.email && errors.email}
+                touched={touched}
+                errors={errors}
+                backendError={backendError}
+              />
+              {/* {(touched.email && errors.email) || backendError ? (
                   <span className={s.warning}>!</span>
                 ) : null}
-                <ErrorFeedback name="email" />
-              </div>
-              {backendError && (
+                <ErrorFeedback name="email" /> */}
+              {/* </div> */}
+              {/* {backendError && (
                 <div className={s.error__backend}>{backendError}</div>
-              )}
+              )} */}
               <Button
-                className={`${s.styledBtn}
+                className={`${common.styledBtn}
                ${
                  isLoading
-                   ? s.styledBtn
+                   ? common.styledBtn
                    : !touched.email || errors.email
                    ? ''
                    : !touched.email || errors.email || backendError
-                   ? s.invalid
-                   : s.valid
+                   ? common.invalid
+                   : common.valid
                } `}
                 type="submit"
                 isDisabled={!dirty || !isValid || isLoading}
@@ -120,7 +125,7 @@ const RequestPasswordReset = () => {
               </Button>
             </Form>
           )}
-        </Formik>
+        </DynamicForm>
       </div>
     </section>
   );
