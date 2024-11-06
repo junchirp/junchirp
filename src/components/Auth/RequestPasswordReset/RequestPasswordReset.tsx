@@ -15,7 +15,6 @@ import Button from '@/components/UI/Button/Button';
 import DynamicForm from '@/components/UI/Forms/DynamicForm/DynamicForm';
 import { FormField } from '@/components/UI/Forms/CustomInput/CustomInput';
 
-import s from './requestPasswordReset.module.scss';
 import common from '@/components/Auth/commonAuthStyles.module.scss';
 
 const RequestPasswordReset = () => {
@@ -64,27 +63,11 @@ const RequestPasswordReset = () => {
             handleChange: formikHandleChange,
           }) => (
             <Form className={common.form}>
-              {/* <div className={s.form__box}> */}
-              {/* <label
-                  className={`${s.label} ${
-                    touched.email && errors.email ? s.invalid : ''
-                  } `}
-                >
-                  Email
-                  <SvgIcon id="icon" width={6} height={16} className={s.chip} />
-                </label> */}
               <FormField
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                   formikHandleChange(e);
                   handleChange();
                 }}
-                // className={`${s.input} ${
-                //   (touched.email && errors.email) || backendError
-                //     ? s.invalid
-                //     : touched.email && !errors.email
-                //     ? s.valid
-                //     : ''
-                // }`}
                 type={'email'}
                 name={'email'}
                 label={'email'}
@@ -93,14 +76,9 @@ const RequestPasswordReset = () => {
                 errors={errors}
                 backendError={backendError}
               />
-              {/* {(touched.email && errors.email) || backendError ? (
-                  <span className={s.warning}>!</span>
-                ) : null}
-                <ErrorFeedback name="email" /> */}
-              {/* </div> */}
-              {/* {backendError && (
-                <div className={s.error__backend}>{backendError}</div>
-              )} */}
+              {backendError && (
+                <div className={common.error__backend}>{backendError}</div>
+              )}
               <Button
                 className={`${common.styledBtn}
                ${

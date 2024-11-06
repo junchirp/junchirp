@@ -11,8 +11,6 @@ import { validationSchemaResetPassword } from '@/validation/validationResetPassw
 
 import { FormValuesResetPassword } from '@/components/Auth/ResetPassword/FormValuesResetPassword';
 
-import SvgIcon from '@/components/UI/SvgIcon/SvgIcon';
-import ErrorFeedback from '@/components/Auth/ErrorFeedback/ErrorFeedback';
 import Button from '@/components/UI/Button/Button';
 import Loader from '@/components/UI/Loader/Loader';
 
@@ -83,28 +81,11 @@ const ResetPasswordComponent = () => {
             handleChange: formikHandleChange,
           }) => (
             <Form className={common.form}>
-              {/* <div className={s.form__box}> */}
-              {/* <label
-                  className={`${s.label} ${
-                    touched.email && errors.email ? s.invalid : ''
-                  } `}
-                >
-                  Email
-                  <SvgIcon id="icon" width={6} height={16} className={s.chip} />
-                </label> */}
               <FormField
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                   formikHandleChange(e);
                   handleChange();
                 }}
-                // className={`${s.input} ${
-                //   (touched.email && errors.email) || backendError
-                //     ? //
-                //       s.invalid
-                //     : touched.email && !errors.email
-                //     ? s.valid
-                //     : ''
-                // }`}
                 type={'email'}
                 name={'email' as keyof object}
                 error={touched.email && errors.email}
@@ -113,34 +94,11 @@ const ResetPasswordComponent = () => {
                 errors={errors}
                 backendError={backendError}
               />
-              {/* {(touched.email && errors.email) || backendError ? (
-                <span className={s.warning}>!</span>
-              ) : null} */}
-
-              {/* <ErrorFeedback name="email" /> */}
-              {/* </div> */}
-              {/* <div className={s.form__box}> */}
-              {/* <label
-                  className={`${s.label} ${
-                    touched.code && errors.code ? s.invalid : ''
-                  } `}
-                >
-                  Код
-                  <SvgIcon id="icon" width={6} height={16} className={s.chip} />
-                </label> */}
               <FormField
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                   formikHandleChange(e);
                   handleChange();
                 }}
-                // className={`${s.input} ${
-                //   (touched.code && errors.code) || backendError
-                //     ? // || backendError
-                //       s.invalid
-                //     : touched.code && !errors.code
-                //     ? s.valid
-                //     : ''
-                // }`}
                 type="text"
                 name="code"
                 error={touched.code && errors.code}
@@ -149,34 +107,12 @@ const ResetPasswordComponent = () => {
                 errors={errors}
                 backendError={backendError}
               />
-              {/* {(touched.code && errors.code) || backendError ? (
-                <span className={s.warning}>!</span>
-              ) : null}
-              <ErrorFeedback name="code" /> */}
-              {/* </div> */}
-              {/* <div className={`${s.form__box} ${s.nth__child}`}> */}
-              {/* <label
-                  className={`${s.label}  ${
-                    touched.newPassword && errors.newPassword ? s.invalid : ''
-                  }`}
-                >
-                  Пароль
-                  <SvgIcon id="icon" width={6} height={16} className={s.chip} />
-                </label> */}
 
               <FormField
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
                   formikHandleChange(e);
                   handleChange();
                 }}
-                // className={`${s.input} ${
-                //   touched.newPassword && errors.newPassword
-                //     ? s.invalid
-                //     : touched.newPassword && !errors.newPassword
-                //     ? s.valid
-                //     : ''
-                // }`}
-
                 type={showPassword ? 'text' : 'password'}
                 name={'newPassword' as keyof object}
                 error={touched.newPassword && errors.newPassword}
@@ -186,24 +122,9 @@ const ResetPasswordComponent = () => {
                 backendError={backendError}
               />
 
-              {/* {touched.newPassword && errors.newPassword && (
-                <span className={s.warning}>!</span>
-              )} */}
-
-              {/* <SvgIcon
-                id={showPassword ? 'eye-close' : 'eye'}
-                width={40}
-                height={40}
-                className={s.chip__eye}
-                onClick={togglePasswordVisibility}
-              /> */}
-
-              {/* <ErrorFeedback name="newPassword" /> */}
-              {/* </div> */}
-
-              {/* {backendError && (
+              {backendError && (
                 <div className={common.error__backend}>{backendError}</div>
-              )} */}
+              )}
 
               <div className={common.box__btn}>
                 <Button

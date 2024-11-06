@@ -24,6 +24,7 @@
   margin: 0 auto;
 
   max-width: 400px;
+  width: 100%;
   @include mediaQuery($screen-size-s) {
     gap: 35px;
   }
