@@ -5,8 +5,10 @@ import Link from 'next/link';
 import { roboto } from '@/utils/fonts';
 
 import s from './ErrorPage404.module.scss';
+import { useTranslations } from 'next-intl';
 
 export default function Error404() {
+  const t = useTranslations('error404');
   return (
     <section className={s.section}>
       <div className={`${roboto.className} ${s.container} `}>
@@ -14,14 +16,10 @@ export default function Error404() {
           <svg className={s.img__404}>
             <use href="/symbol-defs.svg#404"></use>
           </svg>
-          <h1 className={s.title}>Error 404 - Page not found</h1>
-          <p className={s.details}>
-            Ой, ви потрапили на таємну сторінку, якої не існує! Можливо,
-            сторінка була видалена або переміщена. Перейдіть на нашу головну
-            сторінку, щоб знайти потрібну інформацію
-          </p>
+          <h1 className={s.title}>{t('errorTitle')}</h1>
+          <p className={s.details}>{t('errorMessage')}</p>
           <Link className={`${s.link} ${s.button}`} href="/">
-            головна сторінка
+            {t('homeButton')}
           </Link>
         </div>
       </div>

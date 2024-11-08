@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Field, Form, Formik } from 'formik';
 
 import useRegisterFormik from '@/hooks/useRegisterFormik';
-import Error from '@/app/register/error';
+import Error from '@/app/[locale]/register/error';
 import { CustomError } from '@/types/commonTypes';
 import PasswordStrengthIndicator from '../PasswordStrengthIndicator/PasswordStrengthIndicator';
 import { validationSchemaRegister } from '@/validation/validationRegister';
