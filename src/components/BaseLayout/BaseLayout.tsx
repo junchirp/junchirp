@@ -16,7 +16,7 @@ type Props = {
 };
 
 const ReduxProvider = dynamic(
-  () => import('../Providers/ReduxProvider/ReduxProvider'),
+  () => import('../../Providers/ReduxProvider/ReduxProvider'),
   {
     ssr: false,
   }

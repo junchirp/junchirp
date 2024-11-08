@@ -1,6 +1,6 @@
 import Error404 from '@/components/ErrorPage404/ErrorPage404';
 
-import BaseLayout from '@/components/BaseLayout';
+import BaseLayout from '@/components/BaseLayout/BaseLayout';
 import { routing } from '@/i18n/routing';
 
 // This page renders when a route like `/unknown.txt` is requested.
