@@ -1,8 +1,4 @@
-import { Props } from '@/types/commonTypes';
-import { setRequestLocale } from 'next-intl/server';
-
-const AboutPage = ({ params: { locale } }: Props) => {
-  setRequestLocale(locale);
+const AboutPage = () => {
   return <>AboutPage</>;
 };
 export default AboutPage;
