@@ -1,22 +1,6 @@
-import MagicButton from '@/components/UI/magickButton';
-import Faqs from '@/components/Home/Faqs/Faqs';
-import Hero from '@/components/Home/Hero/Hero';
-import ProjectStatistics from '@/components/Home/ProjectStatistics/ProjectStatistics';
-import RoleSelectionLink from '@/components/Home/RoleSelectionLink/RoleSelectionLink';
-import Testimonials from '@/components/Home/Testimonials/Testimonials';
-import WhatWeOffer from '@/components/Home/WhatWeOffer/WhatWeOffer';
+import { redirect } from 'next/navigation';
 
-export default function Home() {
-  return (
-    <>
-      <Hero />
-      <RoleSelectionLink />
-      <ProjectStatistics />
-      <WhatWeOffer />
-      <Testimonials />
-      <Faqs />
-
-      <MagicButton />
-    </>
-  );
+// This page only renders when the app is built statically (output: 'export')
+export default function RootPage() {
+  redirect('/ua');
 }

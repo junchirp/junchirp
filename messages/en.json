@@ -1,0 +1,32 @@
+{
+  "LocaleLayout": {
+    "title": "JunChirp"
+  },
+  "error404": {
+    "errorTitle": "Error 404 - Page not found",
+    "errorMessage": "Oops, you've landed on a secret page that doesn't exist! The page may have been deleted or moved. Go to our main page to find the information you need.",
+    "homeButton": "main page"
+  },
+  "error505": {
+    "errorTitle": "Error 505 - Internal Server Error",
+    "errorMessage": "Oops… Something went wrong with our server. The technical team is already working on a solution to the problem. For now, please return to the main page",
+    "homeButton": "main page"
+  },
+  "hero": {
+    "heroTitle": "JunChirp",
+    "heroText": "Become part of a dynamic community that will support your growth, provide a wide range of opportunities for development and reveal your professional potential. We promise, we will exceed your expectations!",
+    "signUp": "Register"
+  },
+  "projectStatistics": {
+    "statisticTitle": ["+3К", "+2К", "+75tho"],
+    "statisticText": [
+      "projects",
+      "people who found a job",
+      "dollars were successfully invested"
+    ]
+  },
+  "LocaleSwitcher": {
+    "label": "Change language",
+    "locale": "{locale, select, ua {Українська} en{English} de{Deutsch} other {Unknown}}"
+  }
+}
