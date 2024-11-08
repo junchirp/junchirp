@@ -23,7 +23,7 @@ const ReduxProvider = dynamic(
 );
 
 const angryFont = localFont({
-  src: '../../public/fonts/Angry.otf',
+  src: '../../../public/fonts/Angry.otf',
 });
 
 export default async function BaseLayout({ children, locale }: Props) {
