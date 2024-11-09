@@ -1,8 +1,7 @@
 'use client';
 
-import { Link } from '@/i18n/routing';
+import { Link, usePathname } from '@/i18n/routing';
 import { useEffect, useState } from 'react';
-import { usePathname } from 'next/navigation';
 
 import authSelector from '@/redux/auth/authSelector';
 import { clearToken } from '@/redux/auth/authSlice';
