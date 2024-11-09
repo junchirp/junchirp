@@ -1,3 +1,4 @@
 {
-  "cSpell.words": ["Formik"]
+  "cSpell.words": ["Formik"],
+  "i18n-ally.localesPaths": ["locales"]
 }

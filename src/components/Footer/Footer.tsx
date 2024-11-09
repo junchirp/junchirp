@@ -1,12 +1,12 @@
-import Link from "next/link";
+import { Link } from '@/i18n/routing';
 
-import { roboto, montserrat } from "@/utils/fonts";
+import { roboto, montserrat } from '@/utils/fonts';
 
-import Logo from "../UI/Logo/Logo";
-import FooterNav from "./FooterNav";
-import FooterIcons from "./FooterIcons";
+import Logo from '../UI/Logo/Logo';
+import FooterNav from './FooterNav';
+import FooterIcons from './FooterIcons';
 
-import s from "./footer.module.scss";
+import s from './footer.module.scss';
 
 const Footer: React.FC = () => {
   return (
@@ -36,7 +36,7 @@ const Footer: React.FC = () => {
           </div>
 
           <div className={s.footer_nav}>
-            {" "}
+            {' '}
             <FooterNav />
           </div>
         </div>

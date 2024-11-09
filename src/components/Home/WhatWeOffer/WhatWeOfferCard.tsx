@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
+import { Link } from '@/i18n/routing';
 
 import { Offer } from '@/components/Home/WhatWeOffer/WhatWeOffer.types';
 import { roboto } from '@/utils/fonts';

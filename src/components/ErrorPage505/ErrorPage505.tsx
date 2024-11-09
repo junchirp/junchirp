@@ -1,7 +1,6 @@
 'use client';
 
-import Link from 'next/link';
-
+import { Link } from '@/i18n/routing';
 import { roboto } from '@/utils/fonts';
 
 import s from './ErrorPage505.module.scss';
