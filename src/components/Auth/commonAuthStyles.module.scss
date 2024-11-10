@@ -44,7 +44,7 @@
   @include font(14px, 2vw, 20px, 400, 19px);
 }
 
-//sunmit button
+//submit button
 .styledBtn {
   @include flexCenter();
   gap: 28px;
@@ -100,7 +100,7 @@
   text-decoration-thickness: 1px;
 }
 
-// для реєстрації, reset password
+// для реєстрації, reset password, confirm component
 .resetBtn {
   cursor: pointer;
   background-color: transparent;

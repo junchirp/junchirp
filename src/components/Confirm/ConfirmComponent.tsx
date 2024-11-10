@@ -9,7 +9,11 @@ import useCodeInput from '@/hooks/useCodeInput';
 import Button from '@/components/UI/Button/Button';
 import Loader from '@/components/UI/Loader/Loader';
 
+import DynamicForm from '../UI/Forms/DynamicForm/DynamicForm';
+import { FormField } from '../UI/Forms/CustomInput/CustomInput';
+
 import styles from './styles.module.scss';
+import common from '@/components/Auth/commonAuthStyles.module.scss';
 
 const ConfirComponent = () => {
   const {
@@ -28,7 +32,7 @@ const ConfirComponent = () => {
 
   return (
     <section className={styles.section}>
-      <div className={`${styles.container}    ${styles.container__resend}`}>
+      <div className={`${common.container}    ${common.container__resend}`}>
         <h2 className={styles.title}>Підтвердження електронної пошти</h2>
         <p className={styles.text}>
           Введіть 6 значний код, який ми надіслали на Вашу електронну пошту{' '}
@@ -41,7 +45,7 @@ const ConfirComponent = () => {
               )}.`
             : `Код активний ще ${formatTime(timeLeft)}.`}
         </p>
-        <Formik
+        <DynamicForm
           initialValues={{ code: '' }}
           onSubmit={handleSubmit}
           validationSchema={validationSchemaConfirm}
@@ -60,10 +64,14 @@ const ConfirComponent = () => {
                 onPaste={(e) => handlePaste(e, setFieldValue)}
               >
                 {[...Array(6)].map((_, index) => (
-                  <Field
+                  <FormField
                     key={index}
-                    name={`code[${index}]`}
+                    name={`code[${index}]` as keyof object}
                     type="text"
+                    touched={touched}
+                    errors={errors}
+                    backendError={backendError}
+                    label=""
                     className={`${styles.input} ${
                       (touched.code && errors.code) || backendError
                         ? styles.invalid
@@ -71,7 +79,7 @@ const ConfirComponent = () => {
                         ? styles.valid
                         : ''
                     }`}
-                    maxLength="1"
+                    maxLength={'1'}
                     value={values.code[index] || ''}
                     innerRef={(ref: HTMLInputElement) =>
                       (inputRefs.current[index] = ref)
@@ -83,11 +91,11 @@ const ConfirComponent = () => {
                     }}
                   />
                 ))}
-                {touched.code && errors.code && (
+                {/* {touched.code && errors.code && (
                   <div className={styles.invalid__code__message}>
                     {errors.code}
                   </div>
-                )}
+                )} */}
               </div>
               {backendError && (
                 <div className={styles.error__backend}>{backendError}</div>
@@ -115,7 +123,7 @@ const ConfirComponent = () => {
               </Button>
             </Form>
           )}
-        </Formik>
+        </DynamicForm>
         <Button
           title="Надіслати код повторно"
           onClick={() => email && handleResendCode(email)}

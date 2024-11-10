@@ -24,6 +24,9 @@ type FormFieldProps<T extends object> = {
     | FormikErrors<any>
     | FormikErrors<any>[]
     | undefined;
+  maxLength?: string;
+  value?: string;
+  innerRef?: any;
 };
 
 const FormField = <T extends object>(props: FormFieldProps<T>) => {
