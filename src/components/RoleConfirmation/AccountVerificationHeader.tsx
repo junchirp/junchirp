@@ -1,6 +1,5 @@
 'use client';
 
-import { usePathname } from 'next/navigation';
 import cn from 'classnames';
 
 import { roles } from '@/libs/enums/app/Role';
@@ -8,6 +7,7 @@ import { AppRouteEnum } from '@/libs/enums/enums';
 import { roboto } from '@/utils/fonts';
 
 import s from './roleConfirmation.module.scss';
+import { usePathname } from '@/i18n/routing';
 
  const AccountVerificationHeader = () => {
   const pathname = usePathname();

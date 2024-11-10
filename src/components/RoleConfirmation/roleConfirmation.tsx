@@ -1,9 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 import cn from 'classnames';
-
+import { useRouter } from '@/i18n/routing';
 import RoleList from './roleList';
 import { roleCardData } from './roleCardText';
 import { AppRouteEnum } from '@/libs/enums/enums';
@@ -16,7 +15,7 @@ import Button from '@/components/UI/Button/Button';
 
 import s from './roleConfirmation.module.scss';
 
- const RoleConfirmation = () => {
+const RoleConfirmation = () => {
   const [setRole, { isLoading }] = useSetRoleMutation();
   const router = useRouter();
   const [backendError, setBackendError] = useState<string | null>(null);

@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import React, { useEffect, useState } from 'react';
 
 import SvgIcon from '../UI/SvgIcon/SvgIcon';
