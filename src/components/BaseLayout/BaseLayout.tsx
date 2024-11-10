@@ -8,7 +8,6 @@ import Footer from '@/components/Footer/Footer';
 import { Temporary } from '@/components/UI/temporary/temporary';
 import ToastContainer from '@/components/UI/ToastContainer/ToastContainer';
 import dynamic from 'next/dynamic';
-import type { Metadata } from 'next';
 
 type Props = {
   children: ReactNode;
