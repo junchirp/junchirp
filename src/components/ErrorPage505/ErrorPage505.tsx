@@ -5,6 +5,7 @@ import { roboto } from '@/utils/fonts';
 
 import s from './ErrorPage505.module.scss';
 import { useTranslations } from 'next-intl';
+import { AppRouteEnum } from '@/libs/enums/enums';
 
 export default function Error505() {
   const t = useTranslations('error505');
@@ -17,7 +18,7 @@ export default function Error505() {
           </svg>
           <h1 className={s.title}>{t('errorTitle')}</h1>
           <p className={s.details}>{t('errorMessage')}</p>
-          <Link className={`${s.link} ${s.button}`} href="/">
+          <Link className={`${s.link} ${s.button}`} href="/redirect">
             {t('homeButton')}
           </Link>
         </div>
