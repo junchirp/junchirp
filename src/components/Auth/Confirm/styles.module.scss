@@ -15,16 +15,19 @@
   padding-top: 24px;
   @include font(14px, 2vw, 18px, 500, 22px);
 }
+
 .email__text {
   color: #0033ff;
   margin-left: 10px;
   white-space: nowrap;
 }
+
 .timer {
   text-align: center;
   padding: 24px 0;
   @include font(14px, 2vw, 18px, 500, 22px);
 }
+
 .form {
   flex-direction: column;
   gap: 48px;
@@ -45,6 +48,7 @@
     max-width: 888px;
   }
 }
+
 .form__box {
   position: relative;
   width: 100%;
