@@ -1,6 +1,6 @@
 'use client';
 
-import { Field, Form, Formik } from 'formik';
+import { Form } from 'formik';
 
 import { validationSchemaConfirm } from '@/validation/validationConfirm';
 import useEmailConfirmation from '@/hooks/useEmailConfirmation';
@@ -9,8 +9,8 @@ import useCodeInput from '@/hooks/useCodeInput';
 import Button from '@/components/UI/Button/Button';
 import Loader from '@/components/UI/Loader/Loader';
 
-import DynamicForm from '../UI/Forms/DynamicForm/DynamicForm';
-import { FormField } from '../UI/Forms/CustomInput/CustomInput';
+import DynamicForm from '../../UI/Forms/DynamicForm/DynamicForm';
+import { FormField } from '../../UI/Forms/CustomInput/CustomInput';
 
 import styles from './styles.module.scss';
 import common from '@/components/Auth/commonAuthStyles.module.scss';
@@ -91,21 +91,16 @@ const ConfirComponent = () => {
                     }}
                   />
                 ))}
-                {/* {touched.code && errors.code && (
-                  <div className={styles.invalid__code__message}>
-                    {errors.code}
-                  </div>
-                )} */}
               </div>
               {backendError && (
-                <div className={styles.error__backend}>{backendError}</div>
+                <div className={common.error__backend}>{backendError}</div>
               )}
               <Button
-                className={`${styles.styledBtn} ${
+                className={`${common.styledBtn} ${styles.submit__comfirmBtn} ${
                   (touched.code && errors.code) || backendError
-                    ? styles.invalid
+                    ? common.invalid
                     : touched.code && !errors.code
-                    ? styles.valid
+                    ? common.valid
                     : ''
                 }
               ${backendError ? styles.invalid__backendError : ''}`}

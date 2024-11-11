@@ -1,5 +1,5 @@
-@import '../../sass/utils/container';
-@import '../../sass/utils/mixins';
+@import '@/sass/utils/container';
+@import '@/sass/utils/mixins';
 
 .section {
   padding-top: 55px;
@@ -102,36 +102,42 @@
   justify-content: center;
   width: 100%;
   bottom: -35px;
-  color: #b3261e;
+  color: var(--invalid);
   @include font(14px, 2vw, 18px, 500, 22px);
 }
 
-.styledBtn {
-  cursor: pointer;
-  padding: 10px 20px 10px 20px;
-  background-color: #616161;
-  color: var(--text-color);
-  border-radius: 40px;
-  border: none;
-  outline: none;
+// цю кнопку можна звідси забрати, оскільки вона дублює styledBtn із загальних стилів
+// .styledBtn {
+//   cursor: pointer;
+//   padding: 10px 20px 10px 20px;
+//   background-color: #616161;
+//   color: var(--text-color);
+//   border-radius: 40px;
+//   border: none;
+//   outline: none;
+//   width: 192px;
+//   margin: 0 auto;
+//   text-transform: uppercase;
+//   @include font(14px, 2vw, 16px, 400, 19px);
+
+//   &.invalid {
+//     background-color: var(--invalid);
+//     @include flexCenter();
+//     gap: 8px;
+//   }
+
+//   &.valid {
+//     background-color: var(--btn-background);
+
+//     &:hover {
+//       box-shadow: 0px 0px 8px #fff;
+//     }
+//   }
+// }
+
+// деякі унікальні стилі до цієї кнопки можна написати в додатковий клас:
+.submit__comfirmBtn {
   width: 192px;
-  margin: 0 auto;
-  text-transform: uppercase;
-  @include font(14px, 2vw, 16px, 400, 19px);
-
-  &.invalid {
-    background-color: var(--invalid);
-    @include flexCenter();
-    gap: 8px;
-  }
-
-  &.valid {
-    background-color: var(--btn-background);
-
-    &:hover {
-      box-shadow: 0px 0px 8px #fff;
-    }
-  }
 }
 
 .btn__resend {
@@ -147,11 +153,7 @@
     text-decoration-color: #989898;
   }
 }
-.error__backend {
-  color: #b3261e;
-  text-align: center;
-  @include font(14px, 2vw, 20px, 400, 19px);
-}
+
 .disabled {
   text-decoration-color: #989898;
   color: #989898;

@@ -1,4 +1,4 @@
-import ConfirComponent from '@/components/Confirm/ConfirmComponent';
+import ConfirComponent from '@/components/Auth/Confirm/ConfirmComponent';
 
 const ConfirmPage = () => {
   return <ConfirComponent />;
