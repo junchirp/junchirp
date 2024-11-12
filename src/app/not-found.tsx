@@ -1,28 +1,16 @@
-import Link from 'next/link';
+import Error404 from '@/components/ErrorPage404/ErrorPage404';
 
-import { roboto } from '@/utils/fonts';
+import BaseLayout from '@/components/BaseLayout/BaseLayout';
+import { routing } from '@/i18n/routing';
 
-import './globals.scss';
+// This page renders when a route like `/unknown.txt` is requested.
+// In this case, the layout at `app/[locale]/layout.tsx` receives
+// an invalid value as the `[locale]` param and calls `notFound()`.
 
-const NotFoundPage = () => {
+export default function GlobalNotFound() {
   return (
-    <section className={'section'}>
-      <div className={`${roboto.className} ${'container'} `}>
-        <div className={'content__block'}>
-          <svg className={'img__404'} >
-            <use href="/symbol-defs.svg#404"></use>
-          </svg>
-          <h1 className={'title'}>Error 404 - Page not found</h1>
-          <p className={'details'}>
-            Ой, ви потрапили на таємну сторінку, якої не існує! Можливо,
-            сторінка була видалена або переміщена. Перейдіть на нашу головну
-            сторінку, щоб знайти потрібну інформацію
-          </p>
-          <Link className="button"  href='/'>головна сторінка</Link>
-        </div>
-      </div>
-    </section>
+    <BaseLayout locale={routing.defaultLocale}>
+      <Error404 />
+    </BaseLayout>
   );
-};
-
-export default NotFoundPage;
+}

@@ -2,7 +2,7 @@ import { Form } from 'formik';
 
 import useSignInFormik from '@/hooks/useSignInFormik';
 import { CustomError } from '@/types/commonTypes';
-import Error from '@/app/sign-in/error';
+import Error from '@/app/[locale]/sign-in/error';
 import { validationSchemaSignIn } from '../../../validation/validationSignIn';
 
 import DynamicForm from '@/components/UI/Forms/DynamicForm/DynamicForm';

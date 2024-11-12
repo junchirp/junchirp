@@ -1,8 +1,8 @@
 'use client';
 
+import { Link } from '@/i18n/routing';
 import { useState } from 'react';
 import cn from 'classnames';
-import Link from 'next/link';
 
 import { faqs } from './faqsText';
 import { AppRouteEnum } from '@/libs/enums/enums';

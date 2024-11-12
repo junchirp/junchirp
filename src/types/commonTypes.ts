@@ -1,4 +1,7 @@
-import { Role } from "@/components/RoleConfirmation/RoleConfirmation.types";
+import {
+  Role,
+  RoleType,
+} from '@/components/RoleConfirmation/RoleConfirmation.types';
 
 export interface customError {
   status?: number;
@@ -35,3 +38,11 @@ export interface SearchParams {
     token: string | null;
   };
 }
+
+export type Props = {
+  params: {
+    locale: string;
+    'role-information': RoleType;
+  };
+  searchParams: SearchParams;
+};

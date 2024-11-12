@@ -1,6 +1,6 @@
-@import "../../sass/utils/container";
-@import "../../sass/utils/mixins";
-@import "../../sass/utils/variables";
+@import '../../sass-utils/container';
+@import '../../sass-utils/mixins';
+@import '../../sass-utils/variables';
 
 .card {
   position: relative;
@@ -174,7 +174,7 @@
     }
 
     &:checked::after {
-      content: "";
+      content: '';
       display: block;
       width: 40px;
       height: 40px;
@@ -371,7 +371,7 @@
 
 @for $i from 1 through 2 {
   .step__#{$i}::after {
-    content: "#{$i}";
+    content: '#{$i}';
     @include flexCenter();
     @include font(25px, 2vw, 25px, 400, 29px);
 

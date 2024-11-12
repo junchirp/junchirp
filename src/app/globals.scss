@@ -1,5 +1,5 @@
-@import '../sass/utils/container';
-@import '../sass/utils/mixins';
+@import '../sass-utils/container';
+@import '../sass-utils/mixins';
 
 :root {
   --font-mono: 'Roboto' ui-monospace, Menlo, Monaco, 'Cascadia Mono',
@@ -81,6 +81,8 @@ body {
 
 main {
   flex: 1;
+  margin-top: 40px;
+  margin-bottom: 48px;
 }
 
 a {
@@ -102,130 +104,4 @@ p {
 
 .body-no-scroll {
   overflow: hidden;
-}
-
-/* Not-Found Page styles */
-
-.content__block {
-  width: 343px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 0 auto;
-  padding-top: 50px;
-  padding-bottom: 50px;
-
-  // значення 767!!!
-  @include mediaQuery($screen-max-size-s) {
-    width: 708px;
-  }
-
-  @include mediaQuery($screen-size-m) {
-    width: 594px;
-  }
-
-  @include mediaQuery($screen-size-l) {
-    width: 721px;
-  }
-
-  @include mediaQuery($screen-size-xl) {
-    width: 828px;
-  }
-}
-
-.img__404 {
-  margin-bottom: 14px;
-  width: 343px;
-  height: 250px;
-  // значення 767!!!
-
-  @include mediaQuery($screen-max-size-s) {
-    width: 500px;
-    height: 343px;
-    margin-bottom: 16px;
-  }
-
-  @include mediaQuery($screen-size-m) {
-    width: 390px;
-    height: 338px;
-    margin-bottom: 18px;
-  }
-
-  @include mediaQuery($screen-size-l) {
-    width: 620px;
-    height: 464px;
-    margin-bottom: 18px;
-  }
-
-  @include mediaQuery($screen-size-xl) {
-    width: 828px;
-    height: 643px;
-  }
-}
-
-.title {
-  color: #228b22;
-  text-align: center;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-
-  // значення 767!!!
-  @include mediaQuery($screen-max-size-s) {
-    font-size: 18px;
-  }
-
-  @include mediaQuery($screen-size-m) {
-    font-size: 20px;
-  }
-
-  @include mediaQuery($screen-size-l) {
-    font-size: 24px;
-  }
-
-  @include mediaQuery($screen-size-xl) {
-    font-size: 32px;
-  }
-}
-
-.details {
-  color: #fff;
-  text-align: center;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  margin-top: 12px;
-  margin-bottom: 12px;
-
-  @include mediaQuery($screen-size-m) {
-    font-size: 18px;
-  }
-
-  @include mediaQuery($screen-size-l) {
-    font-size: 20px;
-  }
-
-  @include mediaQuery($screen-size-xl) {
-    font-size: 22px;
-    margin-top: 16px;
-    margin-bottom: 16px;
-  }
-}
-
-.button {
-  width: 250px;
-  height: 36px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 40px;
-  background: #228b22;
-  cursor: pointer;
-  color: #fff;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  margin-top: 8px;
-  border: 2px solid white;
 }

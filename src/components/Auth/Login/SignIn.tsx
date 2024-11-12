@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import { Link, usePathname } from '@/i18n/routing';
 
 import { AppRouteEnum } from '@/libs/enums/enums';
 
