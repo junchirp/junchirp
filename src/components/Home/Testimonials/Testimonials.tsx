@@ -7,8 +7,6 @@ import { Pagination, Navigation, EffectCoverflow } from 'swiper/modules';
 
 import SvgIcon from '@/components/UI/SvgIcon/SvgIcon';
 
-// import testimonials from "./testimonials.json";
-
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';

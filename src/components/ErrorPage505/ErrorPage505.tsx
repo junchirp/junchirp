@@ -5,7 +5,6 @@ import { roboto } from '@/utils/fonts';
 
 import s from './ErrorPage505.module.scss';
 import { useTranslations } from 'next-intl';
-import { AppRouteEnum } from '@/libs/enums/enums';
 
 export default function Error505() {
   const t = useTranslations('error505');
