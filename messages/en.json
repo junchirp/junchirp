@@ -28,5 +28,69 @@
   "LocaleSwitcher": {
     "label": "Change language",
     "locale": "{locale, select, ua {Українська} en{English} de{Deutsch} other {Unknown}}"
-  }
+  },
+  "faqs": [
+    {
+      "button_look": "View all",
+      "heading": "Answers to frequently asked questions"
+    },
+    {
+      "id": 1,
+      "question": "How to register and start using JunChirp?",
+      "answer": "To register for JunChirp, click the `SIGN UP` button on the main page. Fill in the required fields, confirm your e-mail and get access to all the features of the platform."
+    },
+    {
+      "id": 2,
+      "question": "How easy is it to find interesting projects and join them?",
+      "answer": "To register for JunChirp, click the `SIGN UP` button on the main page. Fill in the required fields, confirm your e-mail and get access to all the features of the platform."
+    },
+    {
+      "id": 3,
+      "question": "Is JunChirp free to use?",
+      "answer": "To register for JunChirp, click the `SIGN UP` button on the main page. Fill in the required fields, confirm your e-mail and get access to all the features of the platform."
+    }
+  ],
+  "reviews": [
+    { "reviews": "Reviews" },
+    {
+      "id": 1,
+      "text": "JunChirp was a great opportunity for me to try myself as a mentor. Working with talented juniors brought me a lot of pleasure and helped me improve my own skills. Thanks JunChirp!",
+      "name": "Maria Kovalenko",
+      "title": "Full-stack developer",
+      "project": "Social network for travelers",
+      "imageSrc": "/testimonials/Rectangle.png"
+    },
+    {
+      "id": 2,
+      "text": "JunChirp is an incredible platform that helped me find my first pet project. I gained invaluable experience working in a team and improved my skills. I recommend it to everyone who wants to develop in IT!",
+      "name": "Oleksandr Petrenko",
+      "title": "Full-stack developer",
+      "project": "WebApp for event planning",
+      "imageSrc": "/testimonials/Rectangle1.png"
+    },
+    {
+      "id": 3,
+      "text": "On JunChirp, I found a team with a brilliant idea for a startup. They had a clear vision and great potential. Thanks to my investment, the project received a new impetus and has already achieved its first successes. Very pleased with the result!",
+      "name": "Andriy Sydorenko",
+      "title": "Data Scientist",
+      "project": "Mobile application for travel",
+      "imageSrc": "/testimonials/Rectangle2.png"
+    },
+    {
+      "id": 4,
+      "text": "JunChirp is an incredible platform that helped me find my first pet project. I gained invaluable experience working in a team and improved my skills. I recommend it to everyone who wants to develop in IT!",
+      "name": "Andriy Lysenko",
+      "title": "Back-end developer",
+      "project": "Investment platform",
+      "imageSrc": "/testimonials/Rectangle1.png"
+    },
+    {
+      "id": 5,
+      "text": "JunChirp is an incredible platform that helped me find my first pet project. I gained invaluable experience working in a team and improved my skills. I recommend it to everyone who wants to develop in IT!",
+      "name": "Olga Melnyk",
+      "title": "Product manager",
+      "project": "Marketplace for local goods",
+      "imageSrc": "/testimonials/Rectangle.png"
+    }
+  ]
 }

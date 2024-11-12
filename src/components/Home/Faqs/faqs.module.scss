@@ -8,14 +8,14 @@
 
   &__question {
     @include flexCenter();
-    @include font(24px, 2vw, 24px, 400, 36px);
+    @include font(18px, 2vw, 18px, 400, 36px);
 
     @include mediaMaxQuery($screen-size-l) {
-      @include font(20px, 2vw, 20px, 400, 30px);
+      @include font(18px, 2vw, 18px, 400, 30px);
     }
 
     @include mediaMaxQuery($screen-size-m) {
-      @include font(20px, 2vw, 20px, 400, 30px);
+      @include font(18px, 2vw, 18px, 400, 30px);
     }
 
     @include mediaMaxQuery($screen-size-s) {
@@ -23,7 +23,8 @@
     }
 
     @include mediaMaxQuery($screen-size-xs) {
-      @include font(12px, 2vw, 12px, 400, 18px);
+      @include font(16px, 2vw, 16px, 400, 18px);
+      letter-spacing: 0.1vh;
     }
   }
 
@@ -55,23 +56,24 @@
       }
     }
 
-    @include font(20px, 2vw, 20px, 500, 30px);
+    @include font(16px, 2vw, 16px, 400, 30px);
     color: var(--text-color-valid);
 
     @include mediaMaxQuery($screen-size-l) {
-      @include font(20px, 2vw, 20px, 500, 30px);
+      @include font(16px, 2vw, 16px, 400, 30px);
     }
 
     @include mediaMaxQuery($screen-size-m) {
-      @include font(18px, 2vw, 18px, 500, 27px);
+      @include font(16px, 2vw, 16px, 400, 27px);
     }
 
     @include mediaMaxQuery($screen-size-s) {
-      @include font(16px, 2vw, 40px, 500, 24px);
+      @include font(14px, 2vw, 14px, 400, 24px);
+      padding-right: 25px;
     }
 
     @include mediaMaxQuery($screen-size-xs) {
-      @include font(12px, 2vw, 12px, 500, 18px);
+      @include font(14px, 2vw, 14px, 400, 18px);
     }
   }
 
@@ -83,20 +85,26 @@
   }
 
   &__title {
-    @include font(40px, 2vw, 40px, 600, 44px);
+    text-align: center;
+  }
+
+  &__title {
+    @include font(48px, 2vw, 48px, 600, 48px);
 
     @include mediaMaxQuery($screen-size-l) {
-      @include font(32px, 2vw, 32px, 600, 35px);
+      @include font(48px, 2vw, 48px, 600, 48px);
     }
 
     @include mediaMaxQuery($screen-size-m) {
-      @include font(40px, 2vw, 40px, 600, 44px);
+      @include font(48px, 2vw, 48px, 600, 48px);
     }
     @include mediaMaxQuery($screen-size-s) {
-      @include font(24px, 2vw, 24px, 600, 26px);
+      @include font(40px, 2vw, 40px, 700, 40px);
+      line-height: 110%;
     }
     @include mediaMaxQuery($screen-size-xs) {
-      @include font(20px, 2vw, 22px, 600, 22px);
+      @include font(27px, 2vw, 27px, 700, 27px);
+      line-height: 110%;
       @include flexCenter;
     }
   }
@@ -111,23 +119,28 @@
   border: 2px solid var(--color);
   box-sizing: border-box;
   border-radius: 40px;
-  padding: 50px 152px;
+  padding: 50px 40px;
   display: flex;
   flex-direction: column;
 
   @include mediaMaxQuery($screen-size-l) {
-    padding: 40px 189px 50px 189px;
+    border: 1px solid var(--color);
+    border-radius: 32px;
+    padding: 40px 24px;
   }
 
   @include mediaMaxQuery($screen-size-m) {
-    padding: 50px 122px 40px;
+    border-radius: 24px;
+    padding: 50px 24px;
   }
 
   @include mediaMaxQuery($screen-size-s) {
-    padding: 24px 69px 24px;
+    border-radius: 20px;
+    padding: 24px 24px;
   }
 
   @include mediaMaxQuery($screen-size-xs) {
+    border-radius: 12px;
     padding: 32px 24px 24px;
   }
 }
@@ -156,6 +169,16 @@
 .toggleIcon {
   @include font(40px, 2vw, 40px, 600, 44px);
   color: var(--text-color-valid);
+
+  @include mediaMaxQuery($screen-size-xs) {
+    @include font(20px, 2vw, 20px, 600, 22px);
+  }
+}
+
+.toggleIconActive {
+  @include font(40px, 2vw, 40px, 600, 44px);
+  color: var(--color);
+  transform: scaleX(1.5); /* Растягивает символ минус в 2 раза по ширине */
 
   @include mediaMaxQuery($screen-size-xs) {
     @include font(20px, 2vw, 20px, 600, 22px);
