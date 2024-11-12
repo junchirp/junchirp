@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Field, Form, Formik } from 'formik';
+import { Field, Form } from 'formik';
 
 import useRegisterFormik from '@/hooks/useRegisterFormik';
 import Error from '@/app/[locale]/register/error';

@@ -1,9 +1,5 @@
 'use client';
 
-import { Link, usePathname } from '@/i18n/routing';
-
-import { AppRouteEnum } from '@/libs/enums/enums';
-
 import SocialLoginGroup from '../../UI/SocialLoginGroup/SocialLoginGroup';
 
 import RegisterFormik from './RegisterFormik';
