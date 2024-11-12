@@ -9,8 +9,8 @@ import useCodeInput from '@/hooks/useCodeInput';
 import Button from '@/components/UI/Button/Button';
 import Loader from '@/components/UI/Loader/Loader';
 
-import DynamicForm from '../../UI/Forms/DynamicForm/DynamicForm';
-import { FormField } from '../../UI/Forms/CustomInput/CustomInput';
+import DynamicForm from '@/components/UI/Forms/DynamicForm/DynamicForm';
+import { FormField } from '@/components/UI/Forms/CustomInput/CustomInput';
 
 import styles from './styles.module.scss';
 import common from '@/components/Auth/commonAuthStyles.module.scss';
