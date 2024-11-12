@@ -1,4 +1,4 @@
-@import '../../../sass/utils/mixins';
+@import '@/sass-utils/mixins';
 
 .text {
   @include font(14px, 2vw, 16px, 400, 19px);
