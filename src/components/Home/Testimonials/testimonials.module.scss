@@ -8,7 +8,7 @@
     padding: 80px 0;
   }
   @include mediaQuery($screen-size-xl) {
-    padding: 100px 0;
+    padding: 80px 0;
   }
 }
 
@@ -19,15 +19,19 @@
 
   @include mediaQuery($screen-size-s) {
     @include fontSize(40px, 700, 49px);
+    padding-bottom: 40px;
   }
   @include mediaQuery($screen-size-m) {
     @include fontSize(48px, 700, 59px);
+    padding-bottom: 112px;
   }
   @include mediaQuery($screen-size-l) {
     @include fontSize(64px, 700, 78px);
+    padding-bottom: 140px;
   }
   @include mediaQuery($screen-size-xl) {
     @include fontSize(80px, 700, 98px);
+    padding-bottom: 144px;
   }
 }
 
@@ -63,6 +67,11 @@
 
 .swiper__box {
   position: relative;
+  @include mediaQuery($screen-size-xl) {
+    width: 1416px;
+    height: 418px;
+    margin: 0 auto;
+  }
 }
 
 .swiper-wrapper {
@@ -176,15 +185,62 @@
 .swiperButtonPrev {
   cursor: pointer;
   position: absolute;
-
-  right: 53px;
-  top: -36px;
+  top: -99px;
+  @include mediaQuery($screen-size-xs) {
+    right: 32px;
+  }
+  @include mediaQuery($screen-size-s) {
+    top: -40px;
+    right: 64px;
+  }
+  @include mediaQuery($screen-size-m) {
+    top: -79px;
+    right: 68px;
+  }
+  @include mediaQuery($screen-size-l) {
+    top: -93px;
+    right: 68px;
+  }
+  @include mediaQuery($screen-size-xl) {
+    right: -122px;
+  }
 }
 .swiperButtonNext {
   cursor: pointer;
   position: absolute;
-  right: 20px;
-  top: -36px;
+  top: -99px;
+  @include mediaQuery($screen-size-xs) {
+    right: 0px;
+  }
+  @include mediaQuery($screen-size-s) {
+    top: -40px;
+    right: 0px;
+  }
+  @include mediaQuery($screen-size-m) {
+    top: -79px;
+    right: 0px;
+  }
+  @include mediaQuery($screen-size-l) {
+    top: -93px;
+    right: 0px;
+  }
+  @include mediaQuery($screen-size-xl) {
+    right: -190px;
+  }
+}
+
+.swiper__button__right,
+.swiper__button__left {
+  width: 24px;
+  height: 24px;
+  @include mediaQuery($screen-size-s) {
+    width: 40px;
+    height: 40px;
+  }
+  @include mediaQuery($screen-size-m) {
+    width: 44px;
+    height: 44px;
+  }
 }
 
 //

@@ -2,7 +2,6 @@
 
 import Image from 'next/image';
 
-
 import useSaveUser from '@/hooks/useSaveUser';
 import { SearchParams } from '@/types/commonTypes';
 
