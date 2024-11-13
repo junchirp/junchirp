@@ -1,4 +1,4 @@
-import ResetPasswordComponent from '@/components/ResetPassword/ResetPasswordComponent';
+import ResetPasswordComponent from '@/components/Auth/ResetPassword/ResetPasswordComponent';
 import { Props } from '@/types/commonTypes';
 import { setRequestLocale } from 'next-intl/server';
 

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Field, Form, Formik } from 'formik';
+import { Field, Form } from 'formik';
 
 import useRegisterFormik from '@/hooks/useRegisterFormik';
 import Error from '@/app/[locale]/register/error';
@@ -14,6 +14,7 @@ import SvgIcon from '@/components/UI/SvgIcon/SvgIcon';
 import Loader from '@/components/UI/Loader/Loader';
 
 import s from './register.module.scss';
+import common from '@/components/Auth/commonAuthStyles.module.scss';
 
 const RegisterFormik = () => {
   const {
@@ -45,7 +46,7 @@ const RegisterFormik = () => {
     backendError: string | null;
   }) => {
     if (isLoading || isValid) {
-      return s.valid;
+      return common.valid;
     }
 
     if (
@@ -63,7 +64,7 @@ const RegisterFormik = () => {
       return ' ';
     }
 
-    return backendError ? s.invalid : s.valid;
+    return backendError ? common.invalid : common.valid;
   };
 
   return (
@@ -96,7 +97,7 @@ const RegisterFormik = () => {
           handleChange: formikHandleChange,
           isValid,
         }) => (
-          <Form className={s.form}>
+          <Form className={common.form}>
             <FormField
               name={'userName'}
               label={'Ім`я'}
@@ -200,19 +201,19 @@ const RegisterFormik = () => {
             </div>
 
             {backendError && (
-              <div className={s.error__backend}>{backendError}</div>
+              <div className={common.error__backend}>{backendError}</div>
             )}
-            <div className={s.box__btn}>
+            <div className={common.box__btn}>
               <Button
                 title="ОЧИСТИТИ"
-                className={s.resetBtn}
+                className={common.resetBtn}
                 type="reset"
                 isDisabled={!dirty || isLoading}
               />
               <Button
-                className={`${s.styledBtn} ${
+                className={`${common.styledBtn} ${
                   isLoading || isValid
-                    ? s.valid
+                    ? common.valid
                     : !touched.userName ||
                       errors.userName ||
                       !touched.email ||
@@ -225,8 +226,8 @@ const RegisterFormik = () => {
                       errors.rememberMe
                     ? ' '
                     : backendError
-                    ? s.invalid
-                    : s.valid
+                    ? common.invalid
+                    : common.valid
                 }`}
                 type="submit"
                 isDisabled={!dirty || isLoading}

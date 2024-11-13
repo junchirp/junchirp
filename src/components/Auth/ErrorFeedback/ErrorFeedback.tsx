@@ -2,7 +2,7 @@ import { ErrorMessage } from 'formik';
 
 import { roboto } from '@/utils/fonts';
 
-import s from './Login/signIn.module.scss';
+import s from './errorFeedback.module.scss';
 
 export interface ErrorFeedbackProps {
   name: string;

@@ -1,6 +1,6 @@
 import { Field, FormikErrors, FormikTouched } from 'formik';
 
-import ErrorFeedback from '@/components/Auth/ErrorFeedback';
+import ErrorFeedback from '@/components/Auth/ErrorFeedback/ErrorFeedback';
 import SvgIcon from '@/components/UI/SvgIcon/SvgIcon';
 
 import s from './styles.module.scss';
@@ -8,7 +8,7 @@ import s from './styles.module.scss';
 type FormFieldProps<T extends object> = {
   name: keyof T;
   label: string;
-  type: string;
+  type?: string;
   touched: FormikTouched<T>;
   errors: FormikErrors<T>;
   backendError: string | null;
@@ -16,6 +16,17 @@ type FormFieldProps<T extends object> = {
   showPassword?: boolean;
   togglePasswordVisibility?: () => void;
   isThisPassword?: boolean;
+  className?: string;
+  error?:
+    | string
+    | false
+    | string[]
+    | FormikErrors<any>
+    | FormikErrors<any>[]
+    | undefined;
+  maxLength?: string;
+  value?: string;
+  innerRef?: any;
 };
 
 const FormField = <T extends object>(props: FormFieldProps<T>) => {

@@ -1,6 +1,6 @@
 import usePasswordStrength from '@/hooks/usePasswordStrength';
 
-import s from '../Register/register.module.scss';
+import s from './passwordStrengthIndicator.module.scss';
 
 interface Indicator {
   password: string;
