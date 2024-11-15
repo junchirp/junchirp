@@ -77,7 +77,7 @@ const Header = () => {
           {pathname !== AppRouteEnum.SIGN_IN &&
             pathname !== AppRouteEnum.SIGN_UP &&
             pathname !== AppRouteEnum.CONFIRM && (
-              <nav className={`${s.nav}  `}>
+              <nav className={`${s.nav}`}>
                 <LocaleSwitcher />
                 <Link
                   className={s.link}
