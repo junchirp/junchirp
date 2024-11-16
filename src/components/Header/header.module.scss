@@ -88,9 +88,6 @@
       max-width: 100%;
     }
   }
-  @include mediaQuery($screen-size-xl) {
-    min-width: 238px;
-  }
 }
 
 .btn__exit {
