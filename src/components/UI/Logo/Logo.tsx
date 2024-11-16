@@ -15,21 +15,24 @@ const Logo = () => {
       let calculatedWidth, calculatedHeight;
 
       if (w <= 375) {
-        calculatedWidth = 61;
+        calculatedWidth = 62;
         calculatedHeight = 34;
       } else if (w <= 767) {
-        calculatedWidth = 61;
+        calculatedWidth = 62;
         calculatedHeight = 34;
+      } else if (w <= 1279) {
+        calculatedWidth = 72;
+        calculatedHeight = 40;
       } else if (w <= 1535) {
-        calculatedWidth = 96;
-        calculatedHeight = 54;
+        calculatedWidth = 81;
+        calculatedHeight = 45;
       } else if (w <= 1919) {
-        calculatedWidth = 128;
-        calculatedHeight = 70;
+        calculatedWidth = 81;
+        calculatedHeight = 44;
       } else {
-        calculatedWidth = 128;
+        calculatedWidth = 81;
 
-        calculatedHeight = 70;
+        calculatedHeight = 44;
       }
 
       setDynamicWidth(calculatedWidth);

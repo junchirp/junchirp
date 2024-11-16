@@ -19,20 +19,23 @@ const FooterIcons: React.FC<Props> = ({ children }) => {
 
       let calculatedWidth, calculatedHeight;
       if (w <= 375) {
-        calculatedWidth = 34;
-        calculatedHeight = 34;
+        calculatedWidth = 30;
+        calculatedHeight = 30;
       } else if (w <= 767) {
+        calculatedWidth = 30;
+        calculatedHeight = 30;
+      } else if (w <= 1280) {
         calculatedWidth = 40;
         calculatedHeight = 40;
       } else if (w <= 1535) {
-        calculatedWidth = 50;
-        calculatedHeight = 50;
+        calculatedWidth = 40;
+        calculatedHeight = 40;
       } else if (w <= 1919) {
         calculatedWidth = 40;
         calculatedHeight = 40;
       } else {
-        calculatedWidth = 50;
-        calculatedHeight = 50;
+        calculatedWidth = 30;
+        calculatedHeight = 30;
       }
 
       setDynamicWidth(calculatedWidth);

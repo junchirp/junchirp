@@ -17,6 +17,7 @@ import SvgIcon from '@/components/UI/SvgIcon/SvgIcon';
 
 import s from './header.module.scss';
 import LocaleSwitcher from '../LocaleSwitcher/LocaleSwitcher';
+import { useTranslations } from 'next-intl';
 
 const Header = () => {
   const pathname = usePathname();
@@ -55,6 +56,8 @@ const Header = () => {
     };
   }, [menuOpen, windowWidth]);
 
+  const t = useTranslations('headerFooter');
+
   return (
     <header className={s.header}>
       <div className={`${s.container} `}>
@@ -77,7 +80,7 @@ const Header = () => {
           {pathname !== AppRouteEnum.SIGN_IN &&
             pathname !== AppRouteEnum.SIGN_UP &&
             pathname !== AppRouteEnum.CONFIRM && (
-              <nav className={`${s.nav}  `}>
+              <nav className={`${s.nav}`}>
                 <LocaleSwitcher />
                 <Link
                   className={s.link}
@@ -89,7 +92,7 @@ const Header = () => {
                       : AppRouteEnum.SIGN_IN
                   }
                 >
-                  {token ? 'Мій кабінет' : 'Зареєструватись / Увійти'}
+                  {token ? t('office') : t('login')}
                 </Link>
                 <BurgerButton menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
                 {token && (
@@ -115,18 +118,18 @@ const Header = () => {
           <li>
             {' '}
             <Link href="about" onClick={() => setMenuOpen(false)}>
-              Про нас
+              {t('about')}
             </Link>
           </li>
           <li>
             {' '}
             <Link href="terms-of-service" onClick={() => setMenuOpen(false)}>
-              Умови використання
+              {t('terms')}
             </Link>
           </li>
           <li>
             <Link href="privacy-policy" onClick={() => setMenuOpen(false)}>
-              Політика конфіденційності
+              {t('policy')}
             </Link>
           </li>
         </ul>
@@ -141,7 +144,7 @@ const Header = () => {
           }
           onClick={() => setMenuOpen(false)}
         >
-          {token ? 'Мій кабінет' : 'Зареєструватись / Увійти'}
+          {token ? t('office') : t('login')}
         </Link>
       </div>
     </header>

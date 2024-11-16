@@ -93,5 +93,13 @@
       "project": "Платформа для інвестицій",
       "imageSrc": "/testimonials/Rectangle1.png"
     }
-  ]
+  ],
+  "headerFooter": {
+    "login": "Зареєструватись / Увійти",
+    "office": "Мій кабінет",
+    "about": "Про нас",
+    "terms": "Умови використання",
+    "policy": "Політика конфіденційності",
+    "contacts": "Контакти"
+  }
 }

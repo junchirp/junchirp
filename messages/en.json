@@ -92,5 +92,13 @@
       "project": "Marketplace for local goods",
       "imageSrc": "/testimonials/Rectangle.png"
     }
-  ]
+  ],
+  "headerFooter": {
+    "login": "Sign-up / Sign-in",
+    "office": "My office",
+    "about": "About us",
+    "terms": "Terms of use",
+    "policy": "Privacy Policy",
+    "contacts": "Contacts"
+  }
 }
