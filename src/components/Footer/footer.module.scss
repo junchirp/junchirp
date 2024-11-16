@@ -86,7 +86,7 @@
 
 .footerIcons {
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   fill: white;
   gap: 8px;
   padding-top: 10px;
@@ -111,10 +111,6 @@
 
   & p {
     display: none;
-
-    @include mediaQuery($screen-size-m) {
-      display: block;
-    }
   }
 }
 
@@ -122,6 +118,7 @@
   display: none;
   @include mediaQuery($screen-size-m) {
     display: inline-flex;
+    flex-direction: row-reverse;
     gap: 16px;
   }
   a {
