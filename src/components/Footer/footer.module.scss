@@ -2,57 +2,39 @@
 @import '../../sass-utils/mixins';
 
 .footer {
-  padding-top: 10px;
-  border-top: var(--border-btn);
-
+  border-left: 1px solid var(--green);
+  border-right: 1px solid var(--green);
+  border-top: 1px solid var(--green);
+  border-radius: 30px 30px 0 0;
+  padding: 4px 25px 12px 25px;
+  height: 157px;
   @include mediaQuery($screen-size-s) {
+    padding: 4px 50px 12px 50px;
+    height: 106px;
     display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    padding-top: 24px;
+    flex-direction: row;
+    @include flexSpaceBetween();
+    gap: 59px;
   }
-
   @include mediaQuery($screen-size-m) {
-    @include flexSpaceBetween();
-    padding-top: 10px;
-    padding-bottom: 0px;
-  }
-
-  @include mediaQuery($screen-size-l) {
-    @include flexSpaceBetween();
+    border-radius: 40px 40px 0 0;
+    height: 60px;
+    gap: 61px;
   }
 }
 
 .footer_nav {
+  flex-direction: row-reverse;
   @include flexSpaceBetween();
-
-  @include mediaQuery($screen-size-s) {
-    flex-direction: row-reverse;
-  }
 
   & nav {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 12px;
+    justify-content: space-between;
+    gap: 11px;
     font-size: 12px;
     font-weight: 400;
-
-    @include mediaQuery($screen-size-s) {
-      font-size: 18px;
-    }
-
-    @include mediaQuery($screen-size-m) {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-      gap: 54px;
-    }
-    // ще раз подивитися, макет
-    @include mediaQuery(1800px) {
-      gap: 24px;
-    }
 
     & a {
       text-align: center;
@@ -60,46 +42,6 @@
       border-radius: 20px;
       transition: background-color 0.25s ease;
       transition: color var(--transition-time) ease;
-      @include mediaQuery($screen-size-m) {
-        padding-top: 10px;
-        padding-bottom: 10px;
-        width: 188px;
-      }
-
-      @include mediaQuery($screen-size-l) {
-        width: 216px;
-      }
-
-      @include mediaQuery(1800px) {
-        width: 280px;
-      }
-
-      &:first-child {
-        @include mediaQuery($screen-size-m) {
-          width: 80px;
-        }
-        @include mediaQuery($screen-size-l) {
-          width: 96px;
-        }
-
-        @include mediaQuery(1800px) {
-          width: 128px;
-        }
-      }
-
-      &:nth-child(4) {
-        @include mediaQuery($screen-size-m) {
-          width: 280px;
-        }
-
-        @include mediaQuery($screen-size-l) {
-          width: 336px;
-        }
-
-        @include mediaQuery(1800px) {
-          width: 280px;
-        }
-      }
 
       &:hover,
       &:focus {
@@ -108,24 +50,55 @@
       }
     }
   }
+  @include mediaQuery($screen-size-s) {
+    gap: 59px;
+  }
+  .classNav {
+    @include mediaQuery($screen-size-s) {
+      min-width: 253px;
+    }
+  }
+  @include mediaQuery($screen-size-m) {
+    display: none;
+  }
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 0 14px;
+  @include mediaQuery($screen-size-s) {
+    padding: 0 34px;
+    gap: 9px;
+  }
+}
+
+.contact_title {
+  font-weight: 400;
+  font-size: 14px;
+  color: #fff;
+  @include mediaQuery($screen-size-m) {
+    font-size: 16px;
+  }
 }
 
 .footerIcons {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   fill: white;
   gap: 8px;
   padding-top: 10px;
 
-  @include mediaQuery($screen-size-m) {
-    display: flex;
-    flex-direction: row;
-    gap: 50px;
-  }
-
-  @include mediaQuery(1800px) {
+  @include mediaQuery($screen-size-s) {
+    padding-top: 0;
     gap: 16px;
   }
+  a {
+    display: inline-flex;
+  }
+
   a svg {
     fill: white;
     transition: fill var(--transition-time) ease;
@@ -134,13 +107,6 @@
   a:hover svg,
   a:focus svg {
     fill: var(--btn-bg-confirm);
-  }
-
-  &:nth-child(3) {
-    display: none;
-    @include mediaQuery($screen-size-m) {
-      display: block;
-    }
   }
 
   & p {
@@ -152,76 +118,65 @@
   }
 }
 
-.btn_confirm {
-  background: var(--btn-bg-confirm);
-  border: 1px var(--black) solid;
-  border-radius: 20px;
-  padding: 5px 10px;
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 24px;
-  color: var(--black);
-
-  text-align: center;
-  height: 24px;
-  min-width: 152px;
-  @include flexCenter();
-
-  @include mediaQuery($screen-size-s) {
-    font-size: 20px;
-    min-width: 204px;
-    height: 33px;
+.footerIconsMoreM {
+  display: none;
+  @include mediaQuery($screen-size-m) {
+    display: inline-flex;
+    gap: 16px;
+  }
+  a {
+    display: inline-flex;
   }
 
+  a svg {
+    fill: white;
+    transition: fill var(--transition-time) ease;
+  }
+
+  a:hover svg,
+  a:focus svg {
+    fill: var(--btn-bg-confirm);
+  }
+}
+
+.copywriteMoreM {
+  display: none;
   @include mediaQuery($screen-size-m) {
-    min-width: 180px;
+    display: flex;
+  }
+}
+
+.classNavMoreM {
+  display: none;
+  @include mediaQuery($screen-size-m) {
+    display: flex;
+    & nav {
+      display: flex;
+      gap: 61px;
+      & a {
+        text-align: center;
+        padding: 4px;
+        border-radius: 20px;
+        transition: background-color 0.25s ease;
+        transition: color var(--transition-time) ease;
+
+        &:hover,
+        &:focus {
+          background-color: var(--hover-text-color);
+          color: var(--black);
+        }
+      }
+    }
   }
   @include mediaQuery($screen-size-l) {
-    width: 216px;
+    & nav {
+      gap: 86px;
+    }
   }
-
-  &:hover,
-  &:focus {
-    border: 1px var(--btn-bg-confirm) solid;
-    color: var(--color);
-  }
-}
-
-.display_none_mobile {
-  display: none;
-  @include mediaQuery($screen-size-m) {
-    display: flex;
-  }
-}
-
-.display_none_768 {
-  display: none;
-  @include mediaQuery($screen-size-s) {
-    display: flex;
-  }
-}
-
-.display_none_tablet {
-  display: flex;
-  @include mediaQuery($screen-size-s) {
-    display: none;
-  }
-}
-
-.display_none_767 {
-  display: none;
-  @include mediaQuery($screen-size-s) {
-    display: flex;
-  }
-  @include mediaQuery($screen-size-m) {
-    display: none;
-  }
-}
-
-.display_none_1280 {
-  display: flex;
-  @include mediaQuery($screen-size-m) {
-    display: none;
+  @include mediaQuery($screen-size-xl) {
+    & nav {
+      gap: 152px;
+    }
   }
 }
 
@@ -229,30 +184,16 @@
   @include flexSpaceBetween();
   margin-bottom: 16px;
   @include mediaQuery($screen-size-s) {
-    @include flexCenter();
+    align-self: flex-start;
     margin-bottom: 0px;
   }
-}
-
-.footer_nav_mobile {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  & a {
+    display: inline-flex;
+  }
 }
 
 .copywrite {
   font-size: 12px;
   text-align: end;
   margin-left: auto;
-
-  @include mediaQuery($screen-size-s) {
-    font-size: 14px;
-    margin-left: 0;
-    margin-top: 24px;
-  }
-
-  // ще один незрозумілий брейкпоінт
-  @include mediaQuery($screen-max-size-m) {
-    font-size: 16px;
-  }
 }
