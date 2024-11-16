@@ -1,14 +1,14 @@
 import { Link } from '@/i18n/routing';
+import { useTranslations } from 'next-intl';
 import React from 'react';
 
-import s from './footer.module.scss';
-
 const FooterNav = () => {
+  const t = useTranslations('headerFooter');
   return (
     <nav>
-      <Link href="about">Про нас</Link>
-      <Link href="terms-of-service">Умови використання</Link>
-      <Link href="privacy-policy">Політика конфіденційності</Link>
+      <Link href="about">{t('about')}</Link>
+      <Link href="terms-of-service">{t('terms')}</Link>
+      <Link href="privacy-policy">{t('policy')}</Link>
     </nav>
   );
 };

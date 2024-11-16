@@ -60,14 +60,16 @@
   gap: 16px;
 
   @include mediaQuery($screen-size-m) {
-    width: 100%;
-    max-width: 336px;
+    display: flex;
+    max-width: 100%;
+    justify-content: right;
   }
 }
 
 .link {
-  align-self: center;
-  min-width: 234px;
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
   border-bottom: 2px solid var(--green);
   border-left: 1px solid var(--green);
   border-right: 1px solid var(--green);
@@ -83,7 +85,7 @@
     &.open {
       display: flex;
       justify-content: center;
-      width: 343px;
+      max-width: 100%;
     }
   }
   @include mediaQuery($screen-size-xl) {
@@ -108,7 +110,7 @@
   @include flexCenter();
 
   position: fixed;
-  top: 63px;
+  top: 48px;
   left: -100%;
   height: 100%;
   width: 100vw;
@@ -124,13 +126,9 @@
     display: none;
   }
 
-  @include mediaQuery($screen-size-s) {
-    top: 83px;
-  }
-
   &.open {
     position: fixed;
-    top: 63px;
+    top: 48px;
     bottom: 0;
     left: 0;
     display: flex;
@@ -141,9 +139,6 @@
     padding-top: 30px;
     transform: translateX(0);
 
-    @include mediaQuery($screen-size-s) {
-      top: 83px;
-    }
     @include mediaQuery($screen-size-m) {
       display: none;
     }

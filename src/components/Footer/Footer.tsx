@@ -7,8 +7,10 @@ import FooterNav from './FooterNav';
 import FooterIcons from './FooterIcons';
 
 import s from './footer.module.scss';
+import { useTranslations } from 'next-intl';
 
 const Footer: React.FC = () => {
+  const t = useTranslations('headerFooter');
   return (
     <footer className={`${roboto.className} ${s.container} `}>
       <div className={s.footer}>
@@ -30,7 +32,7 @@ const Footer: React.FC = () => {
         <div className={s.footer_nav}>
           <div className={s.contacts}>
             <div className={`${montserrat.className} ${s.contact_title}`}>
-              Контакти
+              {t('contacts')}
             </div>
             <div className={s.footerIcons}>
               <FooterIcons />
