@@ -4,6 +4,7 @@
 .card {
   box-sizing: border-box;
   position: relative;
+overflow: hidden;
 
   @include mediaMaxQuery($screen-size-xl) {
     width: 456px;
@@ -57,8 +58,8 @@
   }
 
   @include mediaMaxQuery($screen-size-s) {
-    width: 346px;
-    height: 461px;
+    width: 319px;
+    height: 440px;
   }
 
   @include mediaMaxQuery($screen-size-xs) {
@@ -69,13 +70,19 @@
 
 .list {
   @include flexCenter();
-  gap: 24px;
   flex-wrap: wrap;
-  row-gap: 40px;
+  row-gap: 32px;
+  column-gap: 24px;
+
+  @include mediaMaxQuery($screen-size-xl) {
+    row-gap: 32px;
+    column-gap: 24px;  
+  }
+
 
   @include mediaMaxQuery($screen-size-l) {
-    row-gap: 32px;
-    gap: 12px;
+    row-gap: 40px;
+    column-gap: 12px;
   }
 
   @include mediaMaxQuery($screen-size-m) {
@@ -135,38 +142,51 @@
 
 .layer {
   position: absolute;
-  top: 78px;
+  bottom: 0;
   background: linear-gradient(90deg, #141416 0%, #124713 100%);
   width: 100%;
   border-radius: 40px;
   border: 2px solid var(--color);
-  height: calc(100% - 78px);
-  transform: scaleY(0);
-  transform-origin: bottom;
-  transition: transform 0.5s ease-in-out;
+  height: calc(100% - 78px); 
+  transform: translateY(100%); 
+  transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out;
+  opacity: 1;
 
   @include mediaMaxQuery($screen-size-l) {
     height: calc(100% - 55px);
-    top: 55px;
   }
 
   @include mediaMaxQuery($screen-size-m) {
     height: calc(100% - 75px);
-    top: 75px;
   }
 
   @include mediaMaxQuery($screen-size-s) {
     height: calc(100% - 48px);
-    top: 48px;
   }
 
-  @include mediaMaxQuery($screen-size-s) {
+  @include mediaMaxQuery($screen-size-xs) {
     height: 100%;
-    top: 0;
   }
 
   .card:hover & {
-    transform: scaleY(1);
+    transform: translateY(0); // Плавно переміщається на своє місце
+  }
+
+  .card:not(:hover) & {
+    transform: translateY(100%); // Повертається вниз, коли ховер знімається
+  }
+
+  &__info, &__title, &__description, &__text, &__button {
+    opacity: 1; // Оставляємо елементи видимими
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .card:hover &__info,
+  .card:hover &__title,
+  .card:hover &__description,
+  .card:hover &__text,
+  .card:hover &__button {
+    opacity: 1; // Показуємо елементи при ховері
   }
 
   &__info {
