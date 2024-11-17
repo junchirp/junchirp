@@ -5,6 +5,7 @@ import cn from 'classnames';
 import { useRouter } from '@/i18n/routing';
 import RoleList from './roleList';
 import { roleCardData } from './roleCardText';
+import { useTranslations } from 'next-intl';
 import { AppRouteEnum } from '@/libs/enums/enums';
 import { useSetRoleMutation } from '@/services/auth-and-user-services';
 import { customError } from '@/types/commonTypes';
@@ -19,6 +20,10 @@ const RoleConfirmation = () => {
   const [setRole, { isLoading }] = useSetRoleMutation();
   const router = useRouter();
   const [backendError, setBackendError] = useState<string | null>(null);
+
+  const t = useTranslations('roleCardData');
+
+ console.log(t);
 
   const handleSubmit = async (values: { role: string }) => {
     try {
@@ -48,7 +53,7 @@ const RoleConfirmation = () => {
           {({ errors, touched, setFieldValue }) => (
             <>
               <RoleList
-                roles={roleCardData}
+                roles={t("roleCardData")}
                 onSelectRole={(roleId) => {
                   setFieldValue('role', roleId);
                   console.log('Selected role:', roleId);

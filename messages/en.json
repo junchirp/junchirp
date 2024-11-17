@@ -28,5 +28,63 @@
   "LocaleSwitcher": {
     "label": "Change language",
     "locale": "{locale, select, ua {Українська} en{English} de{Deutsch} other {Unknown}}"
-  }
+  },
+  "roleCardData": [
+    {
+      "id": 1,
+      "role": "JUNIOR",
+      "title": "Junior",
+      "properties": [
+        { "id": 1, "text": "pet projects, commercial projects, startups" },
+        { "id": 2, "text": "junior positions/internships/freelance" },
+        { "id": 3, "text": "resume and cover letter builder" },
+        { "id": 4, "text": "mentor support and guidance" },
+        { "id": 5, "text": "educational materials, library" },
+        { "id": 6, "text": "participation in professional webinars, conferences" },
+        { "id": 7, "text": "communication with like-minded people in chat" },
+        { "id": 8, "text": "useful blogs and forums" }
+      ]
+    },
+    {
+      "id": 2,
+      "role": "MENTOR",
+      "title": "Mentor",
+      "properties": [
+        { "id": 1, "text": "participation in projects as a mentor" },
+        { "id": 2, "text": "tracking students' progress and providing feedback" },
+        { "id": 3, "text": "chat communication with other mentors" },
+        { "id": 4, "text": "access to up-to-date educational materials" },
+        { "id": 5, "text": "mentorship rating" },
+        { "id": 6, "text": "organization and participation in professional webinars and conferences" },
+        { "id": 7, "text": "participation in forums and communities" },
+        { "id": 8, "text": "startup promotion" },
+        { "id": 9, "text": "blog writing" }
+      ]
+    },
+    {
+      "id": 3,
+      "role": "INVESTOR",
+      "title": "Investor",
+      "properties": [
+        { "id": 1, "text": "unique projects with high potential" },
+        { "id": 2, "text": "startup selection" },
+        { "id": 3, "text": "financial reports, business plans, and development strategies" },
+        { "id": 4, "text": "transparent reporting" },
+        { "id": 5, "text": "events and conferences dedicated to technology and innovation" },
+        { "id": 6, "text": "convenient communication in chat" }
+      ]
+    },
+    {
+      "id": 4,
+      "role": "PARTNER",
+      "title": "Partner",
+      "properties": [
+        { "id": 1, "text": "collaboration in providing services (education, advertising)" },
+        { "id": 2, "text": "access to talented professionals" },
+        { "id": 3, "text": "commissioning commercial projects" },
+        { "id": 4, "text": "offers for employers, recruiters, and HR specialists" },
+        { "id": 5, "text": "innovative solutions and advanced tools" }
+      ]
+    }
+  ]
 }
