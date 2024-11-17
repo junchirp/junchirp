@@ -5,19 +5,24 @@
   box-sizing: border-box;
   position: relative;
 
-  @include mediaMaxQuery($screen-size-l) {
+  @include mediaMaxQuery($screen-size-xl) {
     width: 456px;
-    height: 540px;
+    height: 650px;
+  }
+
+  @include mediaMaxQuery($screen-size-l) {
+    width: 391px;
+    height: 550px;
   }
 
   @include mediaMaxQuery($screen-size-m) {
-    width: 391px;
-    height: 454px;
+    width: 346px;
+    height: 461px;
   }
 
   @include mediaMaxQuery($screen-size-s) {
-    width: 346px;
-    height: 461px;
+    width: 319px;
+    height: 440px;
   }
 
   @include mediaMaxQuery($screen-size-xs) {
@@ -33,15 +38,22 @@
   height: 640px;
   border-radius: 40px;
   border: 2px solid var(--color);
+  object-fit: cover;
+
+  // Діапазон від 1280px до 1535px
+  @include mediaMaxQuery($screen-size-xl) {
+    width: 456px;
+    height: 650px;
+  }
 
   @include mediaMaxQuery($screen-size-l) {
-    width: 456px;
-    height: 540px;
+    width: 391px;
+    height: 550px;
   }
 
   @include mediaMaxQuery($screen-size-m) {
-    width: 391px;
-    height: 454px;
+    width: 346px;
+    height: 461px;
   }
 
   @include mediaMaxQuery($screen-size-s) {
