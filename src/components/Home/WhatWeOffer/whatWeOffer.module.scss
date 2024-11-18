@@ -4,26 +4,30 @@
 .card {
   box-sizing: border-box;
   position: relative;
-overflow: hidden;
 
+  overflow: hidden;
   @include mediaMaxQuery($screen-size-xl) {
     width: 456px;
     height: 650px;
+    overflow: hidden;
   }
 
   @include mediaMaxQuery($screen-size-l) {
     width: 391px;
     height: 550px;
+    overflow: hidden;
   }
 
   @include mediaMaxQuery($screen-size-m) {
     width: 346px;
     height: 461px;
+    overflow: hidden;
   }
 
   @include mediaMaxQuery($screen-size-s) {
     width: 319px;
     height: 440px;
+    overflow: visible;
   }
 
   @include mediaMaxQuery($screen-size-xs) {
@@ -247,6 +251,8 @@ overflow: hidden;
 
     @include mediaMaxQuery($screen-size-s) {
       margin-bottom: 12px;
+      @include font(14px, 2vw, 14px, 400, 17px);
+
     }
     @include mediaMaxQuery($screen-size-xs) {
       @include font(14px, 2vw, 14px, 400, 17px);
@@ -280,30 +286,32 @@ overflow: hidden;
     @include font(24px, 2vw, 24px, 600, 28px);
 
     @include mediaMaxQuery($screen-size-l) {
-      height: 48px;
+      height: 38px;
     }
 
     @include mediaMaxQuery($screen-size-m) {
-      height: 44px;
+      height: 38px;
       bottom: 12px;
       @include font(20px, 2vw, 20px, 600, 23px);
     }
 
     @include mediaMaxQuery($screen-size-s) {
-      height: 40px;
+      height: 38px;
       @include font(18px, 2vw, 18px, 600, 21px);
     }
 
     @include mediaBetweenQuery($screen-size-xs, $screen-size-s) {
-      height: 48px;
+      height: 38px;
       @include font(16px, 2vw, 16px, 600, 21px);
-      bottom: 33px;
+      // bottom: 33px;
+      // top: 390px;
     }
 
     @include mediaMaxQuery($screen-size-xs) {
-      height: 48px;
+      height: 32px;
       @include font(16px, 2vw, 16px, 600, 21px);
-      bottom: 33px;
+      // // bottom: 33px;
+      // top: 390px;
     }
   }
 
