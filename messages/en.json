@@ -4,25 +4,25 @@
   },
   "error404": {
     "errorTitle": "Error 404 - Page not found",
-    "errorMessage": "Oops, you've landed on a secret page that doesn't exist! The page may have been deleted or moved. Go to our main page to find the information you need.",
-    "homeButton": "main page"
+    "errorMessage": "Oh no! You've landed on a secret page that doesn't exist. The page may have been removed or moved to a new location. Please visit our homepage to find the information you're looking for.",
+    "homeButton": "HOME PAGE"
   },
   "error505": {
     "errorTitle": "Error 505 - Internal Server Error",
-    "errorMessage": "Oops… Something went wrong with our server. The technical team is already working on a solution to the problem. For now, please return to the main page",
-    "homeButton": "main page"
+    "errorMessage": "Oops… Something went wrong with our server. Our technical team is already working on fixing the issue. In the meantime, please return to the homepage.",
+    "homeButton": "HOME PAGE"
   },
   "hero": {
     "heroTitle": "JunChirp",
-    "heroText": "Become part of a dynamic community that will support your growth, provide a wide range of opportunities for development and reveal your professional potential. We promise, we will exceed your expectations!",
-    "signUp": "Register"
+    "heroText": "Join a dynamic community that will support your growth, offer a wide range of development opportunities, and unlock your professional potential. We promise, we'll exceed your expectations!",
+    "signUp": "SIGN UP"
   },
   "projectStatistics": {
     "statisticTitle": ["+3К", "+2К", "+75tho"],
     "statisticText": [
       "projects",
-      "people who found a job",
-      "dollars were successfully invested"
+      "people who have found jobs",
+      "dollars successfully invested"
     ]
   },
   "LocaleSwitcher": {
@@ -37,17 +37,17 @@
     {
       "id": 1,
       "question": "How to register and start using JunChirp?",
-      "answer": "To register for JunChirp, click the `SIGN UP` button on the main page. Fill in the required fields, confirm your e-mail and get access to all the features of the platform."
+      "answer": "To register on JunChirp, click the \"REGISTER\" button on the homepage. Fill in the required fields, confirm your email, and gain access to all the platform's features."
     },
     {
       "id": 2,
-      "question": "How easy is it to find interesting projects and join them?",
-      "answer": "To register for JunChirp, click the `SIGN UP` button on the main page. Fill in the required fields, confirm your e-mail and get access to all the features of the platform."
+      "question": "How to easily find interesting projects and join them?",
+      "answer": "To find interesting projects on JunChirp, go to the \"Projects\" section. Here, you can choose pet projects for practice, commercial projects for work, or startups for new opportunities. To join a project, select it from the list, review the details, and apply to participate."
     },
     {
       "id": 3,
-      "question": "Is JunChirp free to use?",
-      "answer": "To register for JunChirp, click the `SIGN UP` button on the main page. Fill in the required fields, confirm your e-mail and get access to all the features of the platform."
+      "question": "Can I use JunChirp for free?",
+      "answer": "Yes, using JunChirp is completely free. You can register and access all available modules and resources at no cost. While some additional services may be offered for a fee, the basic features are available to all users for free."
     }
   ],
   "reviews": [
@@ -94,10 +94,10 @@
     }
   ],
   "headerFooter": {
-    "login": "Sign-up / Sign-in",
-    "office": "My office",
-    "about": "About us",
-    "terms": "Terms of use",
+    "login": "SIGN UP / SIGN IN",
+    "office": "My Profile",
+    "about": "About Us",
+    "terms": "Terms of Use",
     "policy": "Privacy Policy",
     "contacts": "Contacts"
   }
