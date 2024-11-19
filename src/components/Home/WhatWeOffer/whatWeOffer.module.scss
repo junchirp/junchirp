@@ -5,19 +5,29 @@
   box-sizing: border-box;
   position: relative;
 
-  @include mediaMaxQuery($screen-size-l) {
+  overflow: hidden;
+  @include mediaMaxQuery($screen-size-xl) {
     width: 456px;
-    height: 540px;
+    height: 650px;
+    overflow: hidden;
+  }
+
+  @include mediaMaxQuery($screen-size-l) {
+    width: 391px;
+    height: 550px;
+    overflow: hidden;
   }
 
   @include mediaMaxQuery($screen-size-m) {
-    width: 391px;
-    height: 454px;
+    width: 346px;
+    height: 461px;
+    overflow: hidden;
   }
 
   @include mediaMaxQuery($screen-size-s) {
-    width: 346px;
-    height: 461px;
+    width: 319px;
+    height: 440px;
+    overflow: visible;
   }
 
   @include mediaMaxQuery($screen-size-xs) {
@@ -33,20 +43,27 @@
   height: 640px;
   border-radius: 40px;
   border: 2px solid var(--color);
+  object-fit: cover;
+
+  // Діапазон від 1280px до 1535px
+  @include mediaMaxQuery($screen-size-xl) {
+    width: 456px;
+    height: 650px;
+  }
 
   @include mediaMaxQuery($screen-size-l) {
-    width: 456px;
-    height: 540px;
+    width: 391px;
+    height: 550px;
   }
 
   @include mediaMaxQuery($screen-size-m) {
-    width: 391px;
-    height: 454px;
+    width: 346px;
+    height: 461px;
   }
 
   @include mediaMaxQuery($screen-size-s) {
-    width: 346px;
-    height: 461px;
+    width: 319px;
+    height: 440px;
   }
 
   @include mediaMaxQuery($screen-size-xs) {
@@ -57,13 +74,19 @@
 
 .list {
   @include flexCenter();
-  gap: 24px;
   flex-wrap: wrap;
-  row-gap: 40px;
+  row-gap: 32px;
+  column-gap: 24px;
+
+  @include mediaMaxQuery($screen-size-xl) {
+    row-gap: 32px;
+    column-gap: 24px;  
+  }
+
 
   @include mediaMaxQuery($screen-size-l) {
-    row-gap: 32px;
-    gap: 12px;
+    row-gap: 40px;
+    column-gap: 12px;
   }
 
   @include mediaMaxQuery($screen-size-m) {
@@ -123,38 +146,51 @@
 
 .layer {
   position: absolute;
-  top: 78px;
+  bottom: 0;
   background: linear-gradient(90deg, #141416 0%, #124713 100%);
   width: 100%;
   border-radius: 40px;
   border: 2px solid var(--color);
-  height: calc(100% - 78px);
-  transform: scaleY(0);
-  transform-origin: bottom;
-  transition: transform 0.5s ease-in-out;
+  height: calc(100% - 78px); 
+  transform: translateY(100%); 
+  transition: transform 0.5s ease-in-out, opacity 0.3s ease-in-out;
+  opacity: 1;
 
   @include mediaMaxQuery($screen-size-l) {
     height: calc(100% - 55px);
-    top: 55px;
   }
 
   @include mediaMaxQuery($screen-size-m) {
     height: calc(100% - 75px);
-    top: 75px;
   }
 
   @include mediaMaxQuery($screen-size-s) {
     height: calc(100% - 48px);
-    top: 48px;
   }
 
-  @include mediaMaxQuery($screen-size-s) {
+  @include mediaMaxQuery($screen-size-xs) {
     height: 100%;
-    top: 0;
   }
 
   .card:hover & {
-    transform: scaleY(1);
+    transform: translateY(0); // Плавно переміщається на своє місце
+  }
+
+  .card:not(:hover) & {
+    transform: translateY(100%); // Повертається вниз, коли ховер знімається
+  }
+
+  &__info, &__title, &__description, &__text, &__button {
+    opacity: 1; // Оставляємо елементи видимими
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .card:hover &__info,
+  .card:hover &__title,
+  .card:hover &__description,
+  .card:hover &__text,
+  .card:hover &__button {
+    opacity: 1; // Показуємо елементи при ховері
   }
 
   &__info {
@@ -215,6 +251,8 @@
 
     @include mediaMaxQuery($screen-size-s) {
       margin-bottom: 12px;
+      @include font(14px, 2vw, 14px, 400, 17px);
+
     }
     @include mediaMaxQuery($screen-size-xs) {
       @include font(14px, 2vw, 14px, 400, 17px);
@@ -225,9 +263,16 @@
   &__text {
     @include font(18px, 2vw, 18px, 400, 21px);
     text-align: left;
+    
+    @include mediaMaxQuery($screen-size-xl) {
+      @include font(15px, 2vw, 15px, 400, 17px);
+      font-size: 16px;
+    }
+
 
     @include mediaMaxQuery($screen-size-l) {
       @include font(15px, 2vw, 15px, 400, 17px);
+      font-size: 14px;
     }
 
     @include mediaMaxQuery($screen-size-m) {
@@ -248,30 +293,32 @@
     @include font(24px, 2vw, 24px, 600, 28px);
 
     @include mediaMaxQuery($screen-size-l) {
-      height: 48px;
+      height: 38px;
     }
 
     @include mediaMaxQuery($screen-size-m) {
-      height: 44px;
+      height: 38px;
       bottom: 12px;
       @include font(20px, 2vw, 20px, 600, 23px);
     }
 
     @include mediaMaxQuery($screen-size-s) {
-      height: 40px;
+      height: 38px;
       @include font(18px, 2vw, 18px, 600, 21px);
     }
 
     @include mediaBetweenQuery($screen-size-xs, $screen-size-s) {
-      height: 48px;
+      height: 38px;
       @include font(16px, 2vw, 16px, 600, 21px);
-      bottom: 33px;
+      // bottom: 33px;
+      // top: 390px; 
     }
 
     @include mediaMaxQuery($screen-size-xs) {
-      height: 48px;
+      height: 32px;
       @include font(16px, 2vw, 16px, 600, 21px);
-      bottom: 33px;
+      // // bottom: 33px;
+      // top: 390px;
     }
   }
 
