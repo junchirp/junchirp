@@ -1,0 +1,68 @@
+.loadingContainer {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+.loadingVideo {
+  position: absolute;
+  display: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.textContainer {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 10;
+}
+
+.loadingText {
+  font-size: 16px;
+  color: #b3261e;
+  margin-bottom: 24px;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonBack {
+  width: 181px;
+  height: 36px;
+  cursor: pointer;
+  color: var(--grey, #616161);
+  border: none;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-decoration-line: underline;
+  text-transform: uppercase;
+  background-color: transparent;
+}
+
+.buttonReload {
+  width: 250px;
+  height: 36px;
+  padding: 10px;
+  cursor: pointer;
+  color: var(--white, #fafafa);
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border-radius: 40px;
+  border: 1px solid var(--white, #fafafa);
+  background: var(--green, #228b22);
+}
