@@ -263,9 +263,16 @@
   &__text {
     @include font(18px, 2vw, 18px, 400, 21px);
     text-align: left;
+    
+    @include mediaMaxQuery($screen-size-xl) {
+      @include font(15px, 2vw, 15px, 400, 17px);
+      font-size: 16px;
+    }
+
 
     @include mediaMaxQuery($screen-size-l) {
       @include font(15px, 2vw, 15px, 400, 17px);
+      font-size: 14px;
     }
 
     @include mediaMaxQuery($screen-size-m) {
@@ -304,7 +311,7 @@
       height: 38px;
       @include font(16px, 2vw, 16px, 600, 21px);
       // bottom: 33px;
-      // top: 390px;
+      // top: 390px; 
     }
 
     @include mediaMaxQuery($screen-size-xs) {
