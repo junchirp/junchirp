@@ -12,7 +12,7 @@ import { useTranslations } from 'next-intl';
 const Footer: React.FC = () => {
   const t = useTranslations('headerFooter');
   return (
-    <footer className={`${roboto.className} ${s.container320} ${s.container} `}>
+    <footer className={`${roboto.className} ${s.container}`}>
       <div className={s.footer}>
         <div className={s.footer_logo}>
           <Link href="/">
@@ -22,9 +22,9 @@ const Footer: React.FC = () => {
         <div className={`${montserrat.className} ${s.classNavMoreM}`}>
           <FooterNav />
         </div>
-        <div className={`${montserrat.className} ${s.footerIconsMoreM}`}>
+        <address className={`${montserrat.className} ${s.footerIconsMoreM}`}>
           <FooterIcons />
-        </div>
+        </address>
         <p className={`${montserrat.className} ${s.copywriteMoreM}`}>
           &copy; {new Date().getFullYear()}
         </p>
@@ -34,9 +34,9 @@ const Footer: React.FC = () => {
             <div className={`${montserrat.className} ${s.contact_title}`}>
               {t('contacts')}
             </div>
-            <div className={s.footerIcons}>
+            <address className={s.footerIcons}>
               <FooterIcons />
-            </div>
+            </address>
             <div>
               <p className={`${montserrat.className} ${s.copywrite}`}>
                 &copy; {new Date().getFullYear()}
