@@ -146,12 +146,20 @@
   @include mediaQuery($screen-size-xs) {
     padding-top: 0;
   }
+
+  @include mediaQuery($screen-size-s) {
+    @include font(40px, 2vw, 40px, 600, 42px);
+  }
 }
 
 .toggleIconActive {
   @include font(20px, 2vw, 20px, 600, 22px);
   color: var(--color);
   transform: scaleX(1.5); /* Растягивает символ минус в 2 раза по ширине */
+
+  @include mediaQuery($screen-size-s) {
+    @include font(40px, 2vw, 40px, 600, 42px);
+  }
 }
 
 .link {
@@ -166,13 +174,17 @@
 
   @include mediaQuery($screen-size-s) {
     @include font(16px, 2vw, 16px, 300, 20px);
+    border-radius: 12px;
+    padding: 5px 10px;
     width: 188px;
-    height: 33px;
+    height: 35px;
   }
 
   @include mediaQuery($screen-size-m) {
     @include font(18px, 2vw, 18px, 300, 22px);
-    width: 225px;
+    padding: 12px 0px;
+    width: 190px;
+    height: 49px;
   }
 
   &__text {
