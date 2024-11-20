@@ -8,23 +8,22 @@
 
   &__question {
     @include flexCenter();
-    @include font(18px, 2vw, 18px, 400, 36px);
 
-    @include mediaMaxQuery($screen-size-l) {
-      @include font(18px, 2vw, 18px, 400, 30px);
+    @include font(16px, 2vw, 16px, 400, 18px);
+    letter-spacing: 0.1vh;
+    padding-right: 4px;
+    margin-top: 24px;
+
+    @include mediaQuery($screen-size-xs) {
+      margin-top: 0;
     }
 
-    @include mediaMaxQuery($screen-size-m) {
-      @include font(18px, 2vw, 18px, 400, 30px);
-    }
-
-    @include mediaMaxQuery($screen-size-s) {
+    @include mediaQuery($screen-size-s) {
       @include font(16px, 2vw, 16px, 400, 24px);
     }
 
-    @include mediaMaxQuery($screen-size-xs) {
-      @include font(16px, 2vw, 16px, 400, 18px);
-      letter-spacing: 0.1vh;
+    @include mediaQuery($screen-size-m) {
+      @include font(18px, 2vw, 18px, 400, 30px);
     }
   }
 
@@ -41,39 +40,24 @@
       transform: scaleY(1);
       opacity: 1;
       max-height: 500px;
-      margin-top: 32px;
+      margin-top: 24px;
 
-      @include mediaMaxQuery($screen-size-l) {
-        margin-top: 24px;
-      }
-
-      @include mediaMaxQuery($screen-size-s) {
+      @include mediaQuery($screen-size-s) {
         margin-top: 12px;
       }
-
-      @include mediaMaxQuery($screen-size-xs) {
-        margin-top: 24px;
-      }
     }
 
-    @include font(16px, 2vw, 16px, 400, 30px);
     color: var(--text-color-valid);
+    @include font(14px, 2vw, 14px, 400, 18px);
+    padding-right: 20px;
 
-    @include mediaMaxQuery($screen-size-l) {
-      @include font(16px, 2vw, 16px, 400, 30px);
-    }
-
-    @include mediaMaxQuery($screen-size-m) {
-      @include font(16px, 2vw, 16px, 400, 27px);
-    }
-
-    @include mediaMaxQuery($screen-size-s) {
+    @include mediaQuery($screen-size-s) {
       @include font(14px, 2vw, 14px, 400, 24px);
       padding-right: 25px;
     }
 
-    @include mediaMaxQuery($screen-size-xs) {
-      @include font(14px, 2vw, 14px, 400, 18px);
+    @include mediaQuery($screen-size-m) {
+      @include font(16px, 2vw, 16px, 400, 27px);
     }
   }
 
@@ -89,23 +73,17 @@
   }
 
   &__title {
-    @include font(48px, 2vw, 48px, 600, 48px);
+    @include font(27px, 2vw, 27px, 700, 27px);
+    line-height: 110%;
+    @include flexCenter;
 
-    @include mediaMaxQuery($screen-size-l) {
-      @include font(48px, 2vw, 48px, 600, 48px);
-    }
-
-    @include mediaMaxQuery($screen-size-m) {
-      @include font(48px, 2vw, 48px, 600, 48px);
-    }
-    @include mediaMaxQuery($screen-size-s) {
+    @include mediaQuery($screen-size-s) {
       @include font(40px, 2vw, 40px, 700, 40px);
       line-height: 110%;
     }
-    @include mediaMaxQuery($screen-size-xs) {
-      @include font(27px, 2vw, 27px, 700, 27px);
-      line-height: 110%;
-      @include flexCenter;
+
+    @include mediaQuery($screen-size-m) {
+      @include font(48px, 2vw, 48px, 600, 48px);
     }
   }
 }
@@ -116,104 +94,103 @@
     rgba(255, 255, 255, 0.2) 3.55%,
     rgba(34, 139, 34, 0.2) 122.16%
   );
-  border: 2px solid var(--color);
   box-sizing: border-box;
-  border-radius: 40px;
-  padding: 50px 40px;
+  border: 1px solid var(--color);
+  padding: 32px 16px 24px;
+  margin: 40px 16px 0;
+  border-radius: 12px;
   display: flex;
   flex-direction: column;
 
-  @include mediaMaxQuery($screen-size-l) {
-    border: 1px solid var(--color);
-    border-radius: 32px;
-    padding: 40px 24px;
+  @include mediaQuery($screen-size-xs) {
+    margin: 40px 0 0;
   }
 
-  @include mediaMaxQuery($screen-size-m) {
-    border-radius: 24px;
-    padding: 50px 24px;
-  }
-
-  @include mediaMaxQuery($screen-size-s) {
+  @include mediaQuery($screen-size-s) {
     border-radius: 20px;
     padding: 24px 24px;
   }
 
-  @include mediaMaxQuery($screen-size-xs) {
-    border-radius: 12px;
-    padding: 32px 24px 24px;
+  @include mediaQuery($screen-size-m) {
+    border-radius: 24px;
+    padding: 50px 24px;
   }
 }
 
 .container__faqs {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  // gap: 32px;
   margin-bottom: 40px;
 
-  @include mediaMaxQuery($screen-size-l) {
+  @include mediaQuery($screen-size-xs) {
     gap: 24px;
-    margin-bottom: 24px;
+    margin-bottom: 12px;
   }
 
-  @include mediaMaxQuery($screen-size-s) {
+  @include mediaQuery($screen-size-s) {
     gap: 12px;
   }
 
-  @include mediaMaxQuery($screen-size-xs) {
+  @include mediaQuery($screen-size-m) {
     gap: 24px;
-    margin-bottom: 12px;
+    margin-bottom: 24px;
   }
 }
 
 .toggleIcon {
-  @include font(40px, 2vw, 40px, 600, 44px);
+  @include font(20px, 2vw, 20px, 600, 22px);
   color: var(--text-color-valid);
+  padding-top: 22px;
 
-  @include mediaMaxQuery($screen-size-xs) {
-    @include font(20px, 2vw, 20px, 600, 22px);
+  @include mediaQuery($screen-size-xs) {
+    padding-top: 0;
+  }
+
+  @include mediaQuery($screen-size-s) {
+    @include font(40px, 2vw, 40px, 600, 42px);
   }
 }
 
 .toggleIconActive {
-  @include font(40px, 2vw, 40px, 600, 44px);
+  @include font(20px, 2vw, 20px, 600, 22px);
   color: var(--color);
   transform: scaleX(1.5); /* Растягивает символ минус в 2 раза по ширине */
 
-  @include mediaMaxQuery($screen-size-xs) {
-    @include font(20px, 2vw, 20px, 600, 22px);
+  @include mediaQuery($screen-size-s) {
+    @include font(40px, 2vw, 40px, 600, 42px);
   }
 }
 
 .link {
   border: 1px solid var(--border-color);
-  width: 242px;
-  height: 49px;
-  border-radius: 12px;
+  width: 32px;
+  height: 32px;
+  border-radius: 40px;
   gap: 8px;
   @include font(20px, 2vw, 20px, 300, 24px);
   @include flexCenter();
   @include hover(transform, scale(1.05));
 
-  @include mediaMaxQuery($screen-size-m) {
-    @include font(18px, 2vw, 18px, 300, 22px);
-    width: 225px;
+  @include mediaQuery($screen-size-s) {
+    @include font(16px, 2vw, 16px, 300, 20px);
+    border-radius: 12px;
+    padding: 5px 10px;
+    width: 188px;
+    height: 35px;
   }
 
-  @include mediaMaxQuery($screen-size-s) {
-    @include font(16px, 2vw, 16px, 300, 20px);
-    width: 188px;
-    height: 33px;
-  }
-  @include mediaMaxQuery($screen-size-xs) {
-    width: 32px;
-    height: 32px;
-    border-radius: 40px;
+  @include mediaQuery($screen-size-m) {
+    @include font(18px, 2vw, 18px, 300, 22px);
+    padding: 12px 0px;
+    width: 190px;
+    height: 49px;
   }
 
   &__text {
-    @include mediaMaxQuery($screen-size-xs) {
-      display: none;
+    display: none;
+    @include mediaQuery($screen-size-s) {
+      display: inline-flex;
     }
   }
 }

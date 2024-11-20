@@ -31,14 +31,14 @@ const Faqs = () => {
       <div className={s.container}>
         <section className={s.faqs}>
           <div className={s.container__faqs}>
-            <h1 className={s.faq__title}> {t('0.heading')}</h1>
+            <h2 className={s.faq__title}> {t('0.heading')}</h2>
             {faqs.map((faq) => (
               <div className={s.faq} key={faq.id}>
                 <div
                   className={s.faq__item}
                   onClick={() => handleToggle(faq.id)}
                 >
-                  <h2 className={s.faq__question}>{faq.question}</h2>
+                  <h3 className={s.faq__question}>{faq.question}</h3>
                   <div
                     className={clsx(
                       s.toggleIcon,
@@ -49,13 +49,13 @@ const Faqs = () => {
                   </div>
                 </div>
 
-                <h3
+                <h4
                   className={cn(s.faq__answer, {
                     [s.active]: activeIndex === faq.id,
                   })}
                 >
                   {faq.answer}
-                </h3>
+                </h4>
               </div>
             ))}
           </div>
