@@ -3,7 +3,7 @@ import Faqs from '@/components/Home/Faqs/Faqs';
 import Hero from '@/components/Home/Hero/Hero';
 import ProjectStatistics from '@/components/Home/ProjectStatistics/ProjectStatistics';
 import RoleSelectionLink from '@/components/Home/RoleSelectionLink/RoleSelectionLink';
-import Testimonials from '@/components/Home/Testimonials/Testimonials';
+// import Testimonials from '@/components/Home/Testimonials/Testimonials';
 import WhatWeOffer from '@/components/Home/WhatWeOffer/WhatWeOffer';
 import { setRequestLocale } from 'next-intl/server';
 import { Props } from '@/types/commonTypes';
@@ -17,7 +17,7 @@ export default function Home({ params: { locale } }: Props) {
       <RoleSelectionLink />
       <ProjectStatistics />
       <WhatWeOffer />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <Faqs />
       <MagicButton />
     </>
