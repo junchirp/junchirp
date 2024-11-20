@@ -12,7 +12,7 @@ import { useTranslations } from 'next-intl';
 const Footer: React.FC = () => {
   const t = useTranslations('headerFooter');
   return (
-    <footer className={`${roboto.className} ${s.container} `}>
+    <footer className={`${roboto.className} ${s.container320} ${s.container} `}>
       <div className={s.footer}>
         <div className={s.footer_logo}>
           <Link href="/">

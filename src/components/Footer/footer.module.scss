@@ -1,6 +1,14 @@
 @import '../../sass-utils/container';
 @import '../../sass-utils/mixins';
 
+// .container320 {
+//   max-width: 320px;
+//   padding: 0 16px;
+//   nav a:last-child {
+//     text-align: left;
+//   }
+// }
+
 .footer {
   border-left: 1px solid var(--green);
   border-right: 1px solid var(--green);
@@ -147,8 +155,11 @@
   display: none;
   @include mediaQuery($screen-size-m) {
     display: flex;
+    flex: 1;
     & nav {
       display: flex;
+      width: 100%;
+      justify-content: space-around;
       gap: 61px;
       & a {
         text-align: center;
@@ -163,16 +174,6 @@
           color: var(--black);
         }
       }
-    }
-  }
-  @include mediaQuery($screen-size-l) {
-    & nav {
-      gap: 86px;
-    }
-  }
-  @include mediaQuery($screen-size-xl) {
-    & nav {
-      gap: 152px;
     }
   }
 }
