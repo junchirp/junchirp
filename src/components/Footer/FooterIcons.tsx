@@ -5,63 +5,20 @@ import React, { useEffect, useState } from 'react';
 
 import SvgIcon from '../UI/SvgIcon/SvgIcon';
 
+import t from './footer.module.scss';
+
 interface Props {
   children?: React.ReactNode;
 }
 
 const FooterIcons: React.FC<Props> = ({ children }) => {
-  const [dynamicWidth, setDynamicWidth] = useState(24);
-  const [dynamicHeight, setDynamicHeight] = useState(24);
-
-  useEffect(() => {
-    const handleResize = () => {
-      const w = window.innerWidth;
-
-      let calculatedWidth, calculatedHeight;
-      if (w <= 375) {
-        calculatedWidth = 30;
-        calculatedHeight = 30;
-      } else if (w <= 767) {
-        calculatedWidth = 30;
-        calculatedHeight = 30;
-      } else if (w <= 1280) {
-        calculatedWidth = 40;
-        calculatedHeight = 40;
-      } else if (w <= 1535) {
-        calculatedWidth = 40;
-        calculatedHeight = 40;
-      } else if (w <= 1919) {
-        calculatedWidth = 40;
-        calculatedHeight = 40;
-      } else {
-        calculatedWidth = 30;
-        calculatedHeight = 30;
-      }
-
-      setDynamicWidth(calculatedWidth);
-      setDynamicHeight(calculatedHeight);
-    };
-
-    handleResize();
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
   return (
     <>
       <Link href="#">
-        <SvgIcon id="email" width={dynamicWidth} height={dynamicHeight} />
+        <SvgIcon id="email" className={t.emailIcon} />
       </Link>
       <Link href="#">
-        <SvgIcon
-          id="linkedinWhite"
-          width={dynamicWidth}
-          height={dynamicHeight}
-        />
+        <SvgIcon id="linkedinWhite" className={t.linkedinWhiteIcon} />
       </Link>
       {children}
     </>
