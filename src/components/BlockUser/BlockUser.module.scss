@@ -1,0 +1,67 @@
+@import '../../sass-utils/container';
+@import '../../sass-utils/mixins';
+
+.blockedUserContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  background-image: url('../../../public/BlockImage.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.messageWrapper {
+  background-color: #141416;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 330px;
+  height: 450px;
+  padding: 15px;
+  gap: 24px;
+  border-radius: 30px;
+  border: 2px;
+  box-shadow: 0px 0px 20px 0px #b3261e;
+  border: 2px solid #b3261e;
+
+  @include mediaQuery($screen-size-m) {
+    width: 420px;
+    height: 560px;
+    padding: 30px;
+  }
+}
+
+.ButtonFeedback {
+  width: 275px;
+  height: 25px;
+  padding: 4px 28px 4px 28px;
+  border-radius: 40px;
+  background: #228b22;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 19.5px;
+  letter-spacing: 0.5px;
+  border: 1px solid #fafafa;
+  color: #fafafa;
+  cursor: pointer;
+  text-transform: uppercase;
+
+  @include mediaQuery($screen-size-m) {
+    width: 290px;
+    height: 35px;
+    font-size: 16px;
+    padding: 8px 20px 8px 20px;
+  }
+}
+
+.BlImage {
+  width: 300px;
+  height: 370px;
+  @include mediaQuery($screen-size-m) {
+    width: 360px;
+    height: 440px;
+  }
+}
