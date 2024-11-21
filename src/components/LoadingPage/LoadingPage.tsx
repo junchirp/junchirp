@@ -14,7 +14,7 @@ const LoadingPage = () => {
   return (
     <div className={styles.loadingContainer}>
       <video className={styles.loadingVideo} autoPlay loop muted>
-        <source src="/JumHirp-video.mp4" type="video/mp4" />
+        <source src="/IMG_8462.mp4" type="video/mp4" />
         Ваш браузер не підтримує відео.
       </video>
       <div className={styles.textContainer}>
