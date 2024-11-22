@@ -8,8 +8,8 @@
   overflow: hidden;
   background-color: transparent;
 
-  @include mediaMaxQuery($screen-size-m) {
-    height: 65vh;
+  @include mediaMaxQuery($screen-max-size-s) {
+    height: 60vh;
   }
 }
 
@@ -23,26 +23,53 @@
   object-fit: none;
 
   @include mediaMaxQuery($screen-size-m) {
-    height: 104%;
-    object-fit: cover;
-    top: -18px;
-    left: 0;
+    object-fit: fill;
+  }
+  @include mediaMaxQuery($screen-max-size-s) {
+    height: 65%;
   }
 }
 
 .textContainer {
   position: absolute;
+  width: 500px;
   bottom: 50px;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
   z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include mediaMaxQuery($screen-max-size-m) {
+    width: 432px;
+  }
+
+  @include mediaMaxQuery($screen-max-size-s) {
+    width: 343px;
+  }
 }
 
 .loadingText {
   font-size: 16px;
   color: #b3261e;
   margin-bottom: 24px;
+  width: 431px;
+  justify-content: flex-end;
+
+  @include mediaMaxQuery($screen-max-size-m) {
+    width: 432px;
+    height: 19px;
+    font-size: 14px;
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  @include mediaMaxQuery($screen-max-size-s) {
+    width: 343px;
+    height: 38px;
+  }
 }
 
 .buttonGroup {
@@ -50,6 +77,17 @@
   gap: 24px;
   justify-content: center;
   align-items: center;
+
+  @include mediaMaxQuery($screen-max-size-m) {
+    height: 65%;
+    justify-content: start;
+  }
+
+  @include mediaMaxQuery($screen-max-size-s) {
+    height: 65%;
+    display: flex;
+    flex-direction: column-reverse;
+  }
 }
 
 .buttonBack {
@@ -64,6 +102,13 @@
   text-decoration-line: underline;
   text-transform: uppercase;
   background-color: transparent;
+
+  @include mediaMaxQuery($screen-max-size-m) {
+    width: 140px;
+    height: 25px;
+    padding: 4px 10px;
+    font-size: 14px;
+  }
 }
 
 .buttonReload {
@@ -79,4 +124,16 @@
   border-radius: 40px;
   border: 1px solid var(--white, #fafafa);
   background: var(--green, #228b22);
+
+  @include mediaMaxQuery($screen-max-size-m) {
+    width: 135px;
+    height: 25px;
+    padding: 4px 28px;
+  }
+
+  @include mediaMaxQuery($screen-max-size-s) {
+    width: 343px;
+    height: 25px;
+    padding: 4px 0px 4px 0px;
+  }
 }
